@@ -7,6 +7,7 @@
 ls [*] # List files + directories
 ll # List files + directories and details
 cd [path] # Change directory
+clear (Ctrl + L) # Clean terminal
 
 //Basic Directory & File Management Cmds
 mkdir [dir] # Create directory
@@ -25,6 +26,8 @@ whatis [cmd] # Brief explanation of a command
 apropos [search] # Search for a command for what you type
 ```
 
+---
+
 ### Editor Commands
 
 ```bash
@@ -42,6 +45,8 @@ cat [file] [file] > [file] # Unite multiple files into one
 nano [file] # Open file in the nano editor
 ```
 
+---
+
 ### Filter Commands
 
 ```bash
@@ -57,6 +62,8 @@ find [src] [-params] # Search for file | dir from src (all system if empty)
 	params: [-name ""] # Name is X
 					[-type d | f] # Dir or File
 ```
+
+---
 
 ### User Commands
 
@@ -74,6 +81,8 @@ chmod [xxx] [path] # Define all users permissions based on the table below
 # rw- = 6 | r-x = 5 | -wx = 3 | --- = 0
 ```
 
+---
+
 ### Process Commands
 
 ```bash
@@ -84,6 +93,8 @@ fg [-pid] # Set suspended => running in foreground
 kill [-pid] #Terminate process
 [process] & #Run process in bg
 ```
+
+---
 
 ### Wildcards
 

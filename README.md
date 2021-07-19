@@ -4,14 +4,14 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 ## Web Development Fundamentals
 
-### Block 01: Unix & Bash ✔️
+### [Block 01: Unix & Bash ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block01-unix_%26_bash)
 
 - [X] __1.3__: _Web Development Fundamentals_
 - [X] __1.3__: _Introduction - Unix & Shell_
 - [X] __1.3__: _Unix & Bash - Part 1_
 - [X] __1.4__: _Unix & Bash - Part 2_
 ---
-### Block 02: Git, GitHub and Internet
+### [Block 02: Git, GitHub and Internet](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block02-git_github_internet)
 
 - [X] __2.1__: _Git & GitHub - What is it and what for_
 - [ ] __2.2__: _Git & GitHub - Understanding the commands_

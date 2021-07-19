@@ -1,6 +1,6 @@
 # Trybe Exercises
 
-This repository includes all exercises and notes made during the [Trybe Course](https://www.betrybe.com/)
+This repository includes all exercises and notes made during the [Trybe Course](https://www.betrybe.com/). Further detailed notes can be found at [Notion](https://basalt-chicken-ecc.notion.site/Trybe-Course-921659907b454ca3a33b6e80c2e9d457)
 
 ## Web Development Fundamentals
 
@@ -14,7 +14,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 02: Git, GitHub and Internet](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block02-git_github_internet)
 
 - [X] __2.1__: _Git & GitHub - What is it and what for_
-- [ ] __2.2__: _Git & GitHub - Understanding the commands_
+- [X] __2.2__: _Git & GitHub - Understanding the commands_
 - [ ] __2.3__: _Internet - Understanding how it works_
 ---
 ### Block 03: Introduction to HTML and CSS

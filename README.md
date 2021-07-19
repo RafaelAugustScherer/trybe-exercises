@@ -1,6 +1,6 @@
 # Trybe Exercises
 
-This repository includes all exercises and notes made during the [Trybe Course](https://www.betrybe.com/). Further detailed notes can be found at [Notion](https://basalt-chicken-ecc.notion.site/Trybe-Course-921659907b454ca3a33b6e80c2e9d457)
+This repository includes all exercises and notes made during the [Trybe Course](https://www.betrybe.com/). Further & detailed notes can be found at [Notion](https://basalt-chicken-ecc.notion.site/Trybe-Course-921659907b454ca3a33b6e80c2e9d457)
 
 ## Web Development Fundamentals
 

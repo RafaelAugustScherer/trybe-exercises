@@ -11,11 +11,11 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __1.3__: _Unix & Bash - Part 1_
 - [X] __1.4__: _Unix & Bash - Part 2_
 ---
-### [Block 02: Git, GitHub and Internet](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block02-git_github_internet)
+### [Block 02: Git, GitHub and Internet ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block02-git_github_internet)
 
 - [X] __2.1__: _Git & GitHub - What is it and what for_
 - [X] __2.2__: _Git & GitHub - Understanding the commands_
-- [ ] __2.3__: _Internet - Understanding how it works_
+- [X] __2.3__: _Internet - Understanding how it works_
 ---
 ### Block 03: Introduction to HTML and CSS
 

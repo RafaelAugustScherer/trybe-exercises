@@ -20,8 +20,8 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 03: Introduction to HTML & CSS](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block03-html_css)
 
 - [X] __3.1__: _Introduction - HTML & CSS_
-- [ ] __3.1__: _HTML & CSS: Page Structures_
-- [ ] __3.2__: _HTML & CSS: First Steps in CSS_
+- [X] __3.1__: _HTML & CSS: Page Structures_
+- [X] __3.2__: _HTML & CSS: First Steps in CSS_
 - [ ] __3.3__: _HTML & CSS: Selectors and Positioning_
 - [ ] __3.4__: _HTML Semantic_
 - [ ] __3.5__: _Project - Lessons Learned_

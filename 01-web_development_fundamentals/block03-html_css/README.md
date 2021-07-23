@@ -124,3 +124,125 @@ There is a lot of fonts available to use in our CSS file. Some fonts will also n
 - monospace: Font similar to the one used in writing machines. Each letter occupies the same space `width` wise;
 - cursive: Manuscript like font;
 - fantasy: Chronicle book like font.
+
+---
+
+## Box Model
+
+![./boxModelCSS.png](boxModelCSS.png)
+
+### Overflow: How the content is shown in its area
+
+```css
+overflow: [prop]
+					hidden /* Do not show content that doesn't fit */
+					auto /* Create scroll if doesn't fit */ 
+/* Variants */
+overflow-y: /* Only apply to the y-axis */
+overflow-x: /* Only apply to the x-axis */
+```
+
+---
+
+### Position: How the other contents are seeing this one
+
+```css
+position: [prop]
+					absolute /* Override, other elements ignore it */
+					fixed /* Fixed position on screen, even on scroll */
+
+```
+
+---
+
+### Margin: Define space around content
+
+```css
+margin: [value] /* Can receive up to 4 values, in order: top, right, bottom, left */
+/* Variants */
+margin-top:
+margin-bottom:
+margin-left:
+margin-right:
+
+/* auto: defines margin automatically */
+```
+
+---
+
+### Display: How the elements/containers should be displayed
+
+```css
+display: [value]
+				 inline /* Align elements in the same line */
+				 inline-block /* Align containers in the same line */
+```
+
+---
+
+### Z-index: Order overriding elements. 1 is last, x is first
+
+```css
+z-index: [num];
+```
+
+---
+
+### Float: Where content should stay in container
+
+```css
+float: [top, right, bottom, left]
+```
+
+## Grouping in CSS
+
+```css
+/* Apply to multiple elements Ex: <p> + <div> */
+p, div {
+	/* CSS Props */
+}
+
+/* Apply to elements inside other elements Ex: <p> inside <div> */
+div p {
+ /* CSS Props */
+}
+
+/* Apply to pseudoclasses Ex: hover, focus */
+div:property {
+	/* CSS Props */
+}
+```
+
+# Misc
+
+## Default spacing
+
+```css
+/* Remove default spacing from all of the elements */
+* {
+margin: 0;
+padding: 0;
+}
+```
+
+---
+
+## Containers
+
+Containers can be created inside `<section>` or `<div>` tags. They are useful especially when separating HTML sections and styles, you can use separate `class=""` attributtes.
+
+---
+
+## Span
+
+`<span>` is an inline "container". Generally used to project icons or highlight text parts.
+
+---
+
+## Background-image
+
+```css
+background-image: /* Set background image of container */
+background-size: cover /* Adapt image size to container size */ 
+background-position: [x] [y] /* Where the background should start rendering */
+```

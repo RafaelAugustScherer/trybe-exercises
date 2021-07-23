@@ -22,7 +22,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __3.1__: _Introduction - HTML & CSS_
 - [X] __3.1__: _HTML & CSS: Page Structures_
 - [X] __3.2__: _HTML & CSS: First Steps in CSS_
-- [ ] __3.3__: _HTML & CSS: Selectors and Positioning_
+- [X] __3.3__: _HTML & CSS: Selectors and Positioning_
 - [ ] __3.4__: _HTML Semantic_
 - [ ] __3.5__: _Project - Lessons Learned_
 ---

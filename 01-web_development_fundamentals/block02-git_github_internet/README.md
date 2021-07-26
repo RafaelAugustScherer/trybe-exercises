@@ -1,10 +1,8 @@
-# Block 2 - Git & GitHub
-
 # Git | GitHub | GitLab | BitBucket
 
-> Git is the program whose function is to manage software version;
->
-> GitHub, GitLab & BitBucket are platforms to share, publish and colaborate on Git repositories.
+Git is the program whose function is to manage software version;
+
+GitHub, GitLab & BitBucket are platforms to share, publish and colaborate on Git repositories.
 
 ---
 
@@ -70,6 +68,8 @@ git merge [branch] # Join local branch to another spec. branch
 ```bash
 git push # Sync all commits locally made to remote repo
 git pull # Sync all commits remotely made to local repo
+
+git cherry-pick [commitID] # Share commits between branches
 ```
 
 # Git Ignore

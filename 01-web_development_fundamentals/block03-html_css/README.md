@@ -1,5 +1,3 @@
-# Block 3 - Introduction to HTML & CSS
-
 # What is HTML
 
 **HTML**: Hyper Text Markup Language
@@ -74,6 +72,19 @@ alt="" <!-- Description of the object in text format. Used for accessibility or 
 
 ---
 
+## Semantic HTML - Improved organization & accessibility
+
+Below are the most used Semantic tags for HTML5
+
+```html
+<header></header> <!-- Tag used in page|article headers ->
+<footer></footer> <!-- Tag used in page|article footers ->
+<nav></nav> <!-- Tag used in navigation bars ->
+<main></main> <!-- Tag used outside main page content ->
+<article></article> <!-- Tag used outside articles ->
+<section></section> <!-- Tag used for generic sections ->
+```
+
 # What is CSS?
 
 **CSS**: Cascading Style Sheets
@@ -85,8 +96,8 @@ CSS is a styling language for HTML tags. It defines how HTML elements are organi
 It can be implemented in 3 ways:
 
 1. The following can be added inside the `<head>` tag in the HTML page: `<style> #CSS Code </style>`;
-2. `style=" #CSS Code"` can also be used as an attribute of an HTML tag;
-3. (Recommended) A separate file *example.css* can be created and the following can be added inside the `<head>` tag: `<link rel="stylesheet" href="pathTo\example.css"`.
+2. `style="#CSS Code"` can also be used as an attribute of an HTML tag;
+3. (**Recommended**) A separate file *example.css* can be created and the following can be added inside the `<head>` tag: `<link rel="stylesheet" href="pathTo\example.css"`.
 
 ---
 
@@ -101,6 +112,27 @@ h1 {
 
 .exampleClass {
 /* Insert properties for class="exampleClass" here */
+}
+```
+
+---
+
+## Grouping in CSS
+
+```css
+/* Apply to multiple elements Ex: <p> + <div> */
+p, div {
+	/* CSS Props */
+}
+
+/* Apply to elements inside other elements Ex: <p> inside <div> */
+div p {
+ /* CSS Props */
+}
+
+/* Apply to pseudoclasses Ex: hover, focus */
+div:property {
+	/* CSS Props */
 }
 ```
 
@@ -129,7 +161,7 @@ There is a lot of fonts available to use in our CSS file. Some fonts will also n
 
 ## Box Model
 
-![./boxModelCSS.png](boxModelCSS.png)
+![boxModelCSS.png](boxModelCSS.png)
 
 ### Overflow: How the content is shown in its area
 
@@ -150,16 +182,17 @@ overflow-x: /* Only apply to the x-axis */
 position: [prop]
 					absolute /* Override, other elements ignore it */
 					fixed /* Fixed position on screen, even on scroll */
+					relative  /* Relative to content */
 
 ```
 
 ---
 
-### Margin: Define space around content
+### Margin, padding & border: Define space around content
 
 ```css
 margin: [value] /* Can receive up to 4 values, in order: top, right, bottom, left */
-/* Variants */
+/* Separate Variants */
 margin-top:
 margin-bottom:
 margin-left:
@@ -174,8 +207,10 @@ margin-right:
 
 ```css
 display: [value]
-				 inline /* Align elements in the same line */
-				 inline-block /* Align containers in the same line */
+				 block /* Elements in different lines, 100% width, can change height */
+				 inline /* Elements in same line, dynamic width, can't change height and y-margin */
+				 inline-block /* Elements in same line, dynamic width, can change height */
+				 inline-flex /* Align flex/flexbox items */
 ```
 
 ---
@@ -194,22 +229,21 @@ z-index: [num];
 float: [top, right, bottom, left]
 ```
 
-## Grouping in CSS
+---
+
+## Flexbox - Simple item organization model
 
 ```css
-/* Apply to multiple elements Ex: <p> + <div> */
-p, div {
-	/* CSS Props */
+#container {
+	/* Container that wraps blocks */
+	display: flex;
+	flex-direction: row | column; /* Align as column or row */
+	justify-content: left | center | right; /* Where to place content */ 
 }
 
-/* Apply to elements inside other elements Ex: <p> inside <div> */
-div p {
- /* CSS Props */
-}
-
-/* Apply to pseudoclasses Ex: hover, focus */
-div:property {
-	/* CSS Props */
+.block {
+ /* Each block inside container property */
+ align-self: flex-start | center | flex-end /* Where to place the block inside container */
 }
 ```
 

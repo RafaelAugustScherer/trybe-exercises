@@ -1,0 +1,37 @@
+h1, footer {
+    text-align: center;
+}
+
+h3, footer {
+    border-top: 1px solid black;
+}
+
+h1, nav {
+    border-bottom: 1px solid black;
+}
+
+nav {
+    text-align: justify;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+article {
+    text-align: justify;
+    padding: 0 50px;
+}
+
+h3 {
+    padding-top: 20px
+}
+
+section {
+    display: inline-block;
+}
+
+aside {
+    float: right;
+}

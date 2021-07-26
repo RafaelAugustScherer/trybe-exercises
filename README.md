@@ -23,7 +23,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __3.1__: _HTML & CSS: Page Structures_
 - [X] __3.2__: _HTML & CSS: First Steps in CSS_
 - [X] __3.3__: _HTML & CSS: Selectors and Positioning_
-- [X] __3.4__: _HTML Semantic_
+- [X] __3.4__: _Semantic HTML_
 - [ ] __3.5__: _Project - Lessons Learned_
 ---
 ### Block 04: Introduction to JavaScript and Programming Logic

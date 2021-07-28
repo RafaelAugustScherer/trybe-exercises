@@ -17,13 +17,13 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __2.2__: _Git & GitHub - Understanding the commands_
 - [X] __2.3__: _Internet - Understanding how it works_
 ---
-### [Block 03: Introduction to HTML & CSS](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block03-html_css)
+### [Block 03: Introduction to HTML & CSS ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block03-html_css)
 
 - [X] __3.1__: _Introduction - HTML & CSS_
 - [X] __3.1__: _HTML & CSS: Page Structures_
 - [X] __3.2__: _HTML & CSS: First Steps in CSS_
 - [X] __3.3__: _HTML & CSS: Selectors and Positioning_
-- [X] __3.4__: _Semantic HTML_
+- [X] __3.4__: _HTML Semantic_
 - [X] __3.5__: _Project - Lessons Learned_
 ---
 ### Block 04: Introduction to JavaScript and Programming Logic

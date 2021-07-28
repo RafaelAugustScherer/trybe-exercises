@@ -26,7 +26,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __3.4__: _HTML Semantic_
 - [X] __3.5__: _Project - Lessons Learned_
 ---
-### Block 04: Introduction to JavaScript and Programming Logic
+### [Block 04: Introduction to JavaScript and Programming Logic](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block04-javascript_%26_programming_logic)
 
 - [ ] __4.1__: _Introduction - JavaScript_
 - [ ] __4.1__: _JavaScript - First Steps_

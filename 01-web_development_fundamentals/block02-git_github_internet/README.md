@@ -53,7 +53,8 @@ git rm --cached [path] # Remove file | dir not yet commited from local branch
 git checkout [CommitID]~1 [path] # Restore file previously deleted
 
 git branch [name] # Create new branch
-git commit [msg] # Update code in local branch
+git commit -m [msg] # Update code in local branch
+git commit --amend -m [msg] # Change message from last commit
 git push # Upload the code to a repository branch
 
 # Recommended to do in GitHub's graphic interface

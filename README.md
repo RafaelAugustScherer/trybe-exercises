@@ -28,7 +28,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ---
 ### [Block 04: Introduction to JavaScript and Programming Logic](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block04-javascript_%26_programming_logic)
 
-- [ ] __4.1__: _Introduction - JavaScript_
+- [X] __4.1__: _Introduction - JavaScript_
 - [ ] __4.1__: _JavaScript - First Steps_
 - [ ] __4.2__: _JavaScript - Array & For loop_
 - [ ] __4.3__: _JavaScript - Programming Logic and Algorithms_

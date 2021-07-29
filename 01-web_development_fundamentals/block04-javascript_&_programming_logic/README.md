@@ -1,5 +1,7 @@
 # JavaScript's History
 
+---
+
 - Presented in 1995 as **Mocha** language by Brendan Eich;
 - Renamed to **LiveScript** and released in the Netscape 2.0 Beta release;
 - Renamed to **JavaScript** because of Java's Hype;
@@ -11,7 +13,9 @@ So JavaScript is the Official language name, and ECMAScript is the version proto
 
 ---
 
-# Coding
+# Coding in JS
+
+---
 
 ## Variables & Constants
 
@@ -73,6 +77,47 @@ case [condition2:
 	//Do something else
 default:
 	//If anything else passed
+}
+```
+
+---
+
+## Arrays & For Loops
+
+- Array positioning starts from 0. Ex: **0 = 1st** element; **1 = 2nd** element; etc..
+- **For:** Declare **index** value; Define the **condition** to execute; **Increment** index value.
+- Why **idx += 1** and **not idx++**? idx++ works but it also returns a value, which means more processing and therefore more time required.
+
+```jsx
+/* Array */
+let array = [[val], [val2], ...] //Contain multiple elements in one variable
+array[2] //Return element in specific position
+
+array[2] = [value] //Store element in specific position
+array.push([value]) //Store element after the last position
+array.unshift([value]) //Store element before the first position, as the zero element
+
+array.pop() //Remove last element
+array.shift() //Remove first element
+
+array.length //Return the number of elements stored
+array.sort //Return ordered array (snapshot, does not override)
+array.indexOf([element]) //Return position where element is stored
+
+/* For */
+for (let index = 0; index < array.length; index += 1) {
+	//The code inside here is going to be executed until the mid condition above is fullfilled
+	//index starts as 0 and goes up to array.length - 1 in this case.
+
+	console.log(array[index] //Return each element stored in array
+}
+
+for (element of array) {
+	//Iterates over every element of an array
+}
+
+for (letter of word) {
+	//Iterates over every character in a string
 }
 ```
 

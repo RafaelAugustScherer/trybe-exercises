@@ -31,7 +31,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __4.1__: _Introduction - JavaScript_
 - [X] __4.1__: _JavaScript - First Steps_
 - [X] __4.2__: _JavaScript - Array & For loop_
-- [ ] __4.3__: _JavaScript - Programming Logic and Algorithms_
+- [X] __4.3__: _JavaScript - Programming Logic and Algorithms_
 - [ ] __4.4__: _JavaScript - Objects and Functions_
 - [ ] __4.5__: _Project - Playground Functions_
 ---

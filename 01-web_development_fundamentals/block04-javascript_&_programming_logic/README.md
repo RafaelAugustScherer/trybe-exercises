@@ -92,6 +92,7 @@ default:
 /* Array */
 let array = [[val], [val2], ...] //Contain multiple elements in one variable
 array[2] //Return element in specific position
+let array2 = [...array] //Create copy of array
 
 array[2] = [value] //Store element in specific position
 array.push([value]) //Store element after the last position
@@ -142,3 +143,49 @@ for (letter of word) {
 	</body>
 </html>
 ```
+
+---
+
+# Programming Logic
+
+---
+
+## Logic
+
+The computer is dumb. It just understands zeros (0) and ones (1). It **does not understand any logic concept** when we are talking about raw code ~~not considering neural network stuff.~~
+
+So, for a **masterpiece** of code to work properly, it **must** contain every single instruction detailed. The computer will only understand what is a certain word meaning if it is properly **declared**.
+
+---
+
+## Sequence
+
+OK, now that we've got that out of the way we can talk about sequence! Before you start `coding` is almost mandatory that you do some kind of **mental map** (a list) of what the code will do, and if needed, write that down so you don't forget.
+
+Ex:
+
+- [x]  Get the salary;
+- [x]  Calculate X tax;
+- [ ]  Reduce salary value based on X tax;
+- [ ]  Calculate Y tax on the reduced salary;
+- [ ]  Reduce salary value based on Y tax;
+- [ ]  Print salary value.
+
+---
+
+## Baby Steps
+
+Eaaasy go. It is essencially the application of the **Sequence** method but in a more detailed step-by-step list. Ex:
+
+- [x]  Input user for salary and store it in a variable;
+- [x]  Create if condition for salary
+    - [x]  If salary is not a number;
+        - [x]  Print error message and finish code;
+- [x]  Create if condition for the X tax
+    - [ ]  Case salary is above condition;
+        - [ ]  Reduce salary based on condition and store in salary variable;
+    - [ ]  Case salary is below condition;
+        - [ ]  Reduce salary based on condition and store in salary variable;
+- [ ]  Store Y tax in a variable;
+- [ ]  Reduce salary value based on Y tax and store in salary variable;
+- [ ]  Print salary value and finish code.

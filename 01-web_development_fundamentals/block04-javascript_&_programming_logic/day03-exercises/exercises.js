@@ -9,13 +9,13 @@
 // *****
 
 // n = 5;
-// asteriscos = '';
+// asterisks = '';
 
 // for (idx = 0; idx < n; idx += 1) {
-//   asteriscos += '*';
+//   asterisks += '*';
 // }
 // for (idx = 0; idx < n; idx += 1) {
-//   console.log(asteriscos);
+//   console.log(asterisks);
 // }
 
 // 2- Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base. Por exemplo:
@@ -29,11 +29,11 @@
 // *****
 
 // n = 5;
-// asteriscos = '';
+// asterisks = '';
 
 // for (idx = 0; idx < n; idx += 1) {
-//   asteriscos += '*';
-//   console.log(asteriscos);
+//   asterisks += '*';
+//   console.log(asterisks);
 // }
 
 // 3- Agora inverta o lado do triângulo. Por exemplo:
@@ -49,16 +49,16 @@
 // n = 5;
 
 // for (index = 0; index < n; index += 1) {
-//   asteriscos = '';
+//   asterisks = '';
 
 //   for (idx = 0; idx < n; idx += 1) {
 //     if (idx >= n - (index + 1)) {
-//       asteriscos += '*';
+//       asterisks += '*';
 //     } else {
-//       asteriscos += ' ';
+//       asterisks += ' ';
 //     }
 //     if (idx === n - 1) {
-//       console.log(asteriscos);
+//       console.log(asterisks);
 //       break;
 //     }
 //   }
@@ -66,36 +66,88 @@
 
 // Broken 3
 // for (index = 0; index < n; index += 1) {
-//     asteriscos = '';
+//     asterisks = '';
 //     for (idx = 0; idx < n; idx += 1) {
 //     if (idx >= n - (index + 1)) {
-//       asteriscos += '*';
+//       asterisks += '*';
 //     }
 //     if (idx == n - 1) {
-//         console.log(asteriscos)
+//         console.log(asterisks)
 //     }
-//     asteriscos += ' ';
+//     asterisks += ' ';
 //   }
 // }
 
 // 4- Depois, faça uma pirâmide com n asteriscos de base:
 
-n = 5;
-console.log(n/2 +0.5)
-for (index = 0; index < n / 2 + 0.5; index += 1) {
-  asteriscos = '';
-  for (idx = 0; idx < n; idx += 1) {
-    if (idx == n / 2 + 0.5) {
-      asteriscos += '*';
-    }
-    else if () {
-        asteriscos += '*';
-    }
-     else {
-      asteriscos += ' ';
-    }
+// n = 5
+
+//   *
+//  ***
+// *****
+
+// n = 5;
+// startPos = n / 2 - 0.5;
+
+// count = 0;
+// for (index = 0; index < n; index += 2) {
+//   asterisks = '';
+//   for (idx = 0; idx < n; idx += 1) {
+//     if (idx <= startPos + count && idx >= startPos - count) {
+//       asterisks += '*';
+//     } else {
+//       asterisks += ' ';
+//     }
+//   }
+//   count += 1;
+
+//   console.log(asterisks);
+// }
+
+// 5- Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar:
+
+// n = 7
+
+//    *
+//   * *
+//  *   *
+// *******
+
+// n = 7;
+// startPos = n / 2 - 0.5;
+
+// count = 0;
+// for (index = 0; index < n; index += 2) {
+//   asterisks = '';
+
+//   for (idx = 0; idx < n; idx += 1) {
+//     if (idx == startPos + count || idx == startPos - count) {
+//       asterisks += '*';
+//     }
+//     else if (index == n - 1) {
+//       asterisks += '*'
+//     } else {
+//       asterisks += ' ';
+//     }
+//   }
+//   count += 1;
+//   console.log(asterisks);
+// }
+
+// 6- Faça um programa que diz se um número definido numa variável é primo ou não.
+
+n = 17
+
+isPrime = true
+for (index = 2; index < n; index += 1) {
+  if (n % index == 0) {
+    isPrime = false
   }
-  console.log(asteriscos)
 }
 
-// 1  123  12345
+if (isPrime) {
+  console.log('O número é primo.')
+}
+else {
+  console.log('O número não é primo.')
+}

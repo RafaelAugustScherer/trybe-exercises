@@ -113,6 +113,7 @@ for (let index = 0; index < array.length; index += 1) {
 	console.log(array[index] //Return each element stored in array
 }
 
+/* For/of */
 for (element of array) {
 	//Iterates over every element of an array
 }
@@ -120,9 +121,33 @@ for (element of array) {
 for (letter of word) {
 	//Iterates over every character in a string
 }
+
+/* For/in */
+for (key in obj) {
+	//Iterates and returns over every key in an object
+}
+
+for (key in array) {
+	//Iterates over every index in array
+}
 ```
 
 ---
+
+## Objects
+
+- Objects can group many primitve types in only one element
+
+```jsx
+let obj = {
+	[key] = [value],
+	[anotherKey] = [value],
+	[...] = [...]
+}
+
+obj // Referentiate the whole object
+obj.key //Referentiate only the key inside the object
+```
 
 # HTML + JS
 

@@ -87,12 +87,72 @@ console.log(greaterName(testArr))
 // 5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
 // Array de teste: [2, 3, 2, 5, 8, 2, 3]; .
 // Valor esperado no retorno da função: 2 .
-// console.log('\nExercício 5:')
+console.log('\nExercício 5:')
 
-// function higherCountNumber(numArr) {
-//     console.log(numArr.splice(''))
+function higherCountNumber(numArr) {
+    //For loop to count numbers in array and store in object
+    numbers = {}
+    for (num of numArr) {
+        if (numbers[num] === undefined) {
+            numbers[num] = 1
+        }
+        else {
+            numbers[num] += 1
+        }
+    }
+
+    //For loop to store higher count value in variable
+    countHigher = Object.keys(numbers)[0]
+    for (count in numbers) {
+        if (numbers[count] > numbers[countHigher]) {
+            countHigher = count
+        }
+    }
     
-//     return false
-// }
-// testArr = [2, 3, 2, 5, 8, 2, 3]
-// console.log(greaterName(testArr))
+    return countHigher
+}
+testArr = [2, 3, 3, 5, 8, 2, 3]
+console.log(higherCountNumber(testArr))
+
+// 6 - Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.
+// Valor de teste: N = 5 .
+// Valor esperado no retorno da função: 1+2+3+4+5 = 15 .
+console.log('\nExercício 6:')
+
+function sumUpTo(num) {
+    sum = 0
+    for (idx = 1; idx <= num; idx += 1) {
+        sum += idx
+    }
+    return sum
+}
+
+n = 5
+console.log(sumUpTo(n))
+
+// 7 - Crie uma função que receba uma string word e outra string ending . Verifique se a string ending é o final da string word . Considere que a string ending sempre será menor que a string word .
+// Valor de teste: 'trybe' e 'be'
+// Valor esperado no retorno da função: true
+// verificaFimPalavra('trybe', 'be') ;
+// Retorno esperado: true
+// verificaFimPalavra('joaofernando', 'fernan') ;
+// Retorno esperado: false
+console.log('\nExercício 7:')
+
+function testStringEnding(string, ending) {
+    stringArr = string.split('')
+    endingArr = ending.split('')
+
+    for (idx = 0; idx < string.length; idx += 1) {
+        stringArr.shift()
+        if (stringArr.join('') == endingArr.join('')) {
+            return true
+        }
+    }
+    return false
+}
+
+word = 'trybe'
+ending = 'be'
+
+console.log(testStringEnding(word, ending))

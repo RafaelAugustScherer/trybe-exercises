@@ -33,7 +33,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __4.2__: _JavaScript - Array & For loop_
 - [X] __4.3__: _JavaScript - Programming Logic and Algorithms_
 - [X] __4.4__: _JavaScript - Objects and Functions_
-- [ ] __4.5__: _Project - Playground Functions_
+- [X] __4.5__: _Project - Playground Functions_
 ---
 ### Block 05: JavaScript: DOM, Events and Web Storage
 

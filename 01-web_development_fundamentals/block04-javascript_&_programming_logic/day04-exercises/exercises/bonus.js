@@ -20,8 +20,8 @@
 // | M   | 1000 |
 
 function calculateRomanNumber(rNumber) {
-    //Declare roman letter value in an object
-    numValues = {
+  //Declare roman letter value in an object
+  numValues = {
     I: 1,
     V: 5,
     X: 10,
@@ -41,7 +41,7 @@ function calculateRomanNumber(rNumber) {
     numValue = numValues[letter];
 
     if (prevNumber < numValue) {
-      sum += (numValue - prevNumber) - prevNumber;
+      sum += numValue - prevNumber - prevNumber;
     } else {
       sum += numValue;
     }
@@ -53,4 +53,73 @@ function calculateRomanNumber(rNumber) {
 }
 
 testNumber = 'CMXXXVII';
-console.log(calculateRomanNumber(testNumber))
+console.log(calculateRomanNumber(testNumber));
+
+// 2 - Crie uma função chamada arrayOfNumbers que receberá a variável vector como parâmetro. Através de um loop for , percorra essa variável, busque os números pares e os adicione a um novo array que deverá ser retornado ao final pela pela função.
+
+function arrayOfNumbers(vector) {
+  evens = [];
+  for (array of vector) {
+    for (num of array) {
+      if (num % 2 == 0) {
+        evens.push(num);
+      }
+    }
+  }
+  return evens;
+}
+let vector = [
+  [1, 2],
+  [3, 4, 5, 6],
+  [7, 8, 9, 10],
+];
+console.log(arrayOfNumbers(vector));
+
+// 3 - A partir do array de frutas basket , retorne um objeto que contenha o nome da fruta como chave e a quantidade de vezes que ela aparece no array como valor. Por exemplo, o array ['Melancia', 'Abacate', 'Melancia', 'Melancia', 'Uva'], deverá retornar { Melancia: 3, Abacate: 1, Uva: 1 } quando passado como argumento para a função.
+// Em seguida, imprima esse resultado na tela com uma mensagem no seguinte formato: Sua cesta possui: x Melancias, x Abacates...
+
+function countBasket(basketArr) {
+  basketObj = {}
+  
+  for (fruit of basketArr) {
+    if (basketObj[fruit] === undefined) {
+      basketObj[fruit] = 1
+    }
+    else {
+      basketObj[fruit] += 1
+    }
+  }
+
+  return basketObj
+}
+
+const basket = [
+  'Melancia', 'Abacate', 'Melancia', 'Melancia', 'Uva', 'Laranja',
+  'Jaca', 'Pera', 'Melancia', 'Uva', 'Laranja', 'Melancia',
+  'Banana', 'Uva', 'Pera', 'Abacate', 'Laranja', 'Abacate',
+  'Banana', 'Melancia', 'Laranja', 'Laranja', 'Jaca', 'Uva',
+  'Banana', 'Uva', 'Laranja', 'Pera', 'Melancia', 'Uva',
+  'Jaca', 'Banana', 'Pera', 'Abacate', 'Melancia', 'Melancia',
+  'Laranja', 'Pera', 'Banana', 'Jaca', 'Laranja', 'Melancia',
+  'Abacate', 'Abacate', 'Pera', 'Melancia', 'Banana', 'Banana',
+  'Abacate', 'Uva', 'Laranja', 'Banana', 'Abacate', 'Uva',
+  'Uva', 'Abacate', 'Abacate', 'Melancia', 'Uva', 'Jaca',
+  'Uva', 'Banana', 'Abacate', 'Banana', 'Uva', 'Banana',
+  'Laranja', 'Laranja', 'Jaca', 'Jaca', 'Abacate', 'Jaca',
+  'Laranja', 'Melancia', 'Pera', 'Jaca', 'Melancia', 'Uva',
+  'Abacate', 'Jaca', 'Jaca', 'Abacate', 'Uva', 'Laranja',
+  'Pera', 'Melancia', 'Jaca', 'Pera', 'Laranja', 'Jaca',
+  'Pera', 'Melancia', 'Jaca', 'Banana', 'Laranja', 'Jaca',
+  'Banana', 'Pera', 'Abacate', 'Uva',
+];
+
+resposta = 'Sua cesta possui: '
+basketObj = countBasket(basket)
+
+for (fruit in basketObj) {
+  resposta += `${basketObj[fruit]} ${fruit}s`
+  if (fruit !== Object.keys(basketObj).pop()) {
+    resposta += ', '
+  }
+}
+console.log(resposta)

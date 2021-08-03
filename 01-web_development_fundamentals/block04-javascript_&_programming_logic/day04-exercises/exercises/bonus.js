@@ -20,7 +20,8 @@
 // | M   | 1000 |
 
 function calculateRomanNumber(rNumber) {
-  numValues = {
+    //Declare roman letter value in an object
+    numValues = {
     I: 1,
     V: 5,
     X: 10,
@@ -30,22 +31,26 @@ function calculateRomanNumber(rNumber) {
     M: 1000,
   };
 
+  //Convert letters from string -> array
   rNumber = rNumber.split('');
   prevNumber = 0;
   sum = 0;
+
+  //Verify each letter position and add its value to sum variable
   for (letter of rNumber) {
     numValue = numValues[letter];
 
     if (prevNumber < numValue) {
-      sum += numValue - prevNumber - prevNumber;
+      sum += (numValue - prevNumber) - prevNumber;
     } else {
       sum += numValue;
     }
 
     prevNumber = numValues[letter];
   }
-  console.log(sum);
+  //Return the result
+  return sum;
 }
 
 testNumber = 'CMXXXVII';
-calculateRomanNumber(testNumber)
+console.log(calculateRomanNumber(testNumber))

@@ -35,9 +35,9 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __4.4__: _JavaScript - Objects and Functions_
 - [X] __4.5__: _Project - Playground Functions_
 ---
-### Block 05: JavaScript: DOM, Events and Web Storage
+### [Block 05: JavaScript: DOM, Events and Web Storage](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block05-javascript_%26_dom)
 
-- [ ] __5.1__: _JavaScript - DOM and Selectors_
+- [X] __5.1__: _JavaScript - DOM and Selectors_
 - [ ] __5.2__: _JavaScript - Working with elements_
 - [ ] __5.3__: _JavaScript - Events_
 - [ ] __5.4__: _JavaScript - Web Storage_

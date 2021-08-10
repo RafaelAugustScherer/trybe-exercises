@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="paiDoPai">
+      <section id="pai">
+        <section id="primeiroFilho"></section>
+        <section id="elementoOndeVoceEsta">
+          <section id="primeiroFilhoDoFilho"></section>
+          <section id="segundoEUltimoFilhoDoFilho"></section>
+        </section>
+        Atenção!
+        <section id="terceiroFilho"></section>
+        <section id="quartoEUltimoFilho"></section>
+      </section>
+    </main>
+    <script>
+      const elementoOndeVoceEsta = document.getElementById(
+        'elementoOndeVoceEsta'
+      );
+
+      function createElement(tag, id, innerText) {
+        element = document.createElement(tag);
+        element.id = id;
+        element.innerText = innerText;
+
+        return element;
+      }
+
+      // 1. Crie um irmão para elementoOndeVoceEsta .
+      brotherElement = createElement(
+        'section',
+        'irmaoDoElementoOndeEstou',
+        'Irmão do Elemento Onde Estou'
+      );
+      elementoOndeVoceEsta.parentElement.appendChild(brotherElement);
+
+      // 2. Crie um filho para elementoOndeVoceEsta .
+      childElement = createElement(
+        'section',
+        'filhoDoElementoOndeEstou',
+        'Filho do Elemento Onde Estou'
+      );
+      elementoOndeVoceEsta.appendChild(childElement);
+
+      // 3. Crie um filho para primeiroFilhoDoFilho .
+      anotherChildElement = createElement(
+        'section',
+        'FilhoDoPrimeiroFilhoDoFilho',
+        'Filho dos filhos (?)'
+      );
+      elementoOndeVoceEsta.firstElementChild.appendChild(anotherChildElement);
+
+      // 4. A partir desse filho criado, acesse terceiroFilho .
+      const FilhoDoPrimeiroFilhoDoFilho = document.getElementById(
+        'FilhoDoPrimeiroFilhoDoFilho'
+      );
+
+      FilhoDoPrimeiroFilhoDoFilho.parentElement.parentElement
+        .nextElementSibling;
+    </script>
+  </body>
+</html>

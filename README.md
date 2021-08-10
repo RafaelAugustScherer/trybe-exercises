@@ -38,7 +38,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 05: JavaScript: DOM, Events and Web Storage](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block05-javascript_%26_dom)
 
 - [X] __5.1__: _JavaScript - DOM and Selectors_
-- [ ] __5.2__: _JavaScript - Working with elements_
+- [X] __5.2__: _JavaScript - Working with elements_
 - [ ] __5.3__: _JavaScript - Events_
 - [ ] __5.4__: _JavaScript - Web Storage_
 - [ ] __5.5__: _Project - Art with Pixels_

@@ -14,7 +14,7 @@
 6. **text**: Text stored between element tags;
 7. **attribute**: Every attribute given to the tags.
 
-## DOM Methods
+## DOM Common Methods
 
 ```jsx
 /* Common Selectors */
@@ -29,4 +29,31 @@ const Element = document.getElementById('header')
 Element.style.[cssProperty] = [value] //Change CSS Property of element
 Element.innerHTML = [value] //Change Exact value of **inner <tag> content**
 var innerText = Element.innerText // Return just inner text, excluding inner tags
+```
+
+---
+
+## Elements & Methods
+
+```jsx
+const element = document.getElementById('divExample')
+
+/* Hierarchy Access */
+element.parentNode //Return above element in the HTML hierarchy
+element.parentElement //Return only the above element, not inner elements
+element.children //Return HTMLCollection of below elements
+element.firstChild //Only first child
+element.lastChild //Only last child
+
+/* Create Elements */
+let div = document.createElement('div') //Create an element with any tag
+div.id = 'tst'
+
+document.body.appendChild(div) //Append element as child of any tag
+
+/* Modify Elements */
+element.id = [id] //Set id to element
+element.className = [className] //Set class to element
+element.classList.add([className), [...]) //Add class to element
+element.classList.remove([className], [...]) //Remove class from element
 ```

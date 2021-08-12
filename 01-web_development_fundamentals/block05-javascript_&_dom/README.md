@@ -57,3 +57,19 @@ element.className = [className] //Set class to element
 element.classList.add([className), [...]) //Add class to element
 element.classList.remove([className], [...]) //Remove class from element
 ```
+
+---
+
+## Events & Listeners
+
+```jsx
+/* Direct Events - Not Recommended */
+[element].onload = () => {} //Execute function when the element is loaded
+[element].onclick = () => {} //[...] when the element is clicked
+
+/* JavaScript Listeners - Recommended */
+[element].addEventListener([evtType], ([evt]) => {}) //Alternative event method | Listener
+[evtType] = 'click', 'mouseover', 'change', 'keyup'
+[evt].target = [element]
+[evt].type = [evtType]
+```

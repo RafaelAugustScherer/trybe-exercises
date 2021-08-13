@@ -1,0 +1,32 @@
+body {
+    margin: auto 50px;
+    
+}
+
+body a {
+    color: black;
+}
+
+
+h1, h2 {
+    text-align: center;
+}
+
+section p {
+    text-align: justify;
+    margin: 50px auto;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 5px;
+    border: 1px solid black;
+}
+
+.text {
+    display: inline-flex;
+    margin-right: 20px;
+    text-decoration: none;
+}

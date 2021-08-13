@@ -73,3 +73,43 @@ element.classList.remove([className], [...]) //Remove class from element
 [evt].target = [element]
 [evt].type = [evtType]
 ```
+
+# Web Storage
+
+Data saved locally for **user** identification and custom settings.
+
+## Cookies
+
+Saved in a `key-value` just like an object in the user's computer **and** in the website server. They are limited to **4kb**.
+
+```jsx
+document.cookie = '[cookieData]; [cookiesProps]; [...]'
+Ex:
+document.cookie = "email=isabella@email.com; expires=Thu, 17 Dec 2020 12:00:00 UTC; path=/";
+document.cookie //Return values stored in cookies
+```
+
+## Local & Session Storage
+
+Stored only in the user's computer, limited from **5 to 10MB**.
+
+**localStorage** - Works just like a cookie, but has no expiration date attribute.
+
+**sessionStorage** - Saves data just for **this session**. After the browser **tab is closed,** every piece of data is **erased**.
+
+```jsx
+[storageType] = localStorage, sessionStorage
+
+[storageType].setItem('email', 'isabella@email.com')
+[storageType].getItem('email') //Return email value in storage
+
+[storageType].removeItem('email') //Remove specific value from storage
+[storageType].clear() //Remove every value from storage
+```
+
+Storage data can be saved in the forms of Arrays or Objects as well.
+
+```jsx
+sessionStorage.setItem('example', JSON.stringify(['tst1', 'tst2'])
+JSON.parse(sessionStorage.getItem('example')) //Return array
+```

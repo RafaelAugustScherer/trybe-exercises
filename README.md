@@ -41,11 +41,11 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __5.2__: _JavaScript - Working with elements_
 - [X] __5.3__: _JavaScript - Events_
 - [X] __5.4__: _JavaScript - Web Storage_
-- [ ] __5.5__: _Project - Art with Pixels_
-- [ ] __5.6__: _Project - Task List_
-- [ ] __5.7__: _(Bonus) Project - Meme Generator_
-- [ ] __5.7__: _(Bonus) Project - Guess The Color_
-- [ ] __5.7__: _(Bonus) Project - Mysterious Card_
+- [X] __5.5__: _Project - Art with Pixels_
+- [X] __5.6__: _Project - Task List_
+- [X] __5.7__: _(Bonus) Project - Meme Generator_
+- [X] __5.7__: _(Bonus) Project - Guess The Color_
+- [X] __5.7__: _(Bonus) Project - Mysterious Card_
 ---
 ### Block 06: HTML and CSS: Forms, Flexbox and Responsive
 

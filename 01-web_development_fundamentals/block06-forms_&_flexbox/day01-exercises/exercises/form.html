@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Cadastro de Currículo</h1>
+    <form method="POST" action="">
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div>
+          <label for="nome">Nome: </label>
+          <input type="text" name="nome" id="nome" required />
+        </div>
+        <div>
+          <label for="email">E-mail: </label>
+          <input type="text" name="email" id="email" required />
+        </div>
+        <div>
+          <label for="cpf">CPF: </label>
+          <input type="text" name="cpf" id="cpf" required />
+        </div>
+        <div>
+          <label for="endereco">Endereço: </label>
+          <input
+            type="text"
+            name="endereco"
+            id="endereco"
+            "
+            required
+          />
+        </div>
+        <div>
+          <label for="cidade">Cidade: </label>
+          <input
+            type="text"
+            name="cidade"
+            id="cidade"
+            
+            required
+          />
+        </div>
+        <div>
+          <label for="estado">Estado: </label>
+          <select name="estado" id="estado" required></select>
+        </div>
+        <div>
+          <input type="radio" name="tipo-endereco" id="casa" required checked/>
+          <label for="casa">Casa</label>
+          <input type="radio" name="tipo-endereco" id="apartamento" required />
+          <label for="apartamento">Apartamento</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Dados Do Último Emprego</legend>
+        <div>
+          <label for="curriculo">Resumo do Currículo: </label>
+          <textarea
+            name="curriculo"
+            id="curriculo"
+            cols="25"
+            rows="10"
+          ></textarea>
+        </div>
+        <div>
+            <label for="cargo">Cargo: </label>
+            <input type="text" name="cargo" id="cargo" required>
+        </div>
+        <div>
+            <label for="descricao-cargo">Descrição do Cargo: </label>
+            <input type="text" name="descricao-cargo" id="descricao-cargo" required>
+        </div>
+        <div>
+            <label for="data-inicio">Data de Início: </label>
+            <input type="text" name="data-inicio" id="data-inicio" required>
+        </div>
+      </fieldset>
+      <button type="submit" id="botao-enviar">Enviar</button>
+    </form>
+    <div id="confirmar-dados"></div>
+    <button id="limpar-form">Limpar</button>
+    <script src="script.js"></script>
+  </body>
+</html>

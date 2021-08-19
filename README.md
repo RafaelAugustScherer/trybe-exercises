@@ -49,7 +49,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ---
 ### Block 06: HTML and CSS: Forms, Flexbox and Responsive
 
-- [ ] __6.1__: _HTML & CSS - Forms_
+- [X] __6.1__: _HTML & CSS - Forms_
 - [ ] __6.2__: _JavaScript Libraries and CSS Frameworks_
 - [ ] __6.3__: _Introduction - CSS Flexbox_
 - [ ] __6.3__: _CSS Flexbox - Part 1_

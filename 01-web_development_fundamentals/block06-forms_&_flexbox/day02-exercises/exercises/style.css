@@ -1,0 +1,47 @@
+* {
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    padding: 15px;
+}
+
+form * {
+    padding: 5px;
+    margin-left: 3px;
+}
+
+form input, form textarea, button, fieldset {
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 2px;
+}
+
+form input[type=text], textarea {
+    display: block;
+}
+
+button {
+    width: 100%;
+    background-color: ghostwhite;
+    padding: 10px;
+}
+
+form label, legend {
+    font-weight: 800;
+}
+
+fieldset {
+    margin-bottom: 10px;
+}
+
+#confirmar-dados {
+    padding: 15px;
+}
+
+#confirmar-dados p {
+    text-transform: capitalize;
+}

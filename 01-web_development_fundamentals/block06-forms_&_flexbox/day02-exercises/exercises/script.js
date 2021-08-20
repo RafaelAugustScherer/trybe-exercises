@@ -28,6 +28,7 @@ let objEstados = {
   TO: 'Tocantins',
 };
 
+// Define os estados de acordo com o objeto objEstados
 const estadoSelect = document.getElementById('estado');
 
 Object.keys(objEstados).forEach((estado) => {
@@ -38,8 +39,46 @@ Object.keys(objEstados).forEach((estado) => {
   estadoSelect.appendChild(optionElement);
 });
 
+// Define as propriedades do campo de calendário
+const campoDataInicio = document.getElementById('data-inicio');
+const calendario = new Pikaday({
+  field: campoDataInicio,
+  format: 'DD/MM/YYYY',
+  onSelect: function () {
+    campoDataInicio.value = calendario.toString();
+  },
+  i18n: {
+    previousMonth: 'Mês Anterior',
+    nextMonth: 'Próximo Mês',
+    months: [
+      'Janeiro',
+      'Fevereiro',
+      'Março',
+      'Abril',
+      'Maio',
+      'Junho',
+      'Julho',
+      'Agosto',
+      'Setembro',
+      'Outubro',
+      'Novembro',
+      'Dezembro',
+    ],
+    weekdays: [
+      'Domingo',
+      'Segunda-feira',
+      'Terça-feira',
+      'Quarta-feira',
+      'Quinta-feira',
+      'Sexta-feira',
+      'Sábado',
+    ],
+    weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+  },
+});
+
 function checkPreenchido(elArray) {
-  for (el of elArray) {
+  for (let el of elArray) {
     if (el === '') {
       alert('Campos Obrigatórios não foram preenchidos!');
       throw new Error('Campos Obrigatórios não foram preenchidos!');
@@ -55,35 +94,6 @@ function checkTamanho(objTamanhos) {
       throw new Error(`Tamanho de ${value} inválido!`);
     }
   });
-}
-
-function verifyData(data) {
-  dataArr = data.split('/'); //['12', '12', '2020']
-  for (let idx = 0; idx < dataArr.length; idx += 1) {
-    dataArr[idx] = parseInt(dataArr[idx]);
-  }
-  console.log(dataArr[0]);
-
-  let isWrong = false;
-
-  // Ref: https://www.w3schools.com/jsref/jsref_isnan.asp
-  if (isNaN(dataArr[0])) {
-    alert(`Data inválida! Formato de texto detectado.`);
-    isWrong = true;
-  } else if (dataArr[0] < 0 || dataArr > 31) {
-    alert(`Dia ${dataArr[0]} inválido!`);
-    isWrong = true;
-  } else if (dataArr[1] < 0 || dataArr[1] > 12) {
-    alert(`Mês ${dataArr[1]} inválido!`);
-    isWrong = true;
-  } else if (dataArr[2] < 0) {
-    alert(`Ano ${dataArr[2]} inválido!`);
-    isWrong = true;
-  }
-
-  if (isWrong) {
-    throw new Error(`Data inválida!`);
-  }
 }
 
 function getDadosPessoais() {
@@ -106,7 +116,7 @@ function getDadosPessoais() {
   };
   checkTamanho(objTamanhos);
 
-  for (tipo of tipoEndereco) {
+  for (let tipo of tipoEndereco) {
     if (tipo.checked === true) {
       tipoEndereco = tipo.id;
     }
@@ -138,7 +148,6 @@ function getDadosEmprego() {
     10: dataInicio,
   };
   checkTamanho(objTamanhos);
-  verifyData(dataInicio);
 
   return {
     curriculo,
@@ -157,13 +166,15 @@ function createConfirmaDados(objDados) {
 
   if (Object.keys(objDados).length > 0) {
     const titleConfirmaDados = document.createElement('h2');
+    titleConfirmaDados.className = 'mb-3';
     titleConfirmaDados.innerText = 'Confirme seus Dados:';
     divConfirmaDados.appendChild(titleConfirmaDados);
   }
 
-  for (campo in objDados) {
-    textConfirma = document.createElement('p');
-    textConfirma.innerText = `${campo}: ${objDados[campo]}`;
+  for (let campo in objDados) {
+    const textConfirma = document.createElement('li');
+    textConfirma.className = 'list-group-item';
+    textConfirma.innerHTML = `<strong class="text-capitalize">${campo}:</strong> ${objDados[campo]}`;
 
     divConfirmaDados.appendChild(textConfirma);
   }
@@ -196,7 +207,7 @@ function limparForm() {
     'data-inicio',
   ];
 
-  for (id of textToClear) {
+  for (let id of textToClear) {
     document.getElementById(id).value = '';
   }
 

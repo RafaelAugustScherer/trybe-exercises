@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <!-- Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!-- Pikaday -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"
+    />
+  </head>
+  <body class="container-md py-5">
+    <h1>Cadastro de Currículo</h1>
+    <form id="main-form">
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div class="mb-3">
+          <label class="form-label" for="nome">Nome: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="nome"
+            id="nome"
+            data-validate-field="nome"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="email">E-mail: </label>
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            id="email"
+            data-validate-field="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="cpf">CPF: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="cpf"
+            id="cpf"
+            data-validate-field="cpf"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="endereco">Endereço: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="endereco"
+            id="endereco"
+            data-validate-field="endereco"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="cidade">Cidade: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="cidade"
+            id="cidade"
+            data-validate-field="cidade"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="estado">Estado: </label>
+          <select
+            class="form-select"
+            name="estado"
+            id="estado"
+          ></select>
+        </div>
+        <div class="mb-3">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="tipo-endereco"
+              id="casa"
+              checked
+            />
+            <label class="form-check-label" for="casa">Casa</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="tipo-endereco"
+              id="apartamento"
+            />
+            <label class="form-check-label" for="apartamento"
+              >Apartamento</label
+            >
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Dados Do Último Emprego</legend>
+        <div class="mb-3">
+          <label class="form-label" for="curriculo"
+            >Resumo do Currículo:
+          </label>
+          <textarea
+            class="form-control"
+            name="curriculo"
+            id="curriculo"
+            data-validate-field="curriculo"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="cargo">Cargo: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="cargo"
+            id="cargo"
+            data-validate-field="cargo"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="descricao-cargo"
+            >Descrição do Cargo:
+          </label>
+          <input
+            class="form-control"
+            type="text"
+            name="descricao-cargo"
+            id="descricao-cargo"
+            data-validate-field="descricao-cargo"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="data-inicio">Data de Início: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="data-inicio"
+            id="data-inicio"
+            autocomplete="off"
+          />
+        </div>
+      </fieldset>
+      <button class="btn btn-success" type="submit" id="botao-enviar">
+        Enviar
+      </button>
+    </form>
+
+    <!-- Modal for form errors-->
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush" id="confirmar-dados"></ul>
+    <div class="container">
+      <button class="btn btn-warning mx-auto" id="limpar-form">Limpar</button>
+    </div>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <!--Moment -->
+    <script src="moment.js"></script>
+    <!-- Pikaday -->
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <!-- Just Validate-->
+    <script src="just-validate.min.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

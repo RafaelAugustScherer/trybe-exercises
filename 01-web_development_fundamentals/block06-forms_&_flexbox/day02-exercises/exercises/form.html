@@ -19,6 +19,8 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"
     />
+    <!-- Popup Validation-->
+    <link href="validation.min.css" rel="stylesheet" />
   </head>
   <body class="container-md py-5">
     <h1>Cadastro de Currículo</h1>
@@ -28,60 +30,56 @@
         <div class="mb-3">
           <label class="form-label" for="nome">Nome: </label>
           <input
-            class="form-control"
+            class="validate form-control"
             type="text"
             name="nome"
             id="nome"
-            data-validate-field="nome"
+            data-validate="required,nome"
           />
         </div>
         <div class="mb-3">
           <label class="form-label" for="email">E-mail: </label>
           <input
-            class="form-control"
+            class="validate form-control"
             type="email"
             name="email"
             id="email"
-            data-validate-field="email"
+            data-validate="required,email"
           />
         </div>
         <div class="mb-3">
           <label class="form-label" for="cpf">CPF: </label>
           <input
-            class="form-control"
+            class="validate form-control"
             type="text"
             name="cpf"
             id="cpf"
-            data-validate-field="cpf"
+            data-validate="required,cpf"
           />
         </div>
         <div class="mb-3">
           <label class="form-label" for="endereco">Endereço: </label>
           <input
-            class="form-control"
+            class="validate form-control"
             type="text"
             name="endereco"
             id="endereco"
-            data-validate-field="endereco"
+            data-validate="required,endereco"
           />
         </div>
         <div class="mb-3">
           <label class="form-label" for="cidade">Cidade: </label>
           <input
-            class="form-control"
+            class="validate form-control"
             type="text"
             name="cidade"
             id="cidade"
-            data-validate-field="cidade"
+            data-validate="required,cidade"
           />
         </div>
         <div class="mb-3">
           <label class="form-label" for="estado">Estado: </label>
-          <select
-            class="form-select"
-            name="estado"
-            id="estado"
-          ></select>
+          <select class="form-select" name="estado" id="estado"></select>
         </div>
         <div class="mb-3">
           <div class="form-check form-check-inline">
@@ -114,20 +112,20 @@
             >Resumo do Currículo:
           </label>
           <textarea
-            class="form-control"
+            class="validate form-control"
             name="curriculo"
             id="curriculo"
-            data-validate-field="curriculo"
+            data-validate="required,curriculo"
           ></textarea>
         </div>
         <div class="mb-3">
           <label class="form-label" for="cargo">Cargo: </label>
           <input
-            class="form-control"
+            class="validate form-control"
             type="text"
             name="cargo"
             id="cargo"
-            data-validate-field="cargo"
+            data-validate="required,cargo"
           />
         </div>
         <div class="mb-3">
@@ -135,11 +133,11 @@
             >Descrição do Cargo:
           </label>
           <input
-            class="form-control"
+            class="validate form-control"
             type="text"
             name="descricao-cargo"
             id="descricao-cargo"
-            data-validate-field="descricao-cargo"
+            data-validate="required,descricao-cargo"
           />
         </div>
         <div class="mb-3">
@@ -157,20 +155,8 @@
         Enviar
       </button>
     </form>
-
-    <!-- Modal for form errors-->
-    <div class="modal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-          </div>
-        </div>
-      </div>
-    </div>
-    <ul class="list-group list-group-flush" id="confirmar-dados"></ul>
-    <div class="container">
-      <button class="btn btn-warning mx-auto" id="limpar-form">Limpar</button>
-    </div>
+    <div class="container" id="confirmar-dados"></div>
+    <button class="btn btn-warning" id="limpar-form">Limpar</button>
 
     <!-- Bootstrap -->
     <script
@@ -182,8 +168,8 @@
     <script src="moment.js"></script>
     <!-- Pikaday -->
     <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-    <!-- Just Validate-->
-    <script src="just-validate.min.js"></script>
+    <!-- Popup Validation-->
+    <script src="validation.min.js"></script>
     <script type="module" src="script.js"></script>
   </body>
 </html>

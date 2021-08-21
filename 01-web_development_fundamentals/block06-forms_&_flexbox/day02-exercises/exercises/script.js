@@ -105,16 +105,16 @@ function getDadosPessoais() {
   const estado = document.getElementById('estado').value;
   let tipoEndereco = document.getElementsByName('tipo-endereco');
 
-  const elObrigatorios = [nome, email, cpf, endereco, cidade];
-  checkPreenchido(elObrigatorios);
-  const objTamanhos = {
-    40: nome,
-    50: email,
-    14: cpf,
-    200: endereco,
-    28: cidade,
-  };
-  checkTamanho(objTamanhos);
+  // const elObrigatorios = [nome, email, cpf, endereco, cidade];
+  // checkPreenchido(elObrigatorios);
+  // const objTamanhos = {
+  //   40: nome,
+  //   50: email,
+  //   14: cpf,
+  //   200: endereco,
+  //   28: cidade,
+  // };
+  // checkTamanho(objTamanhos);
 
   for (let tipo of tipoEndereco) {
     if (tipo.checked === true) {
@@ -139,15 +139,15 @@ function getDadosEmprego() {
   const descricaoCargo = document.getElementById('descricao-cargo').value;
   const dataInicio = document.getElementById('data-inicio').value;
 
-  const elObrigatorios = [curriculo, cargo, descricaoCargo, dataInicio];
-  checkPreenchido(elObrigatorios);
-  const objTamanhos = {
-    1000: curriculo,
-    40: cargo,
-    500: descricaoCargo,
-    10: dataInicio,
-  };
-  checkTamanho(objTamanhos);
+  // const elObrigatorios = [curriculo, cargo, descricaoCargo, dataInicio];
+  // checkPreenchido(elObrigatorios);
+  // const objTamanhos = {
+  //   1000: curriculo,
+  //   40: cargo,
+  //   500: descricaoCargo,
+  //   10: dataInicio,
+  // };
+  // checkTamanho(objTamanhos);
 
   return {
     curriculo,
@@ -180,8 +180,38 @@ function createConfirmaDados(objDados) {
   }
 }
 
+function defineValidationRules() {
+  const objFields = {
+    40: 'nome',
+    50: 'email',
+    11: 'cpf',
+    200: 'endereco',
+    28: 'cidade',
+    1000: 'curriculo',
+    40: 'cargo',
+    500: 'descricao-cargo',
+  };
+
+  Object.keys(objFields).forEach((key) => {
+    // key = Limite Caracteres
+    // objFields[key] Nome do Campo
+    //console.log(objFields[key])
+
+    validation.rules[objFields[key]] = {
+      message: `${objFields[key]} inválido! Tamanho máximo de ${key} caracteres`,
+      method: (el) => {
+        return el.value.length <= key;
+      },
+    };
+  });
+}
+
 function processarForm(evt) {
   evt.preventDefault();
+
+  validation.init('form');
+  defineValidationRules();
+  validation.highlight();
 
   let dadosPessoais = getDadosPessoais();
   let dadosEmprego = getDadosEmprego();

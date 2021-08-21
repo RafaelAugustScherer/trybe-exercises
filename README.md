@@ -35,7 +35,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __4.4__: _JavaScript - Objects and Functions_
 - [X] __4.5__: _Project - Playground Functions_
 ---
-### [Block 05: JavaScript: DOM, Events and Web Storage](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block05-javascript_%26_dom)
+### [Block 05: JavaScript: DOM, Events and Web Storage ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block05-javascript_%26_dom)
 
 - [X] __5.1__: _JavaScript - DOM and Selectors_
 - [X] __5.2__: _JavaScript - Working with elements_
@@ -47,12 +47,12 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __5.7__: _(Bonus) Project - Guess The Color_
 - [X] __5.7__: _(Bonus) Project - Mysterious Card_
 ---
-### Block 06: HTML and CSS: Forms, Flexbox and Responsive
+### [Block 06: HTML and CSS: Forms, Flexbox and Responsive]((https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block06-forms_%26_flexbox))
 
 - [X] __6.1__: _HTML & CSS - Forms_
-- [ ] __6.2__: _JavaScript Libraries and CSS Frameworks_
-- [ ] __6.3__: _Introduction - CSS Flexbox_
-- [ ] __6.3__: _CSS Flexbox - Part 1_
+- [X] __6.2__: _JavaScript Libraries and CSS Frameworks_
+- [X] __6.3__: _Introduction - CSS Flexbox_
+- [X] __6.3__: _CSS Flexbox - Part 1_
 - [ ] __6.4__: _CSS Flexbox - Part 2_
 - [ ] __6.5__: _Responsive CSS - Mobile First_
 - [ ] __6.6__: _Project - Trybewarts_

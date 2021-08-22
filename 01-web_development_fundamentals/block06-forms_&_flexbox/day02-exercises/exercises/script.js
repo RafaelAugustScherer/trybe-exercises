@@ -1,3 +1,4 @@
+// Define os estados de acordo com o objeto objEstados
 let objEstados = {
   AC: 'Acre',
   AL: 'Alagoas',
@@ -27,8 +28,6 @@ let objEstados = {
   SP: 'São Paulo',
   TO: 'Tocantins',
 };
-
-// Define os estados de acordo com o objeto objEstados
 const estadoSelect = document.getElementById('estado');
 
 Object.keys(objEstados).forEach((estado) => {
@@ -77,25 +76,6 @@ const calendario = new Pikaday({
   },
 });
 
-function checkPreenchido(elArray) {
-  for (let el of elArray) {
-    if (el === '') {
-      alert('Campos Obrigatórios não foram preenchidos!');
-      throw new Error('Campos Obrigatórios não foram preenchidos!');
-    }
-  }
-}
-
-function checkTamanho(objTamanhos) {
-  Object.keys(objTamanhos).forEach((key) => {
-    const value = objTamanhos[key];
-    if (value.length > key) {
-      alert(`Tamanho de ${value} inválido!`);
-      throw new Error(`Tamanho de ${value} inválido!`);
-    }
-  });
-}
-
 function getDadosPessoais() {
   const nome = document.getElementById('nome').value;
   const email = document.getElementById('email').value;
@@ -104,17 +84,6 @@ function getDadosPessoais() {
   const cidade = document.getElementById('cidade').value;
   const estado = document.getElementById('estado').value;
   let tipoEndereco = document.getElementsByName('tipo-endereco');
-
-  // const elObrigatorios = [nome, email, cpf, endereco, cidade];
-  // checkPreenchido(elObrigatorios);
-  // const objTamanhos = {
-  //   40: nome,
-  //   50: email,
-  //   14: cpf,
-  //   200: endereco,
-  //   28: cidade,
-  // };
-  // checkTamanho(objTamanhos);
 
   for (let tipo of tipoEndereco) {
     if (tipo.checked === true) {
@@ -138,16 +107,6 @@ function getDadosEmprego() {
   const cargo = document.getElementById('cargo').value;
   const descricaoCargo = document.getElementById('descricao-cargo').value;
   const dataInicio = document.getElementById('data-inicio').value;
-
-  // const elObrigatorios = [curriculo, cargo, descricaoCargo, dataInicio];
-  // checkPreenchido(elObrigatorios);
-  // const objTamanhos = {
-  //   1000: curriculo,
-  //   40: cargo,
-  //   500: descricaoCargo,
-  //   10: dataInicio,
-  // };
-  // checkTamanho(objTamanhos);
 
   return {
     curriculo,
@@ -182,25 +141,24 @@ function createConfirmaDados(objDados) {
 
 function defineValidationRules() {
   const objFields = {
-    40: 'nome',
-    50: 'email',
-    11: 'cpf',
-    200: 'endereco',
-    28: 'cidade',
-    1000: 'curriculo',
-    40: 'cargo',
-    500: 'descricao-cargo',
+    nome: 40,
+    email: 50,
+    cpf: 11,
+    endereco: 200,
+    cidade: 28,
+    curriculo: 1000,
+    cargo: 40,
+    'descricao-cargo': 500,
   };
 
   Object.keys(objFields).forEach((key) => {
-    // key = Limite Caracteres
-    // objFields[key] Nome do Campo
-    //console.log(objFields[key])
+    // key = Nome do Campo
+    // objFields[key] Limite de caracteres
 
-    validation.rules[objFields[key]] = {
-      message: `${objFields[key]} inválido! Tamanho máximo de ${key} caracteres`,
+    validation.rules[key] = {
+      message: `Campo inválido! Tamanho máximo de ${objFields[key]} caracteres`,
       method: (el) => {
-        return el.value.length <= key;
+        return el.value.length <= objFields[key] || el.value === '';
       },
     };
   });
@@ -208,17 +166,19 @@ function defineValidationRules() {
 
 function processarForm(evt) {
   evt.preventDefault();
+  validation.validate();
 
-  validation.init('form');
-  defineValidationRules();
-  validation.highlight();
+  if (validation.isValid()) {
+    let dadosPessoais = getDadosPessoais();
+    let dadosEmprego = getDadosEmprego();
 
-  let dadosPessoais = getDadosPessoais();
-  let dadosEmprego = getDadosEmprego();
-
-  // Referência: https://stackoverflow.com/questions/171251/how-can-i-merge-properties-of-two-javascript-objects-dynamically
-  const objDados = { ...dadosPessoais, ...dadosEmprego };
-  createConfirmaDados(objDados);
+    // Referência: https://stackoverflow.com/questions/171251/how-can-i-merge-properties-of-two-javascript-objects-dynamically
+    const objDados = { ...dadosPessoais, ...dadosEmprego };
+    createConfirmaDados(objDados);
+  }
+  else {
+    createConfirmaDados({});
+  }
 }
 
 const botaoEnviar = document.getElementById('botao-enviar');
@@ -249,3 +209,14 @@ function limparForm() {
 
 const botaoLimpar = document.getElementById('limpar-form');
 botaoLimpar.addEventListener('click', limparForm);
+
+
+// Inicializar biblioteca de validação e regras personalizadas
+validation.init();
+defineValidationRules();
+
+// Adicionar 'escutador' para cada campo do form
+const camposValidacao = document.querySelectorAll('.validate')
+camposValidacao.forEach(campo => {
+  campo.addEventListener('onfocusout', validation.highlight(campo))
+})

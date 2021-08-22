@@ -4,7 +4,7 @@
 
 ## DOM Structure
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1286cb59-6f11-4eed-af22-3d6bbb079eb1/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1286cb59-6f11-4eed-af22-3d6bbb079eb1/Untitled.png)
+![DOM Structure](https://s3.us-east-2.amazonaws.com/assets.app.betrybe.com/fundamentals/javascript/images/dom-bff0d72875711a1aebad5a98cdf0f8ae.jpg)
 
 1. **Window:** The DOM wrapping container;
 2. **location**: The current document location;
@@ -19,10 +19,10 @@
 ```jsx
 /* Common Selectors */
 document.getElementById([Id]) // Return HTML Element with Id
-				.getElementsByClass([class]) // Return Array of Elements with class
-				.getElementsByTag([tag]) // Return Array of Elements with tag
-				.querySelector([selector]) // Return NodeList of Element with #Id, .class or tag
-				.querySelectorAll([selector]) // Return NodeList with .children Array of Elements
+	.getElementsByClass([class]) // Return Array of Elements with class
+	.getElementsByTag([tag]) // Return Array of Elements with tag
+	.querySelector([selector]) // Return NodeList of Element with #Id, .class or tag
+	.querySelectorAll([selector]) // Return NodeList with .children Array of Elements
 
 /* Common Element Manipulation */
 const Element = document.getElementById('header')

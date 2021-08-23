@@ -53,7 +53,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __6.2__: _JavaScript Libraries and CSS Frameworks_
 - [X] __6.3__: _Introduction - CSS Flexbox_
 - [X] __6.3__: _CSS Flexbox - Part 1_
-- [ ] __6.4__: _CSS Flexbox - Part 2_
+- [X] __6.4__: _CSS Flexbox - Part 2_
 - [ ] __6.5__: _Responsive CSS - Mobile First_
 - [ ] __6.6__: _Project - Trybewarts_
 ---

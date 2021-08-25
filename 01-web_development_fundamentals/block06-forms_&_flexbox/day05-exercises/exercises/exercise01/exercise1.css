@@ -1,0 +1,67 @@
+body {
+  font-size: x-large;
+  margin: 20px;
+}
+h1 {
+  font-size: xx-large;
+}
+
+img {
+  max-width: 100%;
+  padding-top: 40px;
+}
+
+figure {
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: aliceblue;
+    font-size: xx-large;
+    margin: 40px;
+  }
+
+  h1 {
+    font-size: xxx-large;
+  }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    flex-basis: 100%;
+  }
+
+  figure {
+    flex-basis: 45%;
+  }
+
+  /* https://www.w3schools.com/cssref/sel_nth-of-type.asp */
+  figure:nth-of-type(odd) {
+    padding-right: 20px;
+  }
+
+  figure:nth-of-type(even) {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+      background-color: azure;
+      font-size: xxx-large;
+      margin: 80px;
+      max-width: 1700px;
+  }
+
+  h1 {
+      font-size: 150%;
+  }
+
+  img {
+    padding-top: 80px;
+  }
+}

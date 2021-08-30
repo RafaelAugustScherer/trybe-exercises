@@ -1,3 +1,5 @@
+# 7.2. Object.Methods
+
 - [objName].[key];
 - Object.keys([objName]);
 - Object.values([objName]);

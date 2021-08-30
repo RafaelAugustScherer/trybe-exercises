@@ -1,3 +1,5 @@
+# 7.1. Let, Const, Arrow Func., Template Literals & Ternary Operators
+
 # Var, Let & Const
 
 What changes is the scope in which the variable can be reached, and if it is constant (cannot be reassigned.

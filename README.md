@@ -47,7 +47,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __5.7__: _(Bonus) Project - Guess The Color_
 - [X] __5.7__: _(Bonus) Project - Mysterious Card_
 ---
-### [Block 06: HTML and CSS: Forms, Flexbox and Responsive ✔️]((https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block06-forms_%26_flexbox)
+### [Block 06: HTML and CSS: Forms, Flexbox and Responsive ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block06-forms_%26_flexbox)
 
 - [X] __6.1__: _HTML & CSS - Forms_
 - [X] __6.2__: _JavaScript Libraries and CSS Frameworks_

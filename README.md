@@ -47,7 +47,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __5.7__: _(Bonus) Project - Guess The Color_
 - [X] __5.7__: _(Bonus) Project - Mysterious Card_
 ---
-### [Block 06: HTML and CSS: Forms, Flexbox and Responsive]((https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block06-forms_%26_flexbox))
+### [Block 06: HTML and CSS: Forms, Flexbox and Responsive ✔️]((https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block06-forms_%26_flexbox))
 
 - [X] __6.1__: _HTML & CSS - Forms_
 - [X] __6.2__: _JavaScript Libraries and CSS Frameworks_
@@ -55,12 +55,12 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __6.3__: _CSS Flexbox - Part 1_
 - [X] __6.4__: _CSS Flexbox - Part 2_
 - [X] __6.5__: _Responsive CSS - Mobile First_
-- [ ] __6.6__: _Project - Trybewarts_
+- [X] __6.6__: _Project - Trybewarts_
 ---
-### Block 07: Introduction to JavaScript ES6 and Unitary Tests
+### [Block 07: Introduction to JavaScript ES6 and Unitary Tests](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block07-es6_%26_unitary_tests)
 
-- [ ] __7.1__: _JavaScript ES6 - let, const, arrow functions and templates literals_
-- [ ] __7.2__: _JavaScript ES6 - Objects_
+- [X] __7.1__: _JavaScript ES6 - let, const, arrow functions and templates literals_
+- [X] __7.2__: _JavaScript ES6 - Objects_
 - [ ] __7.3__: _Unitary Tests in JavaScript_
 - [ ] __7.4__: _Project - JavaScript Unitary Tests_
 ---

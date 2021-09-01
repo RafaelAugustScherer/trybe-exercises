@@ -61,7 +61,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __7.1__: _JavaScript ES6 - let, const, arrow functions and templates literals_
 - [X] __7.2__: _JavaScript ES6 - Objects_
-- [ ] __7.3__: _Unitary Tests in JavaScript_
+- [X] __7.3__: _Unitary Tests in JavaScript_
 - [ ] __7.4__: _Project - JavaScript Unitary Tests_
 ---
 ### Block 08: Higher Order Functions from JavaScript ES6

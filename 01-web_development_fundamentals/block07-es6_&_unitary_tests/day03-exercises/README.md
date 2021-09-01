@@ -1,4 +1,4 @@
-# 7.3 Unitary Tests
+# 7.3. Unitary Tests
 
 # Summary
 

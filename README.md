@@ -62,11 +62,11 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __7.1__: _JavaScript ES6 - let, const, arrow functions and templates literals_
 - [X] __7.2__: _JavaScript ES6 - Objects_
 - [X] __7.3__: _Unitary Tests in JavaScript_
-- [ ] __7.4__: _Project - JavaScript Unitary Tests_
+- [X] __7.4__: _Project - JavaScript Unitary Tests_
 ---
-### Block 08: Higher Order Functions from JavaScript ES6
+### [Block 08: Higher Order Functions from JavaScript ES6](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block08-es6_higher_order_functions)
 
-- [ ] __8.1__: _JavaScript ES6 - Introduction to Higher Order Functions_
+- [X] __8.1__: _JavaScript ES6 - Introduction to Higher Order Functions_
 - [ ] __8.2__: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
 - [ ] __8.3__: _JavaScript ES6 - Higher Order Functions - map and filter_
 - [ ] __8.4__: _JavaScript ES6 - Higher Order Functions - reduce_

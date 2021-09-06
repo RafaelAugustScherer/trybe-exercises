@@ -66,21 +66,29 @@ const books = [
 const expectedResult = false;
 
 function authorUnique() {
-  //   let isUnique = true;
-  //   books.forEach((book) => {
-  //     const someResult = books.some(
-  //       (someBook) => book.author.birthYear === someBook.author.birthYear
-  //     );
-  //     if (someResult) isUnique = false;
-  //   });
-  //   return isUnique;
+  // let isUnique = true;
+  // books.forEach((book) => {
+  //   const someResult = books.some(
+  //     (someBook) => book.author.birthYear === someBook.author.birthYear
+  //   );
+  //   if (someResult) isUnique = false;
+  // });
+  // return isUnique;
 
-  return books.every((book) => {
-      for (forBook of books) {
-          if (forBook.author.birthYear === book.author.birthYear) {
-              return false;
-          }
+  // return books.every((book) => {
+  //     for (forBook of books) {
+  //         if (forBook.author.birthYear === book.author.birthYear) {
+  //             return false;
+  //         }
+  //     }
+  // });
+
+  return books.every((book, index) => {
+    for (forBook of books.slice(index)) {
+      if (forBook.author.birthYear === book.author.birthYear) {
+        return false;
       }
+    }
   });
 }
 

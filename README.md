@@ -69,8 +69,8 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __8.1__: _JavaScript ES6 - Introduction to Higher Order Functions_
 - [X] __8.2__: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
 - [X] __8.3__: _JavaScript ES6 - Higher Order Functions - map and filter_
-- [ ] __8.4__: _JavaScript ES6 - Higher Order Functions - reduce_
-- [ ] __8.5__: _JavaScript ES6 - spread operator, rest parameter, destructuring and more_
+- [X] __8.4__: _JavaScript ES6 - Higher Order Functions - reduce_
+- [X] __8.5__: _JavaScript ES6 - spread operator, rest parameter, destructuring and more_
 - [ ] __8.6__: _Project - Zoo Functions_
 ---
 ### BLock 09: Asynchronous JavaScript and Promises

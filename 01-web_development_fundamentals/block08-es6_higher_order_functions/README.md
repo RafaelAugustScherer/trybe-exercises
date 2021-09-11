@@ -6,3 +6,5 @@
 * [8.3. map & filter](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block08-es6_higher_order_functions/day03-exercises)
 
 * [8.4. reduce](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block08-es6_higher_order_functions/day04-exercises)
+
+* [8.5. Spread Op, Rest Params, Destructuring and More](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block08-es6_higher_order_functions/day05-exercises)

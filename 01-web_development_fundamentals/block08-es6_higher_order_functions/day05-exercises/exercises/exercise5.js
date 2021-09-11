@@ -1,0 +1,14 @@
+const assert = require('assert');
+
+const myList = [1, 2, 3];
+
+// Alternative to work with any array length
+// const swap = (list) => list.map((el, index) => list[list.length - (index + 1)]);
+
+const swap = ([first, second, third]) => [third, second, first];
+
+const swappedList = swap(myList);
+
+assert.strictEqual(swappedList[0], 3);
+assert.strictEqual(swappedList[1], 2);
+assert.strictEqual(swappedList[2], 1);

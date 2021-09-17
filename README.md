@@ -57,14 +57,14 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __6.5__: _Responsive CSS - Mobile First_
 - [X] __6.6__: _Project - Trybewarts_
 ---
-### [Block 07: Introduction to JavaScript ES6 and Unitary Tests](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block07-es6_%26_unitary_tests)
+### [Block 07: Introduction to JavaScript ES6 and Unitary Tests ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block07-es6_%26_unitary_tests)
 
 - [X] __7.1__: _JavaScript ES6 - let, const, arrow functions and templates literals_
 - [X] __7.2__: _JavaScript ES6 - Objects_
 - [X] __7.3__: _Unitary Tests in JavaScript_
 - [X] __7.4__: _Project - JavaScript Unitary Tests_
 ---
-### [Block 08: Higher Order Functions from JavaScript ES6](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block08-es6_higher_order_functions)
+### [Block 08: Higher Order Functions from JavaScript ES6 ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block08-es6_higher_order_functions)
 
 - [X] __8.1__: _JavaScript ES6 - Introduction to Higher Order Functions_
 - [X] __8.2__: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
@@ -73,10 +73,10 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __8.5__: _JavaScript ES6 - spread operator, rest parameter, destructuring and more_
 - [X] __8.6__: _Project - Zoo Functions_
 ---
-### BLock 09: Asynchronous JavaScript and Promises
+### [Block 09: Asynchronous JavaScript and Promises](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block09-js_asynchronous_%26_callbacks)
 
 - [X] __9.1__: _Asynchronous JavaScript and Callbacks_
-- [ ] __9.2__: _JavaScript Promises_
+- [X] __9.2__: _JavaScript Promises_
 - [ ] __9.3__: _Project - Shopping Cart_
 ---
 ### Block 10: Automated Test with Jest

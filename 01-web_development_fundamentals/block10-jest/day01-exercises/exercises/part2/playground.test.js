@@ -61,7 +61,7 @@ describe('Parte II', () => {
       expect(hydrate).toBeDefined();
     });
     test('Testa se hydrate é uma função', () => {
-      expect(typeof hydrate).toBe('function');
+      expect(hydrate).toBeInstanceOf(Function);
     });
     test('Ao receber uma string retorne a sugestão de quantos copos de água deve-se beber', () => {
       expect(hydrate('1 cerveja')).toBe('1 copo de água');

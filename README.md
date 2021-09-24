@@ -83,5 +83,5 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __10.1__: _Jest - First Steps_
 - [X] __10.2__: _Jest - Asynchronous Tests_
-- [ ] __10.3__: _Jest - Simulating Behaviors_
+- [X] __10.3__: _Jest - Simulating Behaviors_
 - [ ] __10.4__: _Project - Asynchronous Jest and Mocking_

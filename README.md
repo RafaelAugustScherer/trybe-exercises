@@ -2,7 +2,7 @@
 
 This repository includes all exercises and notes made during the [Trybe Course](https://www.betrybe.com/). Further & detailed notes can be found at [Notion](https://basalt-chicken-ecc.notion.site/Trybe-Course-921659907b454ca3a33b6e80c2e9d457)
 
-## Web Development Fundamentals
+## Web Development Fundamentals ✔️
 
 ### [Block 01: Unix & Bash ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block01-unix_%26_bash)
 
@@ -90,8 +90,8 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 ### [Block 11: Introduction to React](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block11-intro_to_react)
 
-- [ ] __11.1__: _Introduction - Front-end_
-- [ ] __11.1__: _Introduction - React_
-- [ ] __11.1__: _'Hello, world!' in React!_
+- [X] __11.1__: _Introduction - Front-end_
+- [X] __11.1__: _Introduction - React_
+- [X] __11.1__: _'Hello, world!' in React!_
 - [ ] __11.2__: _React Components_
 - [ ] __11.3__: _Project - Movie Cards Library_

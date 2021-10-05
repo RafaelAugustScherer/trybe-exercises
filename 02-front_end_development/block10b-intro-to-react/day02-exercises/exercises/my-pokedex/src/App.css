@@ -1,0 +1,56 @@
+.App {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+}
+
+.pokemon-div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 30%;
+  flex-direction: row;
+  width: 200px;
+  margin: 20px;
+  border: 2px solid rgb(143, 30, 30);
+  border-radius: 5px;
+}
+
+.pokemon-div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: space-between;
+  align-items: center;
+  flex-basis: 50%;
+}
+
+.type-image {
+  height: 50px;
+  width: 50px;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

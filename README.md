@@ -79,19 +79,21 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __9.2__: _JavaScript Promises_
 - [X] __9.3__: _Project - Shopping Cart_
 ---
-### [Block 10: Automated Testing with Jest ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block10-jest)
+### [Block 10A: Automated Testing with Jest ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block10-jest)
 
-- [X] __10.1__: _Jest - First Steps_
+- [X] __10A.1__: _Jest - First Steps_
 - [X] __10.2__: _Jest - Asynchronous Tests_
 - [X] __10.3__: _Jest - Simulating Behaviors_
 - [X] __10.4__: _Project - Asynchronous Jest and Mocking_
 
 ## Front-end Development
 
-### [Block 11: Introduction to React](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block11-intro_to_react)
+> The Course has been re-organized, and one Block from Fundamentals was integrated within another. For this reason there are 2 Tenth Blocks.
 
-- [X] __11.1__: _Introduction - Front-end_
-- [X] __11.1__: _Introduction - React_
-- [X] __11.1__: _'Hello, world!' in React!_
-- [ ] __11.2__: _React Components_
-- [ ] __11.3__: _Project - Movie Cards Library_
+### [Block 10B: Introduction to React](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block10b-intro-to-react)
+
+- [X] __10B.1__: _Introduction - Front-end_
+- [X] __10B.1__: _Introduction - React_
+- [X] __10B.1__: _'Hello, world!' in React!_
+- [X] __10B.2__: _React Components_
+- [ ] __10B.3__: _Project - Movie Cards Library_

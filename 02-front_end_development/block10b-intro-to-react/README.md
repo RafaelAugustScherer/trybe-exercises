@@ -150,3 +150,70 @@ class App extends React.Component {
 }
 export default App;
 ```
+
+### props
+
+Props can be interpreted as **parameters** sent to the **React Component.**
+
+```jsx
+/* Greeting.js */
+import { Component } from 'react';
+
+/* Function */
+const Greeting = ({ name }) => <h1>Hello, {name}</h1>
+
+/* Class */
+class Greeting extends Component {
+   render() {
+     return (<h1>Hello, {this.props.name}</h1>);
+   }
+ }
+
+export default Greeting;
+```
+
+```jsx
+/* App.js */
+import Greeting from './Greeting';
+
+const App = () =>
+	<main>
+	  <Greeting name="Jhonny">
+  </main>
+
+export default App;
+```
+
+#### propTypes
+
+Specify parameter types and requirement options.
+
+```jsx
+import React from 'react';
+**import PropTypes from 'prop-types';**
+
+class Greeting extends React.Component {
+  render() {
+    return (<h1>Hello, {this.props.name} {this.props.lastName}</h1>);
+  }
+}
+
+**Greeting.propTypes = {
+  name: PropTypes.string.isRequired,
+  lastName: PropTypes.string,
+	age: PropTypes.number,
+};**
+
+export default Greeting;
+```
+
+**propTypes types**
+
+- String: PropTypes.string;
+- Number: PropTypes.number;
+- Boolean: PropTypes.bool;
+- Function: PropTypes.func;
+- Object: PropTypes.object;
+- Array: PropTypes.array;
+- ArrayOf: PropTypes.arrayOf(PropTypes.string);
+- ObjectOf: ....

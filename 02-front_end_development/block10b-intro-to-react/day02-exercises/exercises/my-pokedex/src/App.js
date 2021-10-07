@@ -1,15 +1,14 @@
 import './App.css';
-import Pokemon from './Pokemon.jsx';
+import PokemonList from './PokemonList';
 import data from './data';
+import Header from './Header';
 
 function App() {
   return (
     <>
-    <div className="App-header">
-    <h1>PokeDex - Exercise</h1>
-    </div>
+    <Header title="PokeDex - Exercise" />
     <div className="App">
-      {data.map((pokemon => <Pokemon pokemon={pokemon}/>))}
+      <PokemonList pokemons={ data } />
     </div>
     </>
   );

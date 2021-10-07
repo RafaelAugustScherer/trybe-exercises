@@ -96,4 +96,4 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __10B.1__: _Introduction - React_
 - [X] __10B.1__: _'Hello, world!' in React!_
 - [X] __10B.2__: _React Components_
-- [ ] __10B.3__: _Project - Movie Cards Library_
+- [X] __10B.3__: _Project - Movie Cards Library_

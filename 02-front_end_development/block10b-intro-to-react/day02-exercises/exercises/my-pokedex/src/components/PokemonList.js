@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Pokemon from './Pokemon';
 
 const PokemonList = ({ pokemons }) => (
-    <>
-    <h2 className="app-title">My Pokedex</h2>
+    <div className="Pokemon-list" key="Pokemon-list">
+    <h2 className="pokedex-title" key="pokedex-title">My Pokedex</h2>
       {pokemons.map((pokemon) => (
         <Pokemon pokemon={pokemon} />
       ))}
-    </>
+    </div>
 );
 
 PokemonList.propTypes = {

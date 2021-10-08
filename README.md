@@ -90,10 +90,27 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 > The Course has been re-organized, and one Block from Fundamentals was integrated within another. For this reason there are 2 Tenth Blocks.
 
-### [Block 10B: Introduction to React](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block10b-intro-to-react)
+### [Block 10B: Introduction to React ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block10b-intro-to-react)
 
 - [X] __10B.1__: _Introduction - Front-end_
 - [X] __10B.1__: _Introduction - React_
 - [X] __10B.1__: _'Hello, world!' in React!_
 - [X] __10B.2__: _React Components_
 - [X] __10B.3__: _Project - Movie Cards Library_
+
+### [Block 11: Components With State, Events & React Forms](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block11-components_state_%26_events_%26_forms)
+
+- [X] __11.1__: _Components with State & Events_
+- [ ] __11.2__: _Forms in React_
+- [ ] __11.3__: _Project - Tryunfo_
+
+### Block 12: Life Cycle of Components & React Router
+
+- [ ] __12.1__: _Life Cycle of Components_
+- [ ] __12.2__: _React Router_
+- [ ] __12.3__: _Project - TrybeTunes_
+
+### Block 13: Agile Methodologies
+
+- [ ] __13.1__: _Agile Methodologies_
+- [ ] __13.2__: _Project - Frontend Online Store_

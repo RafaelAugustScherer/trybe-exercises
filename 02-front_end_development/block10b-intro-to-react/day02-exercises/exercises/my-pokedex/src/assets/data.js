@@ -2,100 +2,100 @@ const pokemons = [
     {
         id: 25,
         name: "Pikachu",
-        type: 'Electric',
+        types: ['electric'],
         averageWeight: {
             value: 6.0,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/b/b2/Spr_5b_025_m.png",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Pikachu_(Pok%C3%A9mon)"
     },
     {
         id: 4,
         name: "Charmander",
-        type: 'Fire',
+        types: ['fire'],
         averageWeight: {
             value: 8.5,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/0/0a/Spr_5b_004.png",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Charmander_(Pok%C3%A9mon)"
     },
     {
         id: 10,
         name: "Caterpie",
-        type: 'Bug',
+        types: ['bug'],
         averageWeight: {
             value: 2.9,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/8/83/Spr_5b_010.png",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Caterpie_(Pok%C3%A9mon)"
     },
     {
         id: 23,
         name: "Ekans",
-        type: 'Poison',
+        types: ['poison'],
         averageWeight: {
             value: 6.9,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/1/18/Spr_5b_023.png",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Ekans_(Pok%C3%A9mon)"
     },
     {
         id: 65,
         name: "Alakazam",
-        type: 'Psychic',
+        types: ['psychic'],
         averageWeight: {
             value: 48.0,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/8/88/Spr_5b_065_m.png",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Alakazam_(Pok%C3%A9mon)"
     },
     {
         id: 151,
         name: "Mew",
-        type: 'Psychic',
+        types: ['psychic'],
         averageWeight: {
             value: 4.0,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/4/43/Spr_5b_151.png",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Mew_(Pok%C3%A9mon)"
     },
     {
         id: 78,
         name: "Rapidash",
-        type: 'Fire',
+        types: ['fire'],
         averageWeight: {
             value: 95.0,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/5/58/Spr_5b_078.png",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Rapidash_(Pok%C3%A9mon)"
     },
     {
         id: 143,
         name: "Snorlax",
-        type: 'Normal',
+        types: ['normal'],
         averageWeight: {
             value: 460.0,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/4/40/Spr_5b_143.png",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Snorlax_(Pok%C3%A9mon)"
     },
     {
         id: 148,
         name: "Dragonair",
-        type: 'Dragon',
+        types: ['dragon'],
         averageWeight: {
             value: 16.5,
             measurementUnit: "kg"
         },
-        image: "https://cdn2.bulbagarden.net/upload/2/2c/Spr_5b_148.png",
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/148.png",
         moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Dragonair_(Pok%C3%A9mon)"
     }
   ];

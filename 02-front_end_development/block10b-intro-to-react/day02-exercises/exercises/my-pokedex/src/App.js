@@ -1,7 +1,8 @@
 import './App.css';
-import PokemonList from './PokemonList';
-import data from './data';
-import Header from './Header';
+import PokemonList from './components/PokemonList';
+import data from './assets/data';
+import Header from './components/Header';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
     <Header title="PokeDex - Exercise" />
     <div className="App">
       <PokemonList pokemons={ data } />
+      <Search />
     </div>
     </>
   );

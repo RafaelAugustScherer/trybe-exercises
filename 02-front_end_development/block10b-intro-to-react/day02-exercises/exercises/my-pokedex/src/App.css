@@ -1,5 +1,7 @@
 body {
   background-color: #1F1F1F;
+  color: white;
+  text-align: center;
 }
 
 .App-header {
@@ -9,23 +11,21 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App {
+.Pokemon-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
-  text-align: center;
 }
 
-.app-title {
+.pokedex-title {
   flex-basis: 100%;
   color: whitesmoke;
 }
 
-.pokemon-div {
+.Pokemon {
   position: relative;
   display: flex;
   color: white;
@@ -33,13 +33,13 @@ body {
   flex-wrap: wrap;
   flex-basis: 30%;
   flex-direction: row;
-  width: 200px;
+  width: 300px;
   margin: 20px;
   border: 2px solid rgb(143, 30, 30);
   border-radius: 5px;
 }
 
-.pokemon-div div {
+.Pokemon div {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -55,6 +55,11 @@ body {
   top: 5px;
 }
 
+.type-image {
+  height: 50px;
+  width: 50px;
+}
+
 #pokemon-lower-div {
   justify-content: center;
   flex-basis: 100%;
@@ -68,6 +73,7 @@ body {
 }
 
 @media screen and (max-width: 640px) {
+  .bi-star,
   .bi-star-fill {
     position: relative;
     right: 0px;
@@ -76,20 +82,13 @@ body {
   }
 }
 
-.type-image {
-  height: 50px;
-  width: 50px;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SearchBar {
+  font-style: inherit;
+  font-size: large;
+  padding: 10px 10px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border: 0;
+  width: 70%;
 }

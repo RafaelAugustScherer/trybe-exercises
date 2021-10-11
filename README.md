@@ -101,7 +101,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 11: Components With State, Events & React Forms](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block11-components_state_%26_events_%26_forms)
 
 - [X] __11.1__: _Components with State & Events_
-- [ ] __11.2__: _Forms in React_
+- [X] __11.2__: _Forms in React_
 - [ ] __11.3__: _Project - Tryunfo_
 
 ### Block 12: Life Cycle of Components & React Router

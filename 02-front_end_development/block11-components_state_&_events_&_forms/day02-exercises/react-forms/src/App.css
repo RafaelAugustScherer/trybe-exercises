@@ -1,0 +1,9 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form fieldset {
+  flex-basis: 100%;
+  margin-bottom: 10px;
+}

@@ -82,13 +82,28 @@ body {
   }
 }
 
-.SearchBar {
+.Search-bar {
   font-style: inherit;
   font-size: large;
   padding: 10px 10px;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
   box-sizing: border-box;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
   border: 0;
   width: 70%;
+}
+
+.Search-button {
+  text-align: center;
+  padding: 14px;
+  border-radius: 0 15px 15px 0;
+  height: 41px;
+  margin-bottom: 15px;
+  border: 0;
+  background-color: #00CFFF;
+  cursor: pointer;
+}
+
+.Error {
+  color:#FF4F44;
 }

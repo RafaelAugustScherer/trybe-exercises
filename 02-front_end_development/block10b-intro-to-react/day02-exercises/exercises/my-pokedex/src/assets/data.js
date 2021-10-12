@@ -8,7 +8,7 @@ const pokemons = [
             measurementUnit: "kg"
         },
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
-        moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Pikachu_(Pok%C3%A9mon)"
+        isFavorite: true,
     },
     {
         id: 4,
@@ -19,7 +19,7 @@ const pokemons = [
             measurementUnit: "kg"
         },
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-        moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Charmander_(Pok%C3%A9mon)"
+        isFavorite: true,
     },
     {
         id: 10,
@@ -30,7 +30,7 @@ const pokemons = [
             measurementUnit: "kg"
         },
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
-        moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Caterpie_(Pok%C3%A9mon)"
+        isFavorite: true,
     },
     {
         id: 23,
@@ -41,7 +41,7 @@ const pokemons = [
             measurementUnit: "kg"
         },
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
-        moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Ekans_(Pok%C3%A9mon)"
+        isFavorite: true,
     },
     {
         id: 65,
@@ -52,7 +52,7 @@ const pokemons = [
             measurementUnit: "kg"
         },
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
-        moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Alakazam_(Pok%C3%A9mon)"
+        isFavorite: true,
     },
     {
         id: 151,
@@ -63,7 +63,7 @@ const pokemons = [
             measurementUnit: "kg"
         },
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
-        moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Mew_(Pok%C3%A9mon)"
+        isFavorite: true,
     },
     {
         id: 78,
@@ -74,7 +74,7 @@ const pokemons = [
             measurementUnit: "kg"
         },
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png",
-        moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Rapidash_(Pok%C3%A9mon)"
+        isFavorite: true,
     },
     {
         id: 143,
@@ -85,7 +85,7 @@ const pokemons = [
             measurementUnit: "kg"
         },
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
-        moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Snorlax_(Pok%C3%A9mon)"
+        isFavorite: true,
     },
     {
         id: 148,
@@ -96,7 +96,7 @@ const pokemons = [
             measurementUnit: "kg"
         },
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/148.png",
-        moreInfo: "https://bulbapedia.bulbagarden.net/wiki/Dragonair_(Pok%C3%A9mon)"
+        isFavorite: true,
     }
   ];
   

@@ -5,28 +5,32 @@ import typeRefs from '../assets/typeRefs';
 class Pokemon extends Component {
   constructor(props) {
     super(props);
-    this.state = { isFavorite: true };
+    this.state = {
+      isFavorite: this.props.isFavorite,
+    };
   }
 
-  handleFavorite = () => {
-    this.setState((prevState) => ({
+  handleFavorite = async (id) => {
+    await this.setState((prevState) => ({
       isFavorite: !prevState.isFavorite,
     }));
-  }
+
+    this.props.handleFavorite(id, this.state.isFavorite);
+  };
 
   render() {
     const {
       pokemon: { id, name, types, averageWeight, image },
     } = this.props;
     return (
-      <div key={name} className="Pokemon" style={{ borderColor: typeRefs[types[0]][1] }}>
+      <div className="Pokemon" style={{ borderColor: typeRefs[types[0]][1] }}>
         <span className="pokemon-id">#{id}</span>
         <div>
           <img className="pokemon-image" src={image} alt="Pokemon Name" />
           <p className="pokemon-name">{name}</p>
         </div>
-        {types.map((type) => (
-          <div>
+        {types.map((type, idx) => (
+          <div key={idx}>
             <img className="type-image" src={typeRefs[type][0]} alt="Type Icon" />
 
             <p className="pokemon-type">{type}</p>
@@ -38,7 +42,7 @@ class Pokemon extends Component {
           </p>
           <i
             className={this.state.isFavorite ? 'bi bi-star-fill' : 'bi bi-star'}
-            onClick={this.handleFavorite}
+            onClick={() => this.handleFavorite(id)}
           ></i>
         </div>
       </div>

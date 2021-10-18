@@ -107,7 +107,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 12: Components Life Cycle & React Router](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block12-components_life_cycle_%26_react_router)
 
 - [X] __12.1__: _Life Cycle of Components_
-- [ ] __12.2__: _React Router_
+- [X] __12.2__: _React Router_
 - [ ] __12.3__: _Project - TrybeTunes_
 
 ### Block 13: Agile Methodologies

@@ -98,19 +98,49 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __10B.2__: _React Components_
 - [X] __10B.3__: _Project - Movie Cards Library_
 
-### [Block 11: Components With State, Events & React Forms](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block11-components_state_%26_events_%26_forms)
+### [Block 11: Components With State, Events & React Forms ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block11-components_state_%26_events_%26_forms)
 
 - [X] __11.1__: _Components with State & Events_
 - [X] __11.2__: _Forms in React_
 - [X] __11.3__: _Project - Tryunfo_
 
-### [Block 12: Components Life Cycle & React Router](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block12-components_life_cycle_%26_react_router)
+### [Block 12: Components Life Cycle & React Router ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block12-components_life_cycle_%26_react_router)
 
 - [X] __12.1__: _Life Cycle of Components_
 - [X] __12.2__: _React Router_
 - [ ] __12.3__: _Project - TrybeTunes_
 
-### Block 13: Agile Methodologies
+### [Block 13: Agile Methodologies](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block13-agile-methodologies)
 
-- [ ] __13.1__: _Agile Methodologies_
+- [X] __13.1__: _Agile Methodologies_
 - [ ] __13.2__: _Project - Frontend Online Store_
+
+### Block 14: Automated Tests with React Testing Library
+
+- [ ] __14.1__: _RTL - First Steps_
+- [ ] __14.2__: _RTL - Mocks & Inputs_
+- [ ] __14.3__: _RTL - Testing React Router_
+- [ ] __14.4__: _Project - Tests in React_
+
+### Block 15: State Management with Redux
+
+- [ ] __15.1__: _Intro to Redux - Application's Global State_
+- [ ] __15.2__: _Using Redux in React - Practice_
+- [ ] __15.3__: _Using Redux in React - Async Actions_
+- [ ] __15.4__: _Tests in React-Redux_
+- [ ] __15.5__: _Project - Trybe Wallet_
+
+### Block 16: Trivia Game Project
+
+- [ ] __16.1__: _Project - Trivia Game_
+
+### Block 17: Context API & React Hooks
+
+- [ ] __17.1__: _React's Context API_
+- [ ] __17.2__: _React Hooks - useState & useContext_
+- [ ] __17.3__: _React Hooks - useEffect & customized Hooks_
+- [ ] __17.4__: _Project - StarWars Datatable w/ Context API & Hooks_
+
+### Block 18: Recipes App Project
+
+- [ ] __18.1__: _Project - Recipes App_

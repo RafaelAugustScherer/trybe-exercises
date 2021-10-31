@@ -110,14 +110,14 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __12.2__: _React Router_
 - [ ] __12.3__: _Project - TrybeTunes_
 
-### [Block 13: Agile Methodologies](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block13-agile-methodologies)
+### [Block 13: Agile Methodologies ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block13-agile-methodologies)
 
 - [X] __13.1__: _Agile Methodologies_
-- [ ] __13.2__: _Project - Frontend Online Store_
+- [X] __13.2__: _Project - Frontend Online Store_
 
-### Block 14: Automated Tests with React Testing Library
+### [Block 14: Automated Tests with React Testing Library](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block14-react-testing-library)
 
-- [ ] __14.1__: _RTL - First Steps_
+- [X] __14.1__: _RTL - First Steps_
 - [ ] __14.2__: _RTL - Mocks & Inputs_
 - [ ] __14.3__: _RTL - Testing React Router_
 - [ ] __14.4__: _Project - Tests in React_

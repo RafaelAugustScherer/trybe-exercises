@@ -119,7 +119,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __14.1__: _RTL - First Steps_
 - [X] __14.2__: _RTL - Mocks & Inputs_
-- [ ] __14.3__: _RTL - Testing React Router_
+- [X] __14.3__: _RTL - Testing React Router_
 - [ ] __14.4__: _Project - Tests in React_
 
 ### Block 15: State Management with Redux

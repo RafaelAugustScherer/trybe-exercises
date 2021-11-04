@@ -174,3 +174,46 @@ global.fetch = async () => { json: async () => {mockedAPIResponse} };
 `mockReturnValueOnce()` ⇒ Same as mockReturnValue, but only applied in the next call;
 
 `toHaveBeenCalledTimes([number])` ⇒ Same as toHaveBeenCalled but specifying how many times;
+
+# Testing React Router
+
+This is done to render a React Component with the Router, adding the URL to the history
+
+```jsx
+import { createMemoryHistory } from 'history';
+
+// Function to render a component and add it to history
+const renderWithRouter = (component) => {
+	const history = createMemoryHistory(); // **Create history before each test**
+	return ({
+		...render(<Router history={ history })>{component}</Router>),
+		**history**
+	});
+};
+
+// App.test.js
+import renderWithRouter from './renderWithRouter';
+import { screen } from '@testing-library/react';
+import App from './App';
+
+describe('test description', () => {
+	test('test', ()=> {
+		renderWithRouter(<App />);
+
+		const homeTitle = screen.getByRole('heading', {
+	    name: 'Start Page',
+	  });
+		expect(homeTitle).toBeInTheDocument();
+	})
+});
+
+export default renderWithRouter;
+```
+
+## Get History Information
+
+```jsx
+const { history } = renderWithRouter(<App />); //createMemoryHistory()
+history.location.pathname // Current Path
+history.push('/about') // Change Path
+```

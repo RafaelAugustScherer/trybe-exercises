@@ -118,7 +118,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 14: Automated Tests with React Testing Library](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block14-react-testing-library)
 
 - [X] __14.1__: _RTL - First Steps_
-- [ ] __14.2__: _RTL - Mocks & Inputs_
+- [X] __14.2__: _RTL - Mocks & Inputs_
 - [ ] __14.3__: _RTL - Testing React Router_
 - [ ] __14.4__: _Project - Tests in React_
 

@@ -9,7 +9,7 @@ describe('Testing the function generateRandomNumber', () => {
     expect(mockedRandomNumber).toHaveBeenCalled();
   });
 
-  test('Testing function result',  () => {
+  test('Testing function result', () => {
     mockedRandomNumber.mockReturnValueOnce(10);
 
     expect(mockedRandomNumber()).toBe(10);
@@ -24,7 +24,7 @@ describe('Testing the function generateRandomNumber', () => {
   // 2
   test('Division mock implementation', () => {
     mockedRandomNumber.mockImplementationOnce((a, b) => a / b);
-    
+
     expect(mockedRandomNumber(4, 2)).toBe(2);
     expect(mockedRandomNumber).toHaveBeenCalled();
     expect(mockedRandomNumber()).toBe(undefined);
@@ -49,7 +49,7 @@ describe('Testing the function generateRandomNumber', () => {
 
     afterEach(() => {
       mockedUpperCase.mockRestore();
-    })
+    });
 
     test('Testing lowerCaseIt', () => {
       mockedUpperCase.mockImplementation((string) => string.toLowerCase());
@@ -69,13 +69,13 @@ describe('Testing the function generateRandomNumber', () => {
 
     afterEach(() => {
       mockedfirstLetter.mockRestore();
-    })
+    });
 
     test('Testing lastLetterIt', () => {
       mockedfirstLetter.mockImplementation((string) => string[string.length - 1]);
       expect(mockedfirstLetter('foo bar')).toBe('r');
       expect(mockedfirstLetter).toHaveBeenCalled();
-    })
+    });
 
     test('Testing firstLetterIt', () => {
       mockedfirstLetter.mockImplementation((string) => string[0]);
@@ -90,18 +90,43 @@ describe('Testing the function generateRandomNumber', () => {
 
     afterEach(() => {
       mockedConcatenate.mockRestore();
-    })
+    });
 
     test('Testing concatenateItPlus', () => {
-      mockedConcatenate.mockImplementation((stringA, stringB, stringC) => (stringA + stringB + stringC));
+      mockedConcatenate.mockImplementation(
+        (stringA, stringB, stringC) => stringA + stringB + stringC
+      );
       expect(mockedConcatenate('ab', 'cd', 'ef')).toBe('abcdef');
       expect(mockedConcatenate).toHaveBeenCalled();
     });
 
     test('Testing concatenateIt', () => {
-      mockedConcatenate.mockImplementation((stringA, stringB) => (stringA + stringB));
+      mockedConcatenate.mockImplementation((stringA, stringB) => stringA + stringB);
       expect(mockedConcatenate('ab', 'cd')).toBe('abcd');
       expect(mockedConcatenate).toHaveBeenCalled();
     });
   });
-})
+
+  describe('Testing requestDogPicture', () => {
+    const mockedRequestDogPicture = jest.spyOn(service, 'requestDogPicture');
+
+    test('Testing resolved value', async () => {
+      const APIResponse = {
+        message: 'https://images.dog.ceo/breeds/otterhound/n02091635_1492.jpg',
+        status: 'success',
+      };
+
+      mockedRequestDogPicture.mockResolvedValue({
+        json: async () => APIResponse,
+      });
+
+      await mockedRequestDogPicture()
+        .then(({ json }) => json())
+        .then((response) =>
+          expect(response.message).toBe(
+            'https://images.dog.ceo/breeds/otterhound/n02091635_1492.jpg'
+          )
+        );
+    });
+  });
+});

@@ -108,23 +108,23 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __12.1__: _Life Cycle of Components_
 - [X] __12.2__: _React Router_
-- [ ] __12.3__: _Project - TrybeTunes_
+- [X] __12.3__: _Project - TrybeTunes_
 
 ### [Block 13: Agile Methodologies ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block13-agile-methodologies)
 
 - [X] __13.1__: _Agile Methodologies_
 - [X] __13.2__: _Project - Frontend Online Store_
 
-### [Block 14: Automated Tests with React Testing Library](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block14-react-testing-library)
+### [Block 14: Automated Tests with React Testing Library ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block14-react-testing-library)
 
 - [X] __14.1__: _RTL - First Steps_
 - [X] __14.2__: _RTL - Mocks & Inputs_
 - [X] __14.3__: _RTL - Testing React Router_
-- [ ] __14.4__: _Project - Tests in React_
+- [X] __14.4__: _Project - Tests in React_
 
 ### Block 15: State Management with Redux
 
-- [ ] __15.1__: _Intro to Redux - Application's Global State_
+- [X] __15.1__: _Intro to Redux - Application's Global State_
 - [ ] __15.2__: _Using Redux in React - Practice_
 - [ ] __15.3__: _Using Redux in React - Async Actions_
 - [ ] __15.4__: _Tests in React-Redux_

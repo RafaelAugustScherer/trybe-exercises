@@ -125,7 +125,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### Block 15: State Management with Redux
 
 - [X] __15.1__: _Intro to Redux - Application's Global State_
-- [ ] __15.2__: _Using Redux in React - Practice_
+- [X] __15.2__: _Using Redux in React - Practice_
 - [ ] __15.3__: _Using Redux in React - Async Actions_
 - [ ] __15.4__: _Tests in React-Redux_
 - [ ] __15.5__: _Project - Trybe Wallet_

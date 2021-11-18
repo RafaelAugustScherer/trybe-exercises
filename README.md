@@ -127,7 +127,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __15.1__: _Intro to Redux - Application's Global State_
 - [X] __15.2__: _Using Redux in React - Practice_
 - [X] __15.3__: _Using Redux in React - Async Actions_
-- [ ] __15.4__: _Tests in React-Redux_
+- [X] __15.4__: _Tests in React-Redux_
 - [ ] __15.5__: _Project - Trybe Wallet_
 
 ### Block 16: Trivia Game Project

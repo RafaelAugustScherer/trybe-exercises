@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { remClient } from '../redux/actions';
+import PropTypes from 'prop-types';
 
 class Clients extends Component {
   constructor() {
@@ -99,3 +100,8 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Clients);
+
+Clients.propTypes = {
+  user: PropTypes.string,
+  clients: PropTypes.arrayOf(PropTypes.string),
+}.isRequired;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { regClient } from '../redux/actions';
+import PropTypes from 'prop-types';
 
 class ClientsRegister extends Component {
   constructor() {
@@ -58,6 +59,10 @@ class ClientsRegister extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   regClientAction: (name, age, email) => dispatch(regClient(name, age, email))
-})
+});
 
-export default connect(null, mapDispatchToProps)(ClientsRegister)
+export default connect(null, mapDispatchToProps)(ClientsRegister);
+
+ClientsRegister.propTypes = {
+  regClientAction: PropTypes.func,
+}.isRequired;

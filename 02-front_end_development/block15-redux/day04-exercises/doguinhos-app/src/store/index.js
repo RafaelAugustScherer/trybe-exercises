@@ -34,7 +34,7 @@ const initialState = {
   error: '',
 };
 
-function reducer(state = initialState, action) {
+export function reducer(state = initialState, action) {
   switch (action.type) {
     case REQUEST_IMAGE:
       return { ...state, isFetching: true };

@@ -129,15 +129,15 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __15.3__: _Using Redux in React - Practice_
 - [X] __15.4__: _Using Redux in React - Async Actions_
 - [X] __15.5__: _Tests in React-Redux_
-- [ ] __15.6__: _Project - Trybe Wallet_
+- [X] __15.6__: _Project - Trybe Wallet_
 
 ### Block 16: Trivia Game Project
 
-- [ ] __16.1__: _Project - Trivia Game_
+- [X] __16.1__: _Project - Trivia Game_
 
 ### Block 17: Context API & React Hooks
 
-- [ ] __17.1__: _React's Context API_
+- [X] __17.1__: _React's Context API_
 - [ ] __17.2__: _React Hooks - useState & useContext_
 - [ ] __17.3__: _React Hooks - useEffect & customized Hooks_
 - [ ] __17.4__: _Project - StarWars Datatable w/ Context API & Hooks_

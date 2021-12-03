@@ -122,7 +122,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __14.3__: _RTL - Testing React Router_
 - [X] __14.4__: _Project - Tests in React_
 
-### Block 15: State Management with Redux
+### [Block 15: State Management with Redux ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block15-redux)
 
 - [X] __15.1__: _Intro to Redux - Application's Global State_
 - [X] __15.2__: _Using Redux in React_
@@ -131,14 +131,14 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __15.5__: _Tests in React-Redux_
 - [X] __15.6__: _Project - Trybe Wallet_
 
-### Block 16: Trivia Game Project
+### Block 16: Trivia Game Project ✔️
 
 - [X] __16.1__: _Project - Trivia Game_
 
-### Block 17: Context API & React Hooks
+### [Block 17: Context API & React Hooks](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block17-context-api_hooks)
 
 - [X] __17.1__: _React's Context API_
-- [ ] __17.2__: _React Hooks - useState & useContext_
+- [X] __17.2__: _React Hooks - useState & useContext_
 - [ ] __17.3__: _React Hooks - useEffect & customized Hooks_
 - [ ] __17.4__: _Project - StarWars Datatable w/ Context API & Hooks_
 

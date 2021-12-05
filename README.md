@@ -139,7 +139,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __17.1__: _React's Context API_
 - [X] __17.2__: _React Hooks - useState & useContext_
-- [ ] __17.3__: _React Hooks - useEffect & customized Hooks_
+- [X] __17.3__: _React Hooks - useEffect & customized Hooks_
 - [ ] __17.4__: _Project - StarWars Datatable w/ Context API & Hooks_
 
 ### Block 18: Recipes App Project

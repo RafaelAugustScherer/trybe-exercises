@@ -86,7 +86,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __10.3__: _Jest - Simulating Behaviors_
 - [X] __10.4__: _Project - Asynchronous Jest and Mocking_
 
-## Front-end Development
+## Front-end Development ✔️
 
 > The Course has been re-organized, and one Block from Fundamentals was integrated within another. For this reason there are 2 Tenth Blocks.
 
@@ -135,13 +135,19 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __16.1__: _Project - Trivia Game_
 
-### [Block 17: Context API & React Hooks](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block17-context-api_hooks)
+### [Block 17: Context API & React Hooks ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block17-context-api_hooks)
 
 - [X] __17.1__: _React's Context API_
 - [X] __17.2__: _React Hooks - useState & useContext_
 - [X] __17.3__: _React Hooks - useEffect & customized Hooks_
-- [ ] __17.4__: _Project - StarWars Datatable w/ Context API & Hooks_
+- [X] __17.4__: _Project - StarWars Datatable w/ Context API & Hooks_
 
-### Block 18: Recipes App Project
+### [Block 18: Recipes App Project ✔️](https://rafaelaugustscherer.github.io/recipes-app/#/)
 
-- [ ] __18.1__: _Project - Recipes App_
+- [X] __18.1__: _Project - Recipes App_
+
+## Back-end Development
+
+### [Block 19: Docker: Utilizing Containers](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/03-back_end_development/block19-docker)
+
+- [X] __19.1__: _Introduction to Back-end_

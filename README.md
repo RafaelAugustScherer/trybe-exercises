@@ -148,6 +148,17 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 ## Back-end Development
 
-### [Block 19: Docker: Utilizing Containers](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/03-back_end_development/block19-docker)
+### [Block 19: Docker - Utilizing Containers](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/03-back_end_development/block19-docker)
 
 - [X] __19.1__: _Introduction to Back-end_
+- [X] __19.2__: _Creating & Manipulating Images in Docker_
+- [ ] __19.3__: _Orchestrate Containers w/ Docker Compose_
+- [ ] __19.4__: _Project: Docker Todo-List_
+
+### Block 20: Introduction to SQL
+
+- [ ] __20.1__: _Introduction - Relational Database_
+- [ ] __20.2__: _Finding Data in a Database_
+- [ ] __20.3__: _Filtering Data_
+- [ ] __20.4__: _Manipulating Tables_
+- [ ] __20.5__: _Project: All For One_

@@ -53,4 +53,12 @@ To exit the terminal simply type: `exit`.
 
 # Misc
 
+### Run Apache Server Example
+
+```bash
+docker run -d -p [acessPort]:[apachePort (80)] --name apache-server httpd:2.4
+# -d = Run in background
+# -p = Define ports to acess the apache server
+```
+
 Use `docker container —help` for more commands.

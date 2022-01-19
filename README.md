@@ -4,20 +4,20 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 ## Web Development Fundamentals ✔️
 
-### [Block 01: Unix & Bash ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block01-unix_%26_bash)
+### [Block 01: Unix & Bash ✔️](/01-web_development_fundamentals/block01-unix_%26_bash)
 
 - [X] __1.3__: _Web Development Fundamentals_
 - [X] __1.3__: _Introduction - Unix & Shell_
 - [X] __1.3__: _Unix & Bash - Part 1_
 - [X] __1.4__: _Unix & Bash - Part 2_
 ---
-### [Block 02: Git, GitHub and Internet ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block02-git_github_internet)
+### [Block 02: Git, GitHub and Internet ✔️](/01-web_development_fundamentals/block02-git_github_internet)
 
 - [X] __2.1__: _Git & GitHub - What is it and what for_
 - [X] __2.2__: _Git & GitHub - Understanding the commands_
 - [X] __2.3__: _Internet - Understanding how it works_
 ---
-### [Block 03: Introduction to HTML & CSS ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block03-html_css)
+### [Block 03: Introduction to HTML & CSS ✔️](/01-web_development_fundamentals/block03-html_css)
 
 - [X] __3.1__: _Introduction - HTML & CSS_
 - [X] __3.1__: _HTML & CSS: Page Structures_
@@ -26,7 +26,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __3.4__: _HTML Semantic_
 - [X] __3.5__: _Project - Lessons Learned_
 ---
-### [Block 04: Introduction to JavaScript and Programming Logic ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block04-javascript_%26_programming_logic)
+### [Block 04: Introduction to JavaScript and Programming Logic ✔️](/01-web_development_fundamentals/block04-javascript_%26_programming_logic)
 
 - [X] __4.1__: _Introduction - JavaScript_
 - [X] __4.1__: _JavaScript - First Steps_
@@ -35,7 +35,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __4.4__: _JavaScript - Objects and Functions_
 - [X] __4.5__: _Project - Playground Functions_
 ---
-### [Block 05: JavaScript: DOM, Events and Web Storage ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block05-javascript_%26_dom)
+### [Block 05: JavaScript: DOM, Events and Web Storage ✔️](/01-web_development_fundamentals/block05-javascript_%26_dom)
 
 - [X] __5.1__: _JavaScript - DOM and Selectors_
 - [X] __5.2__: _JavaScript - Working with elements_
@@ -47,7 +47,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __5.7__: _(Bonus) Project - Guess The Color_
 - [X] __5.7__: _(Bonus) Project - Mysterious Card_
 ---
-### [Block 06: HTML and CSS: Forms, Flexbox and Responsive ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block06-forms_%26_flexbox)
+### [Block 06: HTML and CSS: Forms, Flexbox and Responsive ✔️](/01-web_development_fundamentals/block06-forms_%26_flexbox)
 
 - [X] __6.1__: _HTML & CSS - Forms_
 - [X] __6.2__: _JavaScript Libraries and CSS Frameworks_
@@ -57,14 +57,14 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __6.5__: _Responsive CSS - Mobile First_
 - [X] __6.6__: _Project - Trybewarts_
 ---
-### [Block 07: Introduction to JavaScript ES6 and Unitary Tests ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block07-es6_%26_unitary_tests)
+### [Block 07: Introduction to JavaScript ES6 and Unitary Tests ✔️](/01-web_development_fundamentals/block07-es6_%26_unitary_tests)
 
 - [X] __7.1__: _JavaScript ES6 - let, const, arrow functions and templates literals_
 - [X] __7.2__: _JavaScript ES6 - Objects_
 - [X] __7.3__: _Unitary Tests in JavaScript_
 - [X] __7.4__: _Project - JavaScript Unitary Tests_
 ---
-### [Block 08: Higher Order Functions from JavaScript ES6 ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block08-es6_higher_order_functions)
+### [Block 08: Higher Order Functions from JavaScript ES6 ✔️](/01-web_development_fundamentals/block08-es6_higher_order_functions)
 
 - [X] __8.1__: _JavaScript ES6 - Introduction to Higher Order Functions_
 - [X] __8.2__: _JavaScript ES6 - Higher Order Functions - forEach, find, some, every, sort_
@@ -73,13 +73,13 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __8.5__: _JavaScript ES6 - spread operator, rest parameter, destructuring and more_
 - [X] __8.6__: _Project - Zoo Functions_
 ---
-### [Block 09: Asynchronous JavaScript and Promises ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block09-js_asynchronous_%26_callbacks)
+### [Block 09: Asynchronous JavaScript and Promises ✔️](/01-web_development_fundamentals/block09-js_asynchronous_%26_callbacks)
 
 - [X] __9.1__: _Asynchronous JavaScript and Callbacks_
 - [X] __9.2__: _JavaScript Promises_
 - [X] __9.3__: _Project - Shopping Cart_
 ---
-### [Block 10A: Automated Testing with Jest ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block10-jest)
+### [Block 10A: Automated Testing with Jest ✔️](/01-web_development_fundamentals/block10-jest)
 
 - [X] __10A.1__: _Jest - First Steps_
 - [X] __10.2__: _Jest - Asynchronous Tests_
@@ -90,7 +90,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 > The Course has been re-organized, and one Block from Fundamentals was integrated within another. For this reason there are 2 Tenth Blocks.
 
-### [Block 10B: Introduction to React ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block10b-intro-to-react)
+### [Block 10B: Introduction to React ✔️](/02-front_end_development/block10b-intro-to-react)
 
 - [X] __10B.1__: _Introduction - Front-end_
 - [X] __10B.1__: _Introduction - React_
@@ -98,31 +98,31 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __10B.2__: _React Components_
 - [X] __10B.3__: _Project - Movie Cards Library_
 
-### [Block 11: Components With State, Events & React Forms ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block11-components_state_%26_events_%26_forms)
+### [Block 11: Components With State, Events & React Forms ✔️](/02-front_end_development/block11-components_state_%26_events_%26_forms)
 
 - [X] __11.1__: _Components with State & Events_
 - [X] __11.2__: _Forms in React_
 - [X] __11.3__: _Project - Tryunfo_
 
-### [Block 12: Components Life Cycle & React Router ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block12-components_life_cycle_%26_react_router)
+### [Block 12: Components Life Cycle & React Router ✔️](/02-front_end_development/block12-components_life_cycle_%26_react_router)
 
 - [X] __12.1__: _Life Cycle of Components_
 - [X] __12.2__: _React Router_
 - [X] __12.3__: _Project - TrybeTunes_
 
-### [Block 13: Agile Methodologies ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block13-agile-methodologies)
+### [Block 13: Agile Methodologies ✔️](/02-front_end_development/block13-agile-methodologies)
 
 - [X] __13.1__: _Agile Methodologies_
 - [X] __13.2__: _Project - Frontend Online Store_
 
-### [Block 14: Automated Tests with React Testing Library ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block14-react-testing-library)
+### [Block 14: Automated Tests with React Testing Library ✔️](/02-front_end_development/block14-react-testing-library)
 
 - [X] __14.1__: _RTL - First Steps_
 - [X] __14.2__: _RTL - Mocks & Inputs_
 - [X] __14.3__: _RTL - Testing React Router_
 - [X] __14.4__: _Project - Tests in React_
 
-### [Block 15: State Management with Redux ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block15-redux)
+### [Block 15: State Management with Redux ✔️](/02-front_end_development/block15-redux)
 
 - [X] __15.1__: _Intro to Redux - Application's Global State_
 - [X] __15.2__: _Using Redux in React_
@@ -135,7 +135,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __16.1__: _Project - Trivia Game_
 
-### [Block 17: Context API & React Hooks ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/02-front_end_development/block17-context-api_hooks)
+### [Block 17: Context API & React Hooks ✔️](/02-front_end_development/block17-context-api_hooks)
 
 - [X] __17.1__: _React's Context API_
 - [X] __17.2__: _React Hooks - useState & useContext_
@@ -148,7 +148,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 ## Back-end Development
 
-### [Block 19: Docker - Utilizing Containers](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/03-back_end_development/block19-docker)
+### [Block 19: Docker - Utilizing Containers](/03-back_end_development/block19-docker)
 
 - [X] __19.1__: _Introduction to Back-end_
 - [X] __19.2__: _Creating & Manipulating Images in Docker_

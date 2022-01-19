@@ -6,16 +6,8 @@ Follow the installation process in the official Docker Website: [https://www.doc
 
 ---
 
-[About Containers](/containers)
+[About Containers](/03-back_end_development/block19-docker/containers)
 
-[About Images](/images)
+[About Images](/03-back_end_development/block19-docker/images)
 
-[About Dockerfile](/dockerfile))
-
-## Run Apache Server Example
-
-```bash
-docker run -d -p [acessPort]:[apachePort (80)] --name apache-server httpd:2.4
-# -d = Run in background
-# -p = Define ports to acess the apache server
-```
+[About Dockerfile](/03-back_end_development/block19-docker/dockerfile)

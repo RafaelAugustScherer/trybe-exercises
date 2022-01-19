@@ -6,11 +6,11 @@ Follow the installation process in the official Docker Website: [https://www.doc
 
 ---
 
-[About Containers](/containers)
+[About Containers](/main/03-back_end_development/block19-docker/containers)
 
 [About Images](/images)
 
-[About Dockerfile](/dockerfile))
+[About Dockerfile](dockerfile))
 
 ## Run Apache Server Example
 

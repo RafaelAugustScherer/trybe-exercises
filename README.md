@@ -4,7 +4,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 ## Web Development Fundamentals ✔️
 
-### [Block 01: Unix & Bash ✔️](https://github.com/RafaelAugustScherer/trybe-exercises/tree/main/01-web_development_fundamentals/block01-unix_%26_bash)
+### [Block 01: Unix & Bash ✔️](/01-web_development_fundamentals/block01-unix_%26_bash)
 
 - [X] __1.3__: _Web Development Fundamentals_
 - [X] __1.3__: _Introduction - Unix & Shell_

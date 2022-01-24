@@ -152,8 +152,8 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __19.1__: _Introduction to Back-end_
 - [X] __19.2__: _Creating & Manipulating Images in Docker_
-- [ ] __19.3__: _Orchestrate Containers w/ Docker Compose_
-- [ ] __19.4__: _Project: Docker Todo-List_
+- [X] __19.3__: _Orchestrate Containers w/ Docker Compose_
+- [X] __19.4__: _Project: Docker Todo-List_
 
 ### Block 20: Introduction to SQL
 

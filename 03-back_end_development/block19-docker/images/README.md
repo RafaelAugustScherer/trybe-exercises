@@ -1,6 +1,6 @@
 # About Images
 
-Images are one or more **layers of files and dependencies** that act as a **script** to create the whole filesystem of the Container. These layers contain **unique hashes** that can be **reused** between images.
+Images act as a **set of volumes** that will compose the main part of a container. Each of these volumes are identified by an unique hash that can be reused by different images.
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/64c4c9fe-f1b2-444f-8e76-10eb731712e0/Untitled.png)
 

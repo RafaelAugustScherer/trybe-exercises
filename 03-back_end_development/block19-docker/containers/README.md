@@ -1,5 +1,7 @@
 # About Containers
 
+Containers are packages that are within a set of rules. They are composed mainly by a slim OS that is made to execute what the user asked.
+
 # Basic Commands
 
 ```bash
@@ -44,12 +46,50 @@ docker container prune # Remove all unused containers
 # Run Terminal Inside Container
 
 ```bash
+# On Create
 docker container run -ti ubuntu
+
+#Later
+docker exec -it [imgName] bash
 ```
 
 The command above has the `-t` for terminal and `-i` indicating that we want physical communication with the image. In this case, the keyboard will do.
 
 To exit the terminal simply type: `exit`.
+
+> There should be a **CLI** button in **Docker Desktop Interface** as well for easy connection to the Terminal.
+> 
+
+# Network
+
+`docker network ls`:
+
+These are the three network types available to use in Docker **by default**.
+
+- Bridge: Network goes through the host and is able to communicate with the entire internet;
+- Host: Communication only with the host;
+- None: Nothing!
+
+## Creating a new Network
+
+```bash
+# Creating it based on bridge driver
+docker network create -d bridge tst-network
+
+# Connecting a container to it
+docker network [connect | disconnect] tst-network my-container
+```
+
+# Volume Mapping
+
+**Mirror a directory or file** in the Host’s machine into the Container file system. Example:
+
+`docker run -d --name tst-website -p 4401:80 -v "/home/user/website/:/usr/local/apache2/htdocs" httpd:2.4`
+
+The command above will create an Apache based container that will keep a copy of our local directory running at localhost:4401
+
+> [See Dockerfile implementation here.](https://www.notion.so/About-Dockerfile-f8c808b96072445bbf78aaf613195eb1)
+> 
 
 # Misc
 

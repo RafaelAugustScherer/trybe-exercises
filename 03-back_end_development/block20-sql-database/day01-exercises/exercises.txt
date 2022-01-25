@@ -1,0 +1,22 @@
+1. Navigator > Schemas > sakila (db) > actor (table) > right button > Select rows (limit 1000);
+
+2. Sakila (db) > Tables > right button > Create table...
+
+3.
+CREATE TABLE `sakila`.`filme` (
+  `FilmeId` INT NOT NULL AUTO_INCREMENT,
+  `Descricao` VARCHAR(100) NOT NULL,
+  `AnoLancamento` INT NOT NULL,
+  `Nota` INT NULL,
+  PRIMARY KEY (`FilmeId`));
+
+
+4 e 5. 1:1
+
+6. 1:1
+
+7.
+  a. film-text : film
+  b. city: country
+  c. address: city
+  

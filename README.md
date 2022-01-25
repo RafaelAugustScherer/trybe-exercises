@@ -155,9 +155,9 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __19.3__: _Orchestrate Containers w/ Docker Compose_
 - [X] __19.4__: _Project: Docker Todo-List_
 
-### Block 20: Introduction to SQL
+### [Block 20: Introduction to SQL](/03-back_end_development/block20-sql-database)
 
-- [ ] __20.1__: _Introduction - Relational Database_
+- [X] __20.1__: _Introduction - Relational Database_
 - [ ] __20.2__: _Finding Data in a Database_
 - [ ] __20.3__: _Filtering Data_
 - [ ] __20.4__: _Manipulating Tables_

@@ -158,7 +158,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 20: Introduction to SQL](/03-back_end_development/block20-sql-database)
 
 - [X] __20.1__: _Introduction - Relational Database_
-- [ ] __20.2__: _Finding Data in a Database_
+- [X] __20.2__: _Finding Data in a Database_
 - [ ] __20.3__: _Filtering Data_
 - [ ] __20.4__: _Manipulating Tables_
 - [ ] __20.5__: _Project: All For One_

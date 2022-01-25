@@ -63,10 +63,67 @@ One line in Table_A is referenced to another line in Table_B. Table_B can contai
 | Age     >         > Age     |
 ```
 
-# Basic Commands
+# Queries (Database Commands)
 
-- CREATE DATABASE `db_name` - Create a new database;
-- USE `database_name` - Define in which database to execute next commands;
-- SHOW TABLES - Show every table in current database;
-- SELECT * FROM `table_name` - Show all data stored in a table;
-- DESCRIBE `table_name` - Visualize table schema and its constraints;
+- **DDL - Data Definition Language**
+    - `CREATE`: Create databases or tables (objects);
+    - `ALTER`: To change a schema structure;
+    - `DROP`: Delete objects;
+    - `TRUNCATE`: Empty data in a table.
+- **DML: Data Manipulation Language**
+    - `SELECT`: List data in one or more tables;
+    - `INSERT`: Insert data in a table;
+    - `UPDATE`: Change data in a table;
+    - `DELETE`: Delete table from a table.
+    
+    ## SELECT
+    
+    ```sql
+    USE sakila;
+    -- BASE --
+    SELECT first_name FROM actor;
+    | first_name |
+    | PENELOPE   |
+    
+    -- CONCAT --
+    SELECT CONCAT(first_name, ' ', last_name) FROM actor;
+    | CONCAT(first_na... |
+    | PENELOPE GUINESS   |
+    
+    -- AS --
+    SELECT first_name AS 'First Name' FROM actor;
+    | First Name |
+    | PENELOPE   |
+    
+    -- DISTINCT --
+    SELECT DISTINCT first_name FROM actor;
+    # Return data that is not repeated
+    
+    -- COUNT --
+    SELECT COUNT(DISTINCT first_name) FROM actor;
+    # Return the COUNT(number) of DISTINCT first_name fields in actor
+    
+    -- LIMIT --
+    SELECT first_name FROM actor LIMIT 10;
+    # Limit to only 10 results
+    
+    -- OFFSET --
+    SELECT first_name FROM actor OFFSET 10;
+    # Jump the first 10 results
+    
+    -- ORDER BY --
+    SELECT first_name, last_name FROM actor ORDER BY first_name [DESC]
+    # Order alphabetically by first_name. Use DESC for reverse order
+    
+    SELECT first_name FROM actor ORDER BY first_name, last_name
+    # ORDER BY can take more than one parameter as a secondary ordering factor
+    ```
+    
+- **DCL: Data Control Language**
+    - `GRANT`: Grant access to a user;
+    - `REVOKE`: Remove access to a user.
+- **TCL: Transactional Control Language**
+    - `COMMIT`: Apply stashed changes to database;
+    - `ROLLBACK`: Undo latest command;
+    - `SAVEPOINT`: Create a ‘backup’ from the currrent database state;
+    - `TRANSACTION`:

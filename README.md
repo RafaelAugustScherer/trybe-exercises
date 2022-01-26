@@ -159,6 +159,6 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __20.1__: _Introduction - Relational Database_
 - [X] __20.2__: _Finding Data in a Database_
-- [ ] __20.3__: _Filtering Data_
+- [X] __20.3__: _Filtering Data_
 - [ ] __20.4__: _Manipulating Tables_
 - [ ] __20.5__: _Project: All For One_

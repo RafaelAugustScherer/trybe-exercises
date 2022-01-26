@@ -127,3 +127,75 @@ One line in Table_A is referenced to another line in Table_B. Table_B can contai
     - `ROLLBACK`: Undo latest command;
     - `SAVEPOINT`: Create a ‘backup’ from the currrent database state;
     - `TRANSACTION`:
+
+# Filters
+
+## WHERE
+
+`SELECT * FROM actor WHERE first_name = 'NICK';` - Select everything from actor table, then filter for `first_name` equals to `‘NICK’`;
+
+### Operators
+
+- =  - Equals
+- > | < - Greater than | Smaller than
+- ≥ | ≤ - Greater than or equal | Smaller than or equal
+- <> - Different
+- AND - `first_name = ‘NICK’ AND last_name = ‘STALLONE’`;
+- OR - `first_name = ‘NICK’ OR first_name = ‘JOE’`;
+- NOT - `first_name NOT ‘NICK’` | `postal_code IS NOT FALSE`;
+- IS - FALSE = ‘’ | TRUE = any | NULL = `null` - `postal_code IS FALSE`;
+
+### LIKE
+
+```sql
+first_name LIKE ‘AN%’; # Any string that starts with 'AN'
+
+# % = Wildcard for anything
+# _ = Wildcard for a single char
+
+first_name LIKE '_S%' # Any string where the second letter is 'S'
+```
+
+### IN
+
+```sql
+WHERE first_name = 'PENELOPE'
+OR first_name = 'NICK'
+OR first_name = 'ED'
+OR first_name = 'JENNIFER';
+
+# same result as:
+WHERE first_name IN ('PENELOPE','NICK','ED','JENNIFER');
+```
+
+### BETWEEN
+
+```sql
+# same result as:
+WHERE length BETWEEN 50 AND 120;
+
+# Strings:
+WHERE name BETWEEN 'Italian' AND 'Mandarin' # Only Italian and Mandarin names
+
+# Dates:
+WHERE rental_date BETWEEN CAST('2005-05-27') AND CAST('2005-07-17');
+```
+
+## DATE
+
+### Formats
+
+`DATE` - YYYY-MM-DD
+
+`DATETIME` - YYYY-MM-DD HH:MM:SS
+
+`CAST(’2005-05-27’)` - Convert String to DATE/DATETIME for comparsion
+
+`DATE(date_field)` - Convert DATETIME to DATE
+
+### Querying
+
+```sql
+WHERE date_field = '2005-05-27';
+WHERE YEAR(), MONTH(), DAY(), HOUR(), MINUTE(), SECOND();
+```

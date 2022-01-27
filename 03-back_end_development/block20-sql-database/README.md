@@ -168,6 +168,17 @@ OR first_name = 'JENNIFER';
 WHERE first_name IN ('PENELOPE','NICK','ED','JENNIFER');
 ```
 
+### ANY
+
+```sql
+DELETE FROM BoxOffice WHERE movie_id = 8;
+DELETE FROM BoxOffice WHERE movie_id = 6;
+
+# same result as:
+DELETE FROM BoxOffice
+WHERE movie_id = ANY(SELECT id FROM Movies WHERE director = 'Andrew Staton');
+```
+
 ### BETWEEN
 
 ```sql
@@ -198,4 +209,142 @@ WHERE rental_date BETWEEN CAST('2005-05-27') AND CAST('2005-07-17');
 ```sql
 WHERE date_field = '2005-05-27';
 WHERE YEAR(), MONTH(), DAY(), HOUR(), MINUTE(), SECOND();
+```
+
+---
+
+# Table Manipulation
+
+## Syntax
+
+``table one`` - Backticks are **only** used around **table** or **column** names that contain spaces (not recommended) or **reserved** SQL words. 
+
+`‘column value’` - Quotes are **only** used around **String** types.
+
+## Options
+
+```sql
+SET sql_safe_updates=0 # Allow for some update forms that are considered insecure by MySQL
+SET sql_select_limit=1000 # Max. number of rows for SELECT
+```
+
+## CREATE
+
+Create data structures, such as databases or tables.
+
+```sql
+CREATE DATABASE [IF NOT EXISTS] test_db; # Create a new DB
+USE test_db; # Set DB as "active"
+CREATE TABLE [IF NOT EXISTS] test_table (
+	field varchar(255), # String, up to 255 chars
+	field2 varchar(40)
+);
+
+); # Create a new table in test_db
+```
+
+## INSERT
+
+Insert data in the previously created structures.
+
+```sql
+INSERT INTO test_table (field, field2) VALUES
+('value','value_2'),
+('value_3','value_4');
+# This way you can insert as many values as you want in a table
+
+INSERT IGNORE INTO other_table (unique_field, string_field) VALUES
+(1, 'John'),
+(1, 'Doe'); # This line will be ignored, since it will create an error for unique_field
+```
+
+<aside>
+💡 `AUTO INCREMENT` fields do not need to be specified in `INSERT`. The field can be ignored
+
+</aside>
+
+### INSERT SELECT
+
+We can insert data from another table as well, to create temporary test tables for example. **Pay attention to data types in both tables, they need to match!**
+
+```sql
+INSERT INTO sakila.actor (first_name, last_name)
+    SELECT first_name, last_name FROM sakila.staff;
+```
+
+## UPDATE
+
+Update already inserted data.
+
+```sql
+# SET SQL_SAFE_UPDATES = 0
+# This allows data to be updated without referencing the id in the condition
+
+UPDATE sakila.staff
+SET first_name = 'Rannveig', last_name = 'Jordan'
+WHERE first_name = 'Ravein';
+
+# Mass update
+UPDATE sakila.customer
+SET active = (
+CASE address_id 
+	WHEN 5 THEN 0
+  WHEN 6 THEN 0 
+  WHEN 68 THEN 1
+  ELSE active
+END
+);
+
+```
+
+## DELETE | TRUNCATE
+
+Delete data from the structures.
+
+```sql
+DELETE FROM sakila.film_text
+WHERE title = 'ACADEMY DINOSAUR';
+
+DELETE * FROM table_name;
+# Same as:
+TRUNCATE table_name;
+```
+
+### Foreign Keys, ON DELETE
+
+```sql
+ON DELETE NO ACTION; # Ignore, just do not delete
+ON DELETE RESTRICT; # Generate error, block
+ON DELETE SET NULL; # Set null whenever there is a dependency (FK)
+ON DELETE CASCADE; # Delete FKs wherever it is used
+
+CREATE TABLE table1 (
+	...
+	FOREIGN KEY (actor_id)
+		REFERENCES Actor(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
+```
+
+<aside>
+👉 Whenever you need to delete a Foreign Key ON DELETE RESTRICT, you will need to manually DELETE it where it is being referenced.
+
+</aside>
+
+## ALTER
+
+```sql
+ALTER TABLE film_actor
+DROP COLUMN actor_id
+ADD film_name varchar(255);
+```
+
+## DROP
+
+Delete data strcutures.
+
+```sql
+DROP TABLE table_name;
+DROP DATABASE db_name;
 ```

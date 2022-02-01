@@ -1,5 +1,8 @@
 # Block 21 - SQL Functions, JOINs and Normalization
 
+<details>
+<summary>Part 1 - Functions & Variables</summary>
+
 # Variables
 
 Set a variable for current session.
@@ -153,3 +156,49 @@ GROUP BY first_name
 HAVING actor_names > 2;
 # Only names that appear more than 2 times in the table will be shown
 ```
+
+---
+</details>
+
+<details>
+<summary>Part 2 - JOINs</summary>
+
+# INNER JOIN (JOIN)
+
+```sql
+USE sakila;
+SELECT city, country_id, country.country FROM city
+INNER JOIN sakila.country AS country
+ON city.country_id = country.country_id;
+# Return the city information with its country based on the country_id that
+# receive similar value on both tables.
+```
+
+# LEFT JOIN | RIGHT JOIN
+
+```sql
+SELECT c.customer_id, a.actor_id, c.first_name, a.last_name
+FROM customer AS c
+LEFT JOIN actor as a
+ON c.first_name = a.first_name;
+# Return the intersection between the first and second table, from the first
+# where first_name is equal on both
+# LEFT JOIN = Table on the left (first) is the reference, the other is secondary
+# RIGHT JOIN = Table on the right (second) is the reference, the other is secondary
+```
+
+# SELF JOIN (INNER JOIN)
+
+```sql
+USE hr ('https://s3.us-east-2.amazonaws.com/assets.app.betrybe.com/back-end/sql/hr-cebf8bc2a5bb252bc470ae28943604c6.sql');
+SELECT
+    CONCAT(Employee.FIRST_NAME, " ", Employee.LAST_NAME) AS "Employee Name",
+    CONCAT(Manager.FIRST_NAME, " ", Manager.LAST_NAME) AS "Manager Name"
+FROM
+    employees AS Employee
+INNER JOIN
+    employees AS Manager ON Employee.MANAGER_ID = Manager.EMPLOYEE_ID;
+# Return the Employee name and its respective manager
+# Only return the lines where Employee has a MANAGER_ID
+```
+</details>

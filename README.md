@@ -166,6 +166,6 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 21: SQL Functions, JOINs and Normalization](/03-back_end_development/block21-sql-database-advanced)
 
 - [X] __21.1__: _Most used functions in SQL_
-- [ ] __21.2__: _Simplifying JOINs_
+- [X] __21.2__: _Simplifying JOINs_
 - [ ] __21.3__: _Transforming ideas into a database model_
 - [ ] __21.4__: _Live Class + Project - One For All_

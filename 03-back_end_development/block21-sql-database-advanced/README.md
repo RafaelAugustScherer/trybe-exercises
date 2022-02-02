@@ -202,3 +202,127 @@ INNER JOIN
 # Only return the lines where Employee has a MANAGER_ID
 ```
 </details>
+
+<details>
+<summary>Part 3 - Database Design</summary>
+
+# Summary
+
+Database Design is the process of **modeling** a database based in a demand or an issue.
+
+If you are a Web Developer these will be made in the start of a new project or ocasionally to remodelate the tables to adapt something.
+
+If you are a Database Administrator (DBA) these can be constantly made for maintence or performance issues to re-structure a database. You’re going to need to know how this process works in every kind of database, such as SQL Server, PostgreSQL, MySQL, SQLite, etc.
+
+If you are a Data Scientist, you are rarely going to use these to create new structures, but to structure queries for multi-purpose researches.
+
+# Steps
+
+- [ ]  Identify **entities**, **attributes** and **relationships** in the demand’s description
+- [ ]  Build an **entity-relationship diagram** to represent the identified entities
+- [ ]  Create a database to contain the tables
+- [ ]  Create and modelate the tables based on the model created in Step 2
+
+## Example
+
+We need to store music albums information in a catalog. The information that we need to store for each album are: **Title, Price, Musical Style, Tracks.**
+
+We should also store in the same database informations realted to **artists**. Each artist can have more than one album related.
+
+### Entities & Attributes
+
+- **Album:** album_id, title, price, style_id, artist_id;
+- **Artist:** artist_id, name;
+- **Musical Style:** style_id, name;
+- **Track:** track_id, name, album_id.
+
+### Relationships
+
+- 1 Artist to N Albums (1..N);
+- 1 Musical Style to N Albums (1..N);
+- 1 Album to N Tracks (1..N);
+- [x]  Identify **entities**, **attributes** and **relationships** in the demand’s description
+
+---
+
+### Entity-relationship Diagram
+
+I made the diagram below using [draw.io](http://draw.io). You can also find it [here](https://drive.google.com/file/d/1H7vAE_adqDFGZ8xbi58W21pCpPe6VNrn/view?usp=sharing) (probably). You can also build your own diagram through MySQL Workbench, in the **Models** session.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f4bc9880-c981-44f6-a6f3-4b5cf0942127/Untitled.png)
+
+- [x]  Build an **entity-relationship diagram** to represent the identified entities
+
+---
+
+### Creating the database
+
+```sql
+CREATE DATABASE IF NOT EXISTS albums;
+USE albums;
+```
+
+- [x]  Create a database to contain the tables
+
+---
+
+### Normalization
+
+To normalize a database is to remove redundancy and repeated data from the tables.
+
+Instead of saving multiple times the Artist name as VARCHAR in the Album table, we can create a new table **Artist** that contains the name and other artist information.
+
+<aside>
+❌ Table: Album
+| album_id | name | artist | born_date |
+
+</aside>
+
+<aside>
+✅ Table: Album
+| album_id | name | artist_id |
+
+Table: Artist
+| artist_id | name | born_date |
+
+</aside>
+
+### Creating the tables
+
+```sql
+CREATE TABLE musical_style IF NOT EXISTS (
+	style_id: INTEGER NOT NULL AUTO_INCREMENT,
+	name: VARCHAR(50) NOT NULL,
+	CONSTRAINT PRIMARY KEY(style_id)
+);
+
+CREATE TABLE artist IF NOT EXISTS (
+	artist_id: INTEGER NOT NULL AUTO_INCREMENT,
+	name: VARCHAR(70) NOT NULL,
+	CONSTRAINT PRIMARY KEY(artist_id)
+);
+
+CREATE TABLE album IF NOT EXISTS (
+	album_id: INTEGER NOT NULL AUTO_INCREMENT,
+	title: VARCHAR(70) NOT NULL,
+	price: DOUBLE,
+	style_id: INTEGER,
+	artist_id: INTEGER,
+	CONSTRAINT PRIMARY KEY(album_id),
+	FOREIGN KEY (style_id) REFERENCES musical_style (style_id),
+	FOREIGN KEY (artist_id) REFERENCES artist (artist_id)
+);
+
+CREATE TABLE track IF NOT EXISTS (
+	track_id: INTEGER NOT NULL AUTO_INCREMENT,
+	name: VARCHAR(70) NOT NULL,
+	album_id: INTEGER,
+	CONSTRAINT PRIMARY KEY(track_id),
+	FOREIGN KEY (album_id) REFERENCES album (album_id)
+);
+```
+
+- [x]  Create and modelate the tables based on the model created in Step 2
+
+---
+</details>

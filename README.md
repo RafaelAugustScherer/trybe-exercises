@@ -168,4 +168,13 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __21.1__: _Most used functions in SQL_
 - [X] __21.2__: _Simplifying JOINs_
 - [X] __21.3__: _Transforming ideas into a database model_
-- [ ] __21.4__: _Live Class + Project - One For All_
+- [X] __21.4__: _Live Class + Project - One For All_
+
+### [Block 22: Introduction to Web Development With Node.js](/03-back_end_development/block22-intro-nodejs)
+
+- [X] __22.1__: _Node.js - A JavaScript Engine_
+- [ ] __22.2__: _Nodej.js - Asynchronous Flux_
+- [ ] __22.3__: _Mocha, Chai & Sinon - Back-end Tests With Node.js_
+- [ ] __22.4__: _Express - HTTP with Node.js_
+- [ ] __22.5__: _Express - Middlewares_
+- [ ] __22.6__: _Project - Talker Manager_

@@ -169,3 +169,152 @@ Promise.all([
 	.catch(err => console.error(`Error while reading files: ${err.message}`));
 ```
 </details>
+
+<details>
+<summary>Part 3 - Tests with Mocha & Chai</summary>
+
+```bash
+npm install -D mocha chai
+```
+
+# Test Types
+
+## Unitary Tests
+
+Test a limited scope, a little fragment of the project with minimal interaction with external resources. Example of function to test:
+
+```jsx
+const sum = (a, b) => a + b;
+module.exports = sum;
+```
+
+## Integration Tests
+
+Unite multiple fragments and test the interactions between them.
+
+```jsx
+const sum = require('/sum');
+const subtract = require('/subtract');
+
+// test sum & subtract
+```
+
+## Peer To Peer Tests
+
+Test an API request and the expected result for example.
+
+```jsx
+axios.get('localhost:5000/user');
+```
+
+# TDD - Test Driven Development
+
+This development model proposes that tests should be done before the development of the project itself. This way we avoid the necessity of redoing a piece of code in a case of failure in the tests.
+
+So we should do in order:
+
+1. Interpretate the requirements thinking about the behaviours. Inputs, outputs, etc;
+2. Create the **describe(), it()** structure;
+3. Call the assertions for validation (yes, all the tests will fail for now);
+4. Write the code implementation to pass all the tests.
+
+# Structuring Tests
+
+## Setup
+
+```json
+npm init
+npm install -d mocha chai
+```
+
+```json
+// package.json
+{
+	...
+	"scripts": {
+		"test": "mocha tests"
+	}
+}
+```
+
+## Creating a Test
+
+```jsx
+// tests/operations.js
+**const { expect } = require('chai');**
+const { sum, subtract } = require('../operations');
+
+// divide the tests into 'sections' with **describe()**
+describe('Testing the behaviour of operations.js', () => {
+	// use **it()** to detail the current test
+	it('Expect sum(5, 5) to return 10', () => {
+		const answer = sum(5, 5);
+		**expect(answer).equals(10);**
+	});
+	it('Expect subtract(10, 5) to return 5', () => {
+		const answer = subtract(10, 5);
+		**expect(answer).equals(5);**
+	});
+})
+```
+
+## Creating the Test Resolution
+
+```json
+// operations.js
+const sum = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+
+module.exports = { sum, subtract };
+
+// bash: npm test
+```
+
+# Test Doubles
+
+In a more complex scenario where we need to test external factors, like reading a file content, we cannot rely on the file to be there. We need to create an isolated ambient, just to test the function / code behaviour.
+
+That’s why we have the Test Doubles!
+
+## Sinon
+
+```jsx
+// bash: npm install -D sinon
+
+const fs = require('fs');
+const { expect } = require('chai');
+const sinon = require('sinon');
+const readFileFunc = require('./readFile');
+
+const FILE_CONTENT = 'Example test';
+
+describe('Test readFile.js', () => {
+	describe('When file exists', () => {
+		before(() => {
+			// Whenever a call to fs.readFileSync is made, the return will be FILE_CONTENT
+			sinon.stub(fs, 'readFileSync').returns(FILE_CONTENT);
+		});
+
+		after(() => fs.readFileSync.restore());
+
+		it('Test if file content is expected', () => {
+			const result = readFileFunc('file.txt');
+			expect(result).to.be.equals('Example Test');
+		});
+	});
+
+	describe('When file does not', () => {
+		before(() => {
+			sinon.stub(fs, 'readFileSync').throws(new Error('File was not found!'));
+		});
+
+		after(() => fs.readFileSync.restore());
+
+		it('Test if file content is expected', () => {
+			const result = readFileFunc('otherFile.txt');
+			expect(result).to.be.equals(null);
+		});
+	});
+})
+```
+</details>

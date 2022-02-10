@@ -1,0 +1,21 @@
+{
+  "name": "exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ex1.js",
+  "scripts": {
+    "ex2": "node ex2.js",
+    "ex3": "node ex3.js",
+    "ex4": "node ex4.js",
+    "ex5": "node ex5.js",
+    "ex6": "node ex6.js",
+    "ex7": "node ex7.js",
+    "ex8": "node ex8.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

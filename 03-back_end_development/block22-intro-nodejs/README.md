@@ -8,6 +8,9 @@ Node.js was created by Ryan Dahl in 2009 as a JavaScript interpreter based on Go
 
 One of the major reasons that made Node.js so popular is the non-blocking operation, that doesn’t block any requests if one is already in process. Its resource allocation is very optimized and it will store every request in the memory and process them in all of the cores available. Works just as a queue model.
 
+<details>
+<summary>Part 1 - Starting Up and Node Modules</summary>
+
 # Modules
 
 Modules work as a **set of utilities** that help with the code development.
@@ -77,3 +80,92 @@ const age = readline.questionInt('What is your age? ');
 
 console.log(`Hello, ${name}! You are (already) ${age} years old!`);
 ```
+</details>
+
+<details>
+<summary>Part 2 - Async Operations</summary>
+
+# Callbacks VS Promises
+
+The major advantages of working with **Promises** instead of Callbacks is that we **avoid Callback Hells**, make the **code more readable** and we can **specify one error for every operation**.
+
+## Working With Callbacks
+
+```jsx
+const fs = require('fs');
+
+fs.readFile('file1.txt', (err, file1Content) => {
+  if (err) return console.log(`Error while reading file1.txt: ${err.message}`);
+  console.log(`file1.txt has ${file1Content.byteLength} bytes`);
+
+  fs.readFile('file2.txt', (err, file2Content) => {
+    if (err) return console.log(`Error while reading file2.txt: ${err.message}`);
+    console.log(`file2.txt has ${file2Content.byteLength} bytes`);
+
+    fs.readFile('file3.txt', (err, file3Content) => {
+      if (err) return console.log(`Error while reading file3.txt: ${err.message}`);
+      console.log(`file3.txt has ${file3Content.byteLength} bytes`);
+    });
+  });
+});
+```
+
+## Working With Promises
+
+```jsx
+const fs = require('fs');
+
+readFilePromise('file1.txt')
+  .then((content) => {
+    console.log(`file1.txt has${content.byteLength} bytes`);
+    return readFilePromise('file2.txt');
+	})
+  .then(content => {
+    console.log(`file2.txt has ${content.byteLength} bytes`);
+    return readFilePromise('file3.txt');
+  })
+  .then((content) => {
+    console.log(`file3.txt has ${content.byteLength} bytes`);
+  })
+  .catch((err) => {
+    console.error(`Error while reading files: ${err.message}`);
+  });
+```
+
+## Native Implementation - Sync
+
+```jsx
+try {
+  const fileOne = fs.readFileSync('file1.txt', 'utf8');
+  console.log(`file1.txt has ${fileOne.byteLength} bytes`);
+
+	const fileTwo = fs.readFileSync('file2.txt', 'utf8');
+  console.log(`file1.txt has ${fileTwo.byteLength} bytes`);
+
+	const fileThree = fs.readFileSync('file3.txt', 'utf8');
+  console.log(`file1.txt has ${fileThree.byteLength} bytes`);
+} catch (err) {
+  console.error(`Error while reading files: ${err.message}`);
+}
+```
+
+# Promise.all
+
+Run a sequence of Promises all at once and receive their respective results in an array. Yes, that’s right.
+
+```jsx
+const fs = require('fs').promises;
+
+Promise.all([
+	fs.readFile('file1.txt'),
+	fs.readFile('file2.txt'),
+	fs.readFile('file3.txt'),
+])
+	.then([fileOne, fileTwo, fileThree]) => {
+		console.log(`file1.txt has ${fileOne.byteLength} bytes`);
+		console.log(`file2.txt has ${fileTwo.byteLength} bytes`);
+		console.log(`file3.txt has ${fileThree.byteLength} bytes`);
+	})
+	.catch(err => console.error(`Error while reading files: ${err.message}`));
+```
+</details>

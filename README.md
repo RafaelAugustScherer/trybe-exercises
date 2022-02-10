@@ -173,7 +173,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 22: Introduction to Web Development With Node.js](/03-back_end_development/block22-intro-nodejs)
 
 - [X] __22.1__: _Node.js - A JavaScript Engine_
-- [ ] __22.2__: _Nodej.js - Asynchronous Flux_
+- [X] __22.2__: _Node.js - Asynchronous Flux_
 - [ ] __22.3__: _Mocha, Chai & Sinon - Back-end Tests With Node.js_
 - [ ] __22.4__: _Express - HTTP with Node.js_
 - [ ] __22.5__: _Express - Middlewares_

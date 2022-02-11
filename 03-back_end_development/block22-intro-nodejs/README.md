@@ -318,3 +318,144 @@ describe('Test readFile.js', () => {
 })
 ```
 </details>
+<details>
+<summary>Part 4 - Express - HTTP w/ Node.js</summary>
+
+# HTTP
+
+## Why?
+
+HTTP is the most used Web Protocol for data transfer. We will be using HTTP and its methods (GET, PUT, POST, DELETE, etc) to send data between our application and the API that we’ll be creating with Express. 
+
+## How?
+
+The data will be sent through Headers and Bodies of these HTTP requisitions. More information at [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+
+# Express
+
+Express is yet another NPM module to help the API to interact with the Application through HTTP.
+
+```bash
+npm install express
+```
+
+```jsx
+// index.js
+const express = require('express');
+
+const app = express(); // Start Express
+
+// Create a function to handle a request
+const handleHelloWorldRequest = (_req, res) => {
+  res.status(200).send('Hello World!');
+}
+
+app.get('/hello', handleHelloWorldRequest); // Associate a route to the function
+
+// Start listening to requests at 3001 port
+app.listen(3001, () => {
+  console.log('server is running!');
+});
+```
+
+> Whenever a GET request is made to `localhost:3001/hello`, the answer body is going to be ‘Hello World!’
+
+Try to access the link through your browser, and see what happens ;)
+> 
+
+## Nodemon
+
+This will work just like Live Server, but with Node.js. Whenever you change a file, reload the application.
+
+```bash
+npm i nodemon -D
+```
+
+```json
+// package.json
+"scripts": {
+	"server": "nodemon index.js"
+}
+
+// bash: npm run server
+```
+
+## Routing
+
+Routes are basically **paths** that the application will access to communicate with the Express API.
+
+Each path can have up to one of each method (GET, POST, etc)
+
+```jsx
+let currentUser = '';
+
+app
+	.route('/user')
+	.get((_req, res) => {
+		res.send({ name: 'John Doe', age: undefined });
+	})
+	.post(req, res) => {
+		currentUser = req.body.name;
+		res.status(200);
+	});
+```
+
+### Parameters
+
+Similar to React Router, we can get URL parameters as `req.params`
+
+```jsx
+app
+	.route('/user/:id')
+	.get((req, res) => {
+		const { id } = req.params;
+		const user = await findUserById(id);
+		res.send({ ...user });
+	});
+```
+
+---
+
+Parameters can also be sent as **Query strings**. Example:
+
+```jsx
+// request: localhost:3001/user/id=123
+app
+	.route('/user')
+	.get((req, res) => {
+		const { id } = req.query;
+		...
+	});
+```
+
+## Body
+
+Another way to receive data is through `req.body`. For that we will need to use `body-parser`.
+
+```jsx
+npm install body-parser
+```
+
+```jsx
+// index.js
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+
+// routes/user.js
+app
+	.route('/user')
+	.post((req, res) => {
+		const user = req.body;
+		saveUserInDatabase(user)
+			.then(() => res.status(201).send('User created successfully')
+			.catch((err) => res.status(400).send(err));
+	});
+```
+
+## Params VS Body
+
+`req.param`: Used to send query data. The identifiers of request related data.
+
+`req.body`: Used to send “Raw” data. Everything that is stored or retrieved from the database.
+</details>

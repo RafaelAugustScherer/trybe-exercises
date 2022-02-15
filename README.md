@@ -176,5 +176,5 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __22.2__: _Node.js - Asynchronous Flux_
 - [X] __22.3__: _Mocha, Chai & Sinon - Back-end Tests With Node.js_
 - [X] __22.4__: _Express - HTTP with Node.js_
-- [ ] __22.5__: _Express - Middlewares_
+- [X] __22.5__: _Express - Middlewares_
 - [ ] __22.6__: _Project - Talker Manager_

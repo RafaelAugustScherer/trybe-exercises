@@ -430,17 +430,13 @@ app
 
 ## Body
 
-Another way to receive data is through `req.body`. For that we will need to use `body-parser`.
-
-```jsx
-npm install body-parser
-```
+Another way to receive data is through `req.body`. For that we will need to use `express.json()` to receive JSON data.
 
 ```jsx
 // index.js
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.json());
+const express = require('express');
+const app = express()
+app.use(express.json());
 
 // routes/user.js
 app
@@ -458,4 +454,153 @@ app
 `req.param`: Used to send query data. The identifiers of request related data.
 
 `req.body`: Used to send “Raw” data. Everything that is stored or retrieved from the database.
+</details>
+
+<details>
+<summary>Part 5 - Express - Middlewares</summary>
+
+# Middleware
+
+A middleware is essentialy any code block that work as an **intermediate** between an **application** and **one or more sets of data** **(database).**
+
+## Express Middlewares
+
+All of the functions that treat routes are considered middlewares. `.get(req, res, next)`, `.post(req, res, next)`, etc.
+
+## Next()
+
+Ever wondered what the `next` parameter is all about? You can chain middlewares!
+
+One practical example would be to **first** **authenticate** the user and **then treat the request**:
+
+```jsx
+router.get((req, res, next) => {
+	const { user, password } = req.headers;
+	// authenticate
+	next();
+},
+(req, res) => {
+	const { data } = req.body;
+	// treat request
+});
+
+/* Or simply save the function for more requests */
+
+const authenticate = (req, res, next) => {
+	// authenticate
+	next();
+}
+
+router.get(authenticate, (req, res) => {
+	const { data } = req.body;
+	// treat request
+});
+```
+
+# app.use() & app.all()
+
+```jsx
+const authenticate = (req, res, next) => {
+	// authenticate
+	next();
+}
+
+app.get( ... )
+
+app.use(authenticate);
+
+app.post( ... )
+```
+
+All of the routes that came **after** `app.use( )` will go through the `authenticate` middleware. In this case, `app.post( )`.
+
+---
+
+```jsx
+app.all('*', function (req, res) {
+	return res.status(404).json({ message: `${req.path} not found!`});
+});
+```
+
+This is generally placed at the **end** of the Express index.js file. If no path was found for the request, it will fall in this `404 - Not Found` error.
+
+## Extra `req` keys
+
+Suppose you want to get a user information, but you also have to go through the authentication process before.
+
+You would search for the user in both middlewares? Check this out:
+
+```jsx
+const authenticate = (req, res, next) => {
+	const { username, password } = req.headers;
+	const user = database.find((user) => user.username === username);
+	// authenticate
+	
+	req.user = user;
+	next();
+}
+
+app.get('/user/:id', authenticate, (req, res) => {
+	const user = req.user;
+	// ...
+})
+```
+
+# CORS
+
+Allow for communication between front-end applications and the Express backend.
+
+```jsx
+// index.js
+const Express = require('express');
+const cors = require('cors');
+
+const app = Express();
+app.use(cors());
+```
+
+# Error Middlewares
+
+## Sequence Call
+
+Function MUST receive 4 parameters to indicate Express that it is an Error Middleware.
+
+```jsx
+app.get( ... );
+
+app.use((err, _req, _res, _next) => {
+	console.error(err);
+});
+```
+
+## `Next(err)` Call
+
+Whenever there is an error inside your middleware, you should call an Error Middleware that is placed down the “Express road”.
+
+```jsx
+app.get('/', async (req, res, next) => {
+	try {
+		...
+	}
+	catch (err) {
+		if ([error]) next(err);
+	}
+})
+```
+
+## Auto Call with `express-rescue`
+
+What this package does in essence is **wrap** the middleware code in a `try... catch` block, and call **next(err)** whenever there is an error.
+
+```jsx
+const rescue = require('express-rescue');
+// ...
+app.get('/', rescue(async (req, res) => {
+	
+});
+
+app.use((err, _req, res, next) => {
+	res.status(500).json({ error: err.message });
+});
+```
 </details>

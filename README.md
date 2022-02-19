@@ -182,7 +182,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 23: Node.js: Service Layer & REST Architecture](/03-back_end_development/block23-msc-nodejs)
 
 - [X] __23.1__: _Software Architecture - Model Layer_
-- [ ] __23.2__: _Software Architecture - Controller & Service Layer_
+- [X] __23.2__: _Software Architecture - Controller & Service Layer_
 - [ ] __23.3__: _Web Architecture - Rest & Restful_
 - [ ] __23.4__: _Software Architecture - Testing Layers_
 - [ ] __23.5__: _Project - Store Manager_

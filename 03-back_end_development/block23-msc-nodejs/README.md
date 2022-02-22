@@ -435,3 +435,113 @@ const connection = mysql.createPool({
 // .gitignore
 .env
 ```
+
+# API Requests - fetch
+
+We can make requests to other APIs inside of our own API. It is just like a chain API system.
+
+Example of full `POST` Request:
+
+```jsx
+const fetch = require('node-fetch'); // npm i node-fetch@2
+
+const API_TOKEN = 'lkamda09sd2112';
+const headers = new fetch.Headers({
+	Authorization: API_TOKEN,
+	'Content-Type': 'application/json',
+});
+
+const body = JSON.stringify({
+	name: 'Johnny',
+	age: 18
+});
+
+const POSTMAN_API = 'https://postman-echo.com/post?param1=test';
+fetch(POSTMAN_API, {
+	headers,
+	method: 'POST',
+	body,
+}).then((response) => {
+	if (!response.ok) {
+		return Promise.reject(response)
+	}
+	return response.json();
+}).then((data) => {
+	console.log(data);
+}).catch((error) => {
+	if (error.status) { //Is an error response from the postman API
+		return console.error(`Request failed with status ${error.status}`);
+	}
+	// Is an internet or fetch error
+	console.error(error)
+});
+
+// Result:
+/*
+{
+  args: { param1: 'test' },
+  data: { name: 'Johnny', age: 18 },
+  files: {},
+  form: {},
+  headers: {
+    'x-forwarded-proto': 'https',
+    'x-forwarded-port': '443',
+    host: 'postman-echo.com',
+    'x-amzn-trace-id': 'Root=1-60481a4f-6fe65f3d723405ca6c6c7536',
+    'content-length': '66',
+    authorization: '2d635ea9b637ea0f27d58985cc161d64',
+    'content-type': 'application/json',
+    accept: '* / *',
+    'user-agent': 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)',
+    'accept-encoding': 'gzip,deflate'
+  },
+  json: { name: 'Johnny', age: 18 },
+  url: 'https://postman-echo.com/post?param1=test'
+}
+*/
+```
+<details>
+<summary>REST & RESTful</summary>
+
+# Definition
+
+REST - **Representational State Transfer** is a software architectural style that follows **W3C** restrictions and norms for API creation. It is essentially a set of good practice rules for API / web service creation.
+
+RESTful - API / Web service that is within the REST norms.
+
+# Constraints - Requirements
+
+## 1 - Uniform Interface
+
+Maintain a clear pattern across the application and follow some base rules like:
+
+---
+
+- Specify `Content-type: [JSON, XML, JavaScript]` in the response header;
+- For every resource, keep the resource name in its respective access route.
+- If a collection `GET /user` returns an array. For every other collection, also return an array at this route.;
+- Errors must use a common structure, like: `{ error: '', message: '' }`. The error codes should also represent the error according to the HTTP norm;
+- Always send a response back to the client. Do not keep a request open in the void.
+
+---
+
+## 2 - Client-server Architecture
+
+Exactly how Node.js APIs work. The client can be any device, if it can do an HTTP request to the server, the server should respond accordingly.
+
+## 3 - Stateless
+
+The internal API variables should not change between requests. The variables should keep a static value so that the API can handle multiple requests without breaking.
+
+## 4 - Cacheable
+
+API Responses can be stored in the client-side cache. We can specify it with the header `Cache-Control: max-age=120`. This allows for a lower request number and improves the performance of our API. **Use it wisely! Using too much cache can result in less data trustability.**
+
+## 5 - Layered System
+
+**Abstract** from the client **all the necessary steps to finish a request.** The client expects from the server just an answer, **any other requests to server B or file server C are useless to the client.**
+
+## 6 - Code on Demand (Optional)
+
+Our server might be capable of sending **JavaScript Code** to the client. A widget component for example.
+</details>

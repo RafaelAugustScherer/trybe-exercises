@@ -184,5 +184,13 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __23.1__: _Software Architecture - Model Layer_
 - [X] __23.2__: _Software Architecture - Controller & Service Layer_
 - [X] __23.3__: _Web Architecture - Rest & Restful_
-- [ ] __23.4__: _Software Architecture - Testing Layers_
-- [ ] __23.5__: _Project - Store Manager_
+- [X] __23.4__: _Software Architecture - Testing Layers_
+- [X] __23.5__: _Project - Store Manager_
+
+### [Block 24: ORM & Authentication](/03-back_end_development/block24-orm-jwt)
+
+- [X] __24.1__: _ORM - Application interface with database_
+- [ ] __24.2__: _ORM - Associations_
+- [ ] __24.3__: _JWT - JSON Web Token_
+- [ ] __24.4__: _Testing APIs w/ Integration Tests_
+- [ ] __24.5__: _Project - Blogs API_

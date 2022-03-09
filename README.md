@@ -190,7 +190,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 24: ORM & Authentication](/03-back_end_development/block24-orm-jwt)
 
 - [X] __24.1__: _ORM - Application interface with database_
-- [ ] __24.2__: _ORM - Associations_
+- [X] __24.2__: _ORM - Associations_
 - [ ] __24.3__: _JWT - JSON Web Token_
 - [ ] __24.4__: _Testing APIs w/ Integration Tests_
 - [ ] __24.5__: _Project - Blogs API_

@@ -254,3 +254,317 @@ if (!updateUser) {
 const deleteUser = await User.destroy({ where: { id } });
 ```
 </details>
+
+<details>
+<summary>ORM - Associations (JOIN)</summary>
+
+## Creating Relationships
+
+Taking as example: **Addresses Table** has a Foreign Key `employee_id` related to **Employees Table (1:1).**
+
+### Migration
+
+```jsx
+// migrations/XXXXX-create-addresses.js
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    return queryInterface.createTable('Addresses', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
+      [ ...otherFields ],
+      **employeeId: { // Foreign Key
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        onUpdate: 'CASCADE', // Obligatory
+        onDelete: 'CASCADE', // Obligatory
+        field: 'employee_id', // Actual name in table
+        references: {
+          model: 'Employees', // Where it comes from
+          key: 'id', // What field is referencing
+        },
+      },**
+    });
+  },
+
+  down: async (queryInterface, _Sequelize) => {
+    return queryInterface.dropTable('Addresses');
+  },
+};
+```
+
+### Model
+
+```jsx
+// models/Employee.js
+module.exports = (sequelize, DataTypes) => {
+  const Employee = sequelize.define('Employee', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    [ ...otherFields ]
+  },
+  {
+    timestamps: false, // No need to use createdAt or updatedAt
+    tableName: 'Employees',
+    underscored: true,
+  });
+
+	// Associate FK **employee_id** with Addresses table
+  Employee.associate = (models) => {
+    Employee.hasOne(models.Address,
+      { foreignKey: **'employee_id'**, as: **'addresses'** }); // addresses in lowercase
+  };
+
+  return Employee;
+};
+
+// models/Address.js
+module.exports = (sequelize, DataTypes) => {
+  const Address = sequelize.define('Address', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    [ ...otherFields ]
+    employeeId: { type: DataTypes.INTEGER, foreignKey: true }, // optional declaration
+  },
+  {
+    timestamps: false,
+    tableName: 'Addresses',
+    underscored: true,
+  });
+
+	// Associate employee_id from Employees with this table's primary key
+  Address.associate = (models) => {
+    Address.belongsTo(models.Employee,
+      { foreignKey: 'employee_id', as: 'employees' });
+  };
+
+  return Address;
+};
+```
+
+## 1:N Relationships
+
+In the case of **each employee having many addresses**, we can simply change in the Model:
+
+```jsx
+// models/Employee.js
+
+module.exports = (sequelize, DataTypes) => {
+	[...]
+
+  Employee.associate = (models) => {
+    Employee.hasMany(models.Address,
+      { foreignKey: 'employee_id', as: 'addresses' });
+  };
+}
+```
+
+## Filter Association Information
+
+You can use the Association to retrieve information from the related table. See some examples:
+
+### Eager Loading
+
+Uses one call to get all data needed
+
+```jsx
+const { Employee, Address } = require('../models');
+
+// Return every information in Address where employee_id = 1
+const employee = await Employee.findOne({
+	where: { id: 1 },
+	**include: [{ model: Address, as: 'addresses' }]**
+});
+// { id: 1, ...employeeFields, addresses: { ...addressFields } }
+
+// Filter data returned from the association table
+const employee = await Employee.findOne({
+	where: { id: 1 },
+	**include: [{ model: Address, as: 'addresses', attributes: { exclude: ['number'] } }]**
+});
+
+```
+
+### Lazy Loading
+
+Uses more than one call to get the data. Useful for **multi-purpose requests.**
+
+```jsx
+const { Employee, Address } = require('../models');
+
+const employee = await Employee.findOne({ where: { id: 1 } });
+// { id: 1, ...employeeFields }
+
+// Will provide related table data if requested
+if(req.query.includeAddresses) {
+	// const addresses = await employee.getAddresses();
+	const addresses = await Address.findAll({ where: { employeeId: id } });
+
+	// return res.status(200).json({ employee, addresses });
+}
+
+// return res.status(200).json({ employee });
+```
+
+## N:N Relationships
+
+In this case, we will be using an intermediate table, to make this association work. There is going to be:
+
+- User - `book_id` related to Book `id`
+- Book - `user_id` related to User `id`
+- UserBook - `user_id` related to User `id`, `book_id` related to Book `id`
+
+---
+
+No `Associations` are needed in models/Book.js or models/User.js. Everything is going to be done to `UserBook.js`:
+
+### N:N Relationship Code
+
+```jsx
+// models/UserBook.js
+module.exports = (sequelize, _DataTypes) => {
+  const UserBook = sequelize.define('UserBook',
+    {},
+    { timestamps: false },
+  );
+
+  UserBook.associate = (models) => {
+		// Define every user_id related to one book_id
+    models.Book.belongsToMany(models.User, {
+      as: 'users',
+      through: UserBook,
+      foreignKey: 'book_id',
+      otherKey: 'user_id',
+    });
+		// Define every book_id related to one user_id
+    models.User.belongsToMany(models.Book, {
+      as: 'books',
+      through: UserBook,
+      foreignKey: 'user_id',
+      otherKey: 'book_id',
+    });
+  };
+
+  return UserBook;
+};
+
+//migrations/XXXXX-create-user-books.js
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('UserBooks', {
+      userId: {
+        type: Sequelize.INTEGER,
+        field: 'user_id',
+        references: {
+          model: 'Users',
+          key: 'user_id', // PK needs to be instantiated as **userId in migrations/create-users**
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+        primaryKey: true,
+      },
+      bookId: {
+        type: Sequelize.INTEGER,
+        field: 'book_id',
+        references: {
+          model: 'Books',
+          key: 'book_id', // PK needs to be instantiated as **bookId in migrations/create-books**
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+        primaryKey: true,
+      },
+    });
+  },
+
+  down: async (queryInterface, _Sequelize) => {
+    await queryInterface.dropTable('UserBooks');
+  },
+};
+
+//seeders/XXXXX-user-books
+module.exports = {
+  up: async (queryInterface, _Sequelize) => {
+    return queryInterface.bulkInsert('UserBooks',
+      [
+        { user_id: 1, book_id: 1 },
+        { user_id: 1, book_id: 3 },
+        { user_id: 2, book_id: 1 },
+        { user_id: 2, book_id: 2 },
+        { user_id: 3, book_id: 1 },
+        { user_id: 3, book_id: 2 },
+        { user_id: 3, book_id: 3 },
+      ],
+      {},
+    );
+  },
+
+  down: async (queryInterface, _Sequelize) => {
+    await queryInterface.bulkDelete('UserBooks', null, {});
+  },
+};
+```
+
+**Now to find the User and its books, we can do:**
+
+```jsx
+const user = await User.findOne({
+	where: { userId: id },
+	include: [{ model: Book, as: 'books', /* through: { attributes: [] } */ }],
+});
+```
+</details>
+
+<details>
+<summary>ORM - Transactions</summary>
+
+## Summary
+
+Whenever we want to do more than one operation and rollback in case of failure in one of them, we are going to use Transactions! Example:
+
+Transfer money from User A to User B. Operations:
+
+- Remove Money from User A account;
+- Add Money to User B account;
+
+**If the first operation succeeds and the second fails, we will have removed money from User A and not added any money to User B. And that is not the expected behaviour!!!**
+
+## Using Transactions
+
+```jsx
+const Sequelize = require('sequelize');
+
+const config = require('./config/config'); // Need to be a .js file
+const sequelize = new Sequelize(config.development);
+
+app.put('/user/transaction', () => {
+  const { idRemove, idAdd, value } = req.body;
+  const userRemove = User.findOne({ where: { id: idRemove } });
+  const userAdd = User.findOne({ where: { id: idAdd } });
+
+	if (!userRemove || !userAdd) {
+		return res.status(400).json({ message: 'User with provided id not found' });
+	}
+
+  await sequelize.transaction(async (t) => {
+    try {
+      await User.update(
+				{ money: userRemove.money - value },
+				{ where: { id: idRemove } },
+				{ transaction: t }
+			);
+      await User.update(
+				{ money: userAdd.money + value },
+				{ where: { id: idRemove } },
+				{ transaction: t }
+			);
+
+      return res.status(200).end();
+    } catch (e) {
+      res.status(500).end();
+    }
+  });
+});
+```
+</details>

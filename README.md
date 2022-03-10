@@ -191,6 +191,6 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __24.1__: _ORM - Application interface with database_
 - [X] __24.2__: _ORM - Associations_
-- [ ] __24.3__: _JWT - JSON Web Token_
+- [X] __24.3__: _JWT - JSON Web Token_
 - [ ] __24.4__: _Testing APIs w/ Integration Tests_
 - [ ] __24.5__: _Project - Blogs API_

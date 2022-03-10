@@ -568,3 +568,27 @@ app.put('/user/transaction', () => {
 });
 ```
 </details>
+
+# JWT - JSON Web Token
+
+JWT is a token generated with the **HMAC** algorithm by codifying some information.
+
+The token generation is based in **personal user information and a secret** known just by the server.
+
+## Into the code
+
+```jsx
+const jwt = require('jsonwebtoken'); // npm i jsonwebtoken
+
+const secret = 'MySuperExtremelyComplexSecret';
+
+const user = { username: 'John Doe', password: 'ጋዐዘክሃሃ ዕዐቿ' }
+
+const jwtConfig = {
+	expiresIn: '1d', // Limit token validation to 1 day
+	algorithm: 'HS256' // SHA-1, SHA-256, MD-5
+};
+
+const token = jwt.sign({ data: user }, secret, jwtConfig);
+// token: 
+```

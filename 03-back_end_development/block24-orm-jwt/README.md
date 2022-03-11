@@ -592,3 +592,178 @@ const jwtConfig = {
 const token = jwt.sign({ data: user }, secret, jwtConfig);
 // token: 
 ```
+
+# API Integration Tests
+
+Integration tests are made to test the behaviour of the API as a whole. Each route will be tested from peer-to-peer. In an integration test you will **not test the database or any running service**, just the API.
+
+## Contracts
+
+Contracts have simillar meaning to Promises. We have a **pre-defined request** and we expect a **pre-defined response**.
+
+Example:
+
+> **Request:** GET /users/:id
+**Response:** {
+    HTTP 200 - OK
+    Body: { id: ‘123’, name: ‘Test’, ‘email’: ‘test@email.com’ }
+}
+> 
+
+## Into the code
+
+### Dependencies
+
+We will need to install the following packages for the tests:
+
+```bash
+npm i -D **mocha chai sinon chai-http**
+```
+
+### Preparing the tests
+
+- **/api/app.js**
+    
+    Instead of creating the app at index.js, we are going to create a separate filefor it. This way we can use the app in the tests without directly running it
+    
+- **/tests/mock/models/Users.json**
+    
+    Create a set of data to serve as a database mock.
+    
+    ```jsx
+    [
+      {
+        "id": 1,
+        "username": "Saul Reixas",
+        "password": "SaaS"
+      },
+    ]
+    ```
+    
+- **/tests/mock/models/index.js**
+    
+    Create a fake model to mock functions such as `findAll`, `findOne`, `Create`, etc.
+    
+    ```jsx
+    const Users = require('./Users.json');
+    
+    const mockCreate = (Instance, data) => {
+      if(!data) return;
+    
+      const newData = { ...data };
+      if(!!Instance[0].id) {
+        newData.id = Date.now();
+      }
+      Instance.push(newData);
+      return newData;
+    };
+    
+    const User = {
+      create: async (data) => mockCreate(Users, data),
+      findAll: async () => Users,
+    };
+    
+    module.exports = { User };
+    ```
+    
+
+### Creating a User Creation Tests
+
+- **/tests/user/createUser.js**
+    
+    ```jsx
+    const chai = require('chai');
+    const sinon = require('sinon');
+    const chaiHttp = require('chai-http');
+    
+    const server = require('../api/app');
+    const { User } = require('../models'); // Actual application model to mock
+    const { User: userMock } = require('./mock/models'); // Fake model to get mocked functions
+    
+    chai.use(chaiHttp);
+    const { expect } = chai;
+    
+    describe('When creating a user through POST /user', () => {
+    	describe('When sending expected request body with username and password', () => {
+    		let response;
+    		let databaseAfterCreation;
+    		const newUser = {
+    			username: 'Johnny Doe',
+    			password: 'ጋዐዘክሃሃ ዕዐቿ',
+    		};
+    
+    		before(() => {
+    			response = await chai.request(server).post('/user').send(newUser);
+          databaseAfterCreation = await chai.request(server).get('/user').then(({ body }) => body);
+    		});
+    
+    		it('Expect response to have status 200 (OK)', () => {
+    			expect(response).to.have.status(200);
+    		});
+    
+    		it('Expect response to have message "User created successfully"', () => {
+    			expect(response.body).to.have.property('message');
+    			expect(response.body.message).to.be.equal('User created successfully');
+    		});
+    
+    		it('Expect user to have been created in database', () => {
+    			expect(databaseAfterCreation).to.have.length(2);
+    			expect(databaseAfterCreation[1]).to.contain(newUser);
+    		});
+    	});
+    
+    	describe('When sending unexpected request body without any data', () => {
+    		const newUser = {};
+    		
+    		before(() => {
+    			response = await chai.request(server).post('/user').send(newUser);
+          databaseAfterCreation = await chai.request(server).get('/user').then(({ body }) => body);
+    		});
+    
+    		it('Expect response to have status 400 (BAD REQUEST)', () => {
+    			expect(response).to.have.status(400);
+    		});
+    
+    		it('Expect response to have message "username is required"', () => {
+    			expect(response.body).to.have.property('message');
+    			expect(response.body.message).to.be.equal('username is required');
+    		});
+    
+    		it('Expect user not to have been created in database', () => {
+    			expect(databaseAfterCreation).to.have.length(1);
+    			expect(databaseAfterCreation[1]).not.to.contain(newUser);
+    		});
+    	});
+    });
+    ```
+    
+    ### Specifications
+    
+    To determine every test that should be done for a specific route, you should check every possible outcome of the API. **Make a contract** for each possible outcome, depending on the request and the current state of the database.
+    
+    > **Tip:** If you are not doing TDD, check **every return** and make sure that you have tests for each one of them.
+    > 
+    
+    ## Test Coverage
+    
+    To run a test coverage and see what is the percentage of coverage of your tests related to the total coverage, we need to install the [nyc](https://www.npmjs.com/package/nyc) package. For a simple coverage run, we just need to add the following to `/package.json`:
+    
+    ```json
+    {
+     ...
+     "scripts": {
+    	 ...
+       "test": "mocha ./tests/* --exit",
+       "test:coverage": "nyc npm test"
+     }
+    }
+    ```
+    
+    Running `npm run test:coverage` , a table with some information about the coverage is printed:
+    
+    - **File:** Application file name;
+    - **% Stmts:** Statements covered;
+    - **% Branch:** Branches (blocks) of code reached by tests;
+    - **% Funcs:** Functions executed in the tests;
+    - **% Lines:** Amount of lines tested;
+    - **Uncovered Line #s:** Lines that were not read in the tests.

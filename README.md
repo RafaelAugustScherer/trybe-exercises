@@ -193,4 +193,10 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __24.2__: _ORM - Associations_
 - [X] __24.3__: _JWT - JSON Web Token_
 - [X] __24.4__: _Testing APIs w/ Integration Tests_
-- [ ] __24.5__: _Project - Blogs API_
+- [X] __24.5__: _Project - Blogs API_
+
+### [Block 25: Deployment](/03-back_end_development/block25-deployment)
+
+- [X] __25.1__: _Infrastructure - Deploy w/ Heroku_
+- [X] __25.2__: _Deploy Docker & Heroku_
+- [X] __25.3__: _Project - Stranger Things_

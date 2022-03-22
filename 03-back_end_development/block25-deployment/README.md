@@ -252,3 +252,45 @@ git commit -m 'Deploy settings'
 git push heroku master # Will be deployed as a container
 
 ```
+
+# Automated React Deploy - Heroku
+
+```bash
+heroku create react-app --buildpack mars/create-react-app
+
+git add .
+git commit -m 'Deploy settings'
+git push heroku master # Will be deployed as a container
+```
+
+## As a Container - NGINX
+
+```bash
+**# Dockerfile**
+
+# Create Production build in node container
+FROM node:alpine AS build
+WORKDIR /app
+COPY . .
+ENV REACT_APP_SERVER=https://tryberank-api.herokuapp.com
+RUN ["npm", "i"]
+RUN ["npm", "run", "build"]
+
+# Copy build to nginx container & nginx configs
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+COPY ./deploy/default.conf.template /etc/nginx/conf.d/default.conf.template
+CMD /bin/sh -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+
+**# ./deploy/default.conf.template**
+server {
+    listen       $PORT;
+    listen  [::]:$PORT;
+    server_name  localhost;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+}
+```

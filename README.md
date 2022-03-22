@@ -200,3 +200,11 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __25.1__: _Infrastructure - Deploy w/ Heroku_
 - [X] __25.2__: _Deploy Docker & Heroku_
 - [X] __25.3__: _Project - Stranger Things_
+
+### [Block 26: TypeScript](/03-back_end_development/block26-typescript)
+
+- [X] __26.1__: _Introduction to TypeScript_
+- [ ] __26.2__: _Static Typing & Generics_
+- [ ] __26.3__: _TypeScript + Express_
+- [ ] __26.4__: _Project - Trybe Smith_
+

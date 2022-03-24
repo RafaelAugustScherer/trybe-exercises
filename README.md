@@ -204,7 +204,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 26: TypeScript](/03-back_end_development/block26-typescript)
 
 - [X] __26.1__: _Introduction to TypeScript_
-- [ ] __26.2__: _Static Typing & Generics_
+- [X] __26.2__: _Static Typing & Generics_
 - [ ] __26.3__: _TypeScript + Express_
 - [ ] __26.4__: _Project - Trybe Smith_
 

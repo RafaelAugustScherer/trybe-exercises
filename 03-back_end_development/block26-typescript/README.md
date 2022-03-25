@@ -300,7 +300,15 @@ processor.getIdentity();  // Logs: "Hello" & returns 100;
 </details>
 
 <details>
-<summary>MySQL Operations</summary>
+<summary>MySQL Operations + Express</summary>
+## Init
+
+```bash
+npm init -y
+npm install dotenv mysql2
+npm install -D typescript @types/node
+```
+
 ## connection.ts - Same as JS
 
 ```tsx
@@ -338,8 +346,6 @@ main();
 If we don’t use `<ResultSetHeader>`, TypeScript will not know that the property insertId exists in dataInserted, and therefore will throw an error.
 
 ```tsx
-// npm i readline-sync @types/readline-sync
-import readline from 'readline-sync';
 import { ResultSetHeader } from "mysql2";
 import connection from './models/connection';
 
@@ -368,51 +374,121 @@ export interface Book {
 }
 
 export default class BookModel {
-  private connection: Pool;
+  constructor(private connection: Pool) {}
 
-  constructor(connection: Pool) {
-    this.connection = connection;
-  }
-
-  public async getAll(): Promise<Book[]> {
-    const result = await this.connection.execute('SELECT * FROM books');
-    const [rows] = result;
+  public getAll = async () => : Promise<Book[]> {
+    const [rows] = await this.connection.execute('SELECT * FROM books');
     return rows as Book[];
   }
 
-	public async create(book: Book): Promise<Book> {
+	public create = async (book: Book) => : Promise<Book> {
     const { title, author } = book;
-    const result = await this.connection.execute<ResultSetHeader>(
+    const [{ insertId }] = await this.connection.execute<ResultSetHeader>(
       'INSERT INTO books (title, author) VALUES (?, ?)',
       [title, author]
     );
-    const [dataInserted] = result;
-    const { insertId } = dataInserted;
     return { id: insertId, ...book };
   }
 }
+```
 
-//controllers/Book.ts
-import BookModel from "./models/Book";
-import connection  from "./models/connection";
+# Express as OOP
 
-const getAll = async (req, res) => {
-  const bookModel = new BookModel(connection);
+## Extra Dependencies
 
-  const books = await bookModel.getAll();
-  return res.status(200).json(books);
+```bash
+npm install express
+npm install -D @types/express ts-node-dev
+```
+
+### Service
+
+```tsx
+// services/Book.ts
+import connection from '../models/connection';
+import BookModel, { Book } from '../models/Book';
+
+class BookService {
+	model: BookModel;
+
+  constructor() {
+		this.model = new BookModel(connecti);
+	}
+
+  public getAll = async () => : Promise<Book[]> {
+    const books = await this.model.getAll();
+    return books;
+  }
+
+	public create = async (data: Book) => : Promise<Book> {
+    const book = await this.model.create(data);
+    return books;
+  }
 }
 
-const create = async (req, res) => {
-	const newBook: Book = { ...req.book };
-	const createBook = await BookModel.create(newBook);
-	
-	return res.status(201).end();
+export default BookService;
+```
+
+### Controller
+
+```tsx
+// controllers/Book.ts
+import { RequestHandler } from 'express';
+import { Book } from '../models/Book';
+import BookService from "../services/Book";
+
+class BookControler {
+	service: BookService;
+
+	constructor() {
+		this.service = new BookService();
+	}
+
+	public getAll:RequestHandler = async (_req, res) => {
+    const books = await this.service.getAll();
+	  return res.status(200).json(books);
+  }
+
+	public create:RequestHandler = async (req, res) => {
+	  const { title, author } = req.body;
+		const created = await this.service.create({ title, author });
+	  return res.status(201).json(created);
+  }
 }
 
-export {
-	getAll,
-	create,
-}
+export default BookController;
+```
+
+### Route
+
+```tsx
+// routes/Book.ts
+import { Router } from "express";
+import BookController from '../controllers/Book.ts';
+
+const router = Router();
+
+const controller = new BookController();
+
+router
+	.route('/book')
+	.get(controller.getAll)
+	.post(controller.create);
+
+export default router;
+```
+
+### Index
+
+```tsx
+// index.ts
+import express from 'express';
+
+const app = express();
+import BookRoutes from './routes/Book.ts';
+
+app.use(BookRoutes);
+
+app.listen(3000, () => console.log('Running server at 3000'));
 ```
 </details>

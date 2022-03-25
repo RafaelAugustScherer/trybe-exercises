@@ -205,6 +205,6 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __26.1__: _Introduction to TypeScript_
 - [X] __26.2__: _Static Typing & Generics_
-- [ ] __26.3__: _TypeScript + Express_
+- [X] __26.3__: _TypeScript + Express_
 - [ ] __26.4__: _Project - Trybe Smith_
 

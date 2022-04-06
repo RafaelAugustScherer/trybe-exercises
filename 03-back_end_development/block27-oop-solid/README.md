@@ -1,5 +1,3 @@
-# Block 27 - OOP & SOLID
-
 # OOP - Class, Getters & Setters
 
 ## Concept
@@ -34,7 +32,8 @@ test.priVar // undefined
 test.priVar = 'tseT' // Error ts (2341)
 ```
 
-## Example of Email Class
+<details>
+<summary>Example of Email Class</summary>
 
 ```tsx
 class Email {
@@ -72,6 +71,9 @@ class Email {
   }
 }
 ```
+</details>
+
+---
 
 # Super and Subclasses
 
@@ -170,3 +172,66 @@ class Bird implements Animal {
   getBirthDate() { return this.birthDate; }
 }
 ```
+
+<details>
+<summary>Polimorphism</summary>
+Polimorphism is an OOP pillar. It assumes that classes can be interpreted and used in multiple ways. To better understand this concept, check out the content below.
+
+## Abstract Classes
+
+Abstract classes are made to be a model for what the subclasses should be:
+
+```tsx
+abstract class Animal {
+  constructor(public name: string) { }
+  abstract move(): void
+}
+
+class Bird extends Animal {
+  move() { console.log(`${this.name} is flying.`); }
+}
+
+class Mammal extends Animal {
+  move() { console.log(`${this.name} is walking.`); }
+}
+
+const b = new Bird('Woody Woodpecker');
+const m = new Mammal('Elephant');
+
+// Parameter can be any of type Animal, including its subclasses
+const myMove = (animal: Animal) => {
+	animal.move();
+}
+
+myMove(b); // Woody Woodpecker is flying
+myMove(m); // Elephant is walking
+```
+
+## Static
+
+Static methods and variables **do not have a direct relationship with the instance**. It is **related to the Class as whol**e and all of the instances.
+
+These are only accessible in the class (`Class.static`):
+
+```tsx
+class Employee {
+  private static employeeCount = 0
+
+  constructor(public name: string) {
+    Employee.addEmployee();
+  }
+
+  private static addEmployee() {
+    Employee.employeeCount += 1;
+  }
+
+  static get employees() {
+    return Employee.employeeCount;
+  }
+}
+
+console.log(Employee.employees); // 0
+const e1 = new Employee('Ronald');
+console.log(Employee.employees); // 1
+```
+</details>

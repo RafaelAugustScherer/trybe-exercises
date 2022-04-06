@@ -212,7 +212,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __27.1__: _Introduction to Object Orientation_
 - [X] __27.2__: _Heritage & Interfaces_
-- [ ] __27.3__: _Polimorphism_
+- [X] __27.3__: _Polimorphism_
 - [ ] __27.4__: _SOLID - Introduction & Principles S, O and D_
 - [ ] __27.5__: _SOLID - Principles L and I_
 - [ ] __27.6__: _Project - Trybers and Dragons_

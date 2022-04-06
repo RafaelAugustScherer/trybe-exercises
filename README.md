@@ -211,7 +211,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 27: Object-Oriented Programming (OOP) & SOLID](/03-back_end_development/block27-oop-solid)
 
 - [X] __27.1__: _Introduction to Object Orientation_
-- [ ] __27.2__: _Heritage & Interfaces_
+- [X] __27.2__: _Heritage & Interfaces_
 - [ ] __27.3__: _Polimorphism_
 - [ ] __27.4__: _SOLID - Introduction & Principles S, O and D_
 - [ ] __27.5__: _SOLID - Principles L and I_

@@ -72,3 +72,101 @@ class Email {
   }
 }
 ```
+
+# Super and Subclasses
+
+Subclasses are an **extension** of a Superclass.
+
+## Protected vs Private
+
+- `protected weight`: Access is allowed in a subclass;
+- `private weight`: Access is not allowed in a subclass.
+
+### Syntax
+
+```tsx
+class Animal {
+  constructor(public birthDate: Date) { }
+
+}
+
+class Bird extends Animal {
+  showBirthDate() {
+    console.log(this.birthDate);
+	}
+}
+```
+
+### Adding new Properties
+
+```tsx
+class Animal {
+  constructor(protected birthDate: Date) { }
+}
+
+class Bird extends Animal {
+  constructor(public name: string) {
+    super(new Date()); // super() is a reference to Animal()
+  }
+}
+```
+
+## Super
+
+`super()` is an instance of the Superclass inside a Subclass. You can use it to access methods inside the Superclass. It is especially useful when manipulating `private` variables.
+
+```tsx
+class Person {
+	constructor(public name: string, private items: string[]) {}
+
+	public addItem(item: string) {
+		items.push(item);
+	}
+}
+
+class Officer extends Person {
+	constructor(public name: string) {
+		**super(name);**
+		super.addItem('Donut');
+		super.addItem('Pistol');
+	}
+
+	public addItem(item:string) {
+		if (item === 'Donut') {
+			console.log('Only one donut allowed!');
+		}
+		else {
+			**super.addItem(item);**
+		}
+	}
+}
+
+const Joe = new Officer('Joe'); // Joe.items (unacessible) = ['Donut', 'Pistol']
+```
+
+## Interfaces & Classes
+
+An Interface can be **implemented** as a contract of what should be publically available in a Class.
+
+```tsx
+interface Animal {
+  name: string;
+  age: number;
+
+  getBirthDate(): Date;
+}
+
+// name, age and getBirthDage() should be available in a type Animal object
+class Bird implements Animal {
+  constructor(
+    public name: string,
+    private birthDate: Date) {}
+
+  get age() {
+    var timeDiff = Math.abs(Date.now() - new Date(this.birthDate).getTime());
+    return Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
+  }
+
+  getBirthDate() { return this.birthDate; }
+}
+```

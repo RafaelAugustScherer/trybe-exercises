@@ -235,3 +235,93 @@ const e1 = new Employee('Ronald');
 console.log(Employee.employees); // 1
 ```
 </details>
+
+<details>
+<summary>SOLID</summary>
+
+Good practices in software development!
+
+## S - Single Responsibility Principle
+
+Avoid doing many things in a single method or Class. This allows for reusability and easy understanding of what the code does afterwards.
+
+> Just because you *can* doesn’t mean you *should*.
+> 
+
+## O - Open/Closed Principle
+
+**Open to extensions, Closed to modifications**. The code should be SOLID and deliver exaclty what is expected. The methods and Classes should be universal and scalable. For that it is expected that there is no arbitrary variables.
+
+### **Ex:**
+
+We need to calculate how many students are approved in a school. Minimum approval grade in this school is 0.7 out of 1.0.
+
+After the implementation, another school decided to use the service, but the minimum approval for this school is 0.8 out of 1.0.
+
+### Wrong Way to do it
+
+```tsx
+if (school === ‘a’) {
+	approved = grade >= 0.7
+} else {
+	approved = grade >= 0.8
+}
+```
+
+### Right Way to do it
+
+```tsx
+approved = grade >= school.approvalGrade
+```
+
+## D - Dependency Inversion Principle
+
+> High level entities shouldn’t depend on low level entities. Both should depend on abstractions
+> 
+
+The sentece above is mostly used in OOP. You can combine the power of **Interfaces** and **Implementations** to achieve that!
+
+### Ex:
+
+We want to connect Musicians to instruments. Each musician can play up to multiple instruments.
+
+```tsx
+// Contract
+interface Instrument {
+	name: string,
+	play(): void
+}
+
+class Flute implements Instrument {
+  constructor(public name: string) { }
+
+  public play(): void {
+    console.log(`${this.name} is emitting melodies`);
+  }
+}
+
+class Guitar implements Instrument {
+  constructor(public name: string) { }
+
+  public play(): void {
+    console.log(`${this.name} is vibrating its cords`);
+  }
+}
+
+class Musician {
+  constructor(
+    public name: string,
+    public instrument: Instrument
+  ) { }
+
+  play() {
+    this.instrument.play();
+    console.log(
+      `"${this.name}" is playing the instrument`
+    );
+  }
+}
+```
+
+This way a Musician does not depend on any specific instrument, but in a ~~contract~~ abstraction that can be related to multiple instruments.
+</details>

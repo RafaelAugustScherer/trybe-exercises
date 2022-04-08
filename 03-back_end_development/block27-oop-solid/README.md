@@ -274,6 +274,34 @@ if (school === ‘a’) {
 approved = grade >= school.approvalGrade
 ```
 
+## L - Liskov Substituition Principle
+
+Submethods must keep the same signature as the Supermethod. Whenever a signature of a Class is required, all of the subclasses should be valid to occupy that position as well.
+
+```tsx
+class Person {
+	constructor(public name: string, public age: number) {}
+}
+
+class Employee extends Person {
+	constructor(name: string, age: number, public role: string) {
+		super(name, age);
+	}
+}
+
+// typeof Employee should always be accepeted in the function below
+function getPersonName(person: Person) {
+	return person.name;
+}
+```
+
+## I - Interface Segregation Principle
+
+Interfaces should not depend on unused methods. You can use this principle to separate things into more Classes or interfaces.
+
+You can create a ReadOnly Class that will not use Write methods, and then extend the ReadOnly Class to the Normal Class.
+This is especially useful when dealing with Database and Connection Classes.
+
 ## D - Dependency Inversion Principle
 
 > High level entities shouldn’t depend on low level entities. Both should depend on abstractions

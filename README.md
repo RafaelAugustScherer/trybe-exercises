@@ -215,5 +215,18 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __27.3__: _Polimorphism_
 - [X] __27.4__: _SOLID - Introduction & Principles S, O and D_
 - [X] __27.5__: _SOLID - Principles L and I_
-- [ ] __27.6__: _Project - Trybers and Dragons_
+- [X] __27.6__: _Project - Trybers and Dragons_
 
+### [Block 28: Project - TFC - Trybe Futebol Clube]
+
+- [X] __28.1__: _Project - TFC - Trybe Futebol Clube_
+
+### [Block 29: Introduction to MongoDB](/03-back_end_development/block29-mongodb)
+
+- [X] __29.1__: _NoSQL - Introduction_
+- [X] __29.1__: _MongoDB - Introduction_
+- [ ] __29.2__: _Filter Operators_
+- [ ] __29.3__: _Query Operators_
+- [ ] __29.4__: _Simple Updates_
+- [ ] __29.5__: _Complex Updates - Arrays_
+- [ ] __29.6__: _Project - Commerce_

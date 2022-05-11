@@ -226,7 +226,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __29.1__: _NoSQL - Introduction_
 - [X] __29.1__: _MongoDB - Introduction_
 - [X] __29.2__: _Filter Operators_
-- [ ] __29.3__: _Query Operators_
+- [X] __29.3__: _Query Operators_
 - [ ] __29.4__: _Simple Updates_
 - [ ] __29.5__: _Complex Updates - Arrays_
 - [ ] __29.6__: _Project - Commerce_

@@ -1,5 +1,4 @@
 # Block 29 - MongoDB
-
 MongoDB is an alternative to conventional SQL databases. It is one of the most popular NoSQL databases and it is primarly used because of performance, scalability and ease-of-use.
 
 It is especially easy to use with **JavaScript**!
@@ -53,9 +52,7 @@ Just like WHERE in SQL:
 db.collection.find( { quantity: { $gt: 4 } } ); // Every document where quantity > 4
 ```
 
-More of filter related content [here](https://www.mongodb.com/docs/manual/reference/method/db.collection.find/#find-all-documents-in-a-collection)!
-
-### Projection - Second parameter
+## Projection - Second parameter
 
 In the case that you want only specific fields to be returned, you can specify them as well:
 
@@ -117,6 +114,66 @@ db.collection.find({}).sort({ quantity: -1 }); // Sort by quantity descending
 
 db.collection.find({}).sort({ quantity: -1 }, { price: 1 });
 // Sort by quantity descending, price ascending
+```
+
+## Query Operators
+
+- `$all` - Every item in the array exists in the document
+
+```jsx
+db.inventory.find({ tags: { $all: [ "ssl", "security" ] } });
+// Every document with tags sll and security
+```
+
+- `$elemMatch` - Document contains an object that has following items
+
+```jsx
+db.scores.find({ results: { $elemMatch: { $gte: 80, $lt: 85 } } });
+// Every document with 'results' containing an array with number between 80 and 84
+
+db.survey.find({ results: { $elemMatch: { product: "Keyboard" } } });
+// Every document with 'results' containing an object with product: 'Keyboard'
+```
+
+- `$size` - Document contains an array with `number` size
+
+```jsx
+db.products.find({ tags: { $size: 2 } }); // Every document where tags.length = 2
+```
+
+- `$expr` - Used to make more complex expressions, like comparing fields
+
+```jsx
+db.monthlyBudget.find({ $expr: { $gt: [ "$spent", "$budget" ] } });
+// Every document where 'spent' is greater than 'budget'
+```
+
+- `$regex` - Use the powers of regular expressions to filter documents
+
+```jsx
+db.products.find({ sku: { $regex: /^ABC/i } });
+// Every document where 'sku' contains abc. (/i is for case insensitive)
+```
+
+- `$mod` - Filter fields based on their quotient (division)
+
+```jsx
+db.inventory.find({ qty: { $mod: [4, 0] } });
+// Every document where 'qty' is perfectly divisible by 4
+```
+
+## Count
+
+```jsx
+db.heroes.count(); // Number of documents in heroes collection
+db.heroes.count({ publisher: 'Marvel' });
+// Number of documents where publisher = 'Marvel' in heroes collection
+```
+
+## Distinct
+
+```jsx
+db.heroes.distinct("publisher") // Number of different publishers in heroes collection
 ```
 
 # Deleting Documents

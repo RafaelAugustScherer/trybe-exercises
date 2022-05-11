@@ -40,7 +40,12 @@ db.movies.find() // Find every document in the collection as an array
 db.movies.findOne({ title: "Forrest Gump" }); // Find a movie with title = 'Forrest Gump'
 ```
 
-### Filter - First parameter
+<aside>
+⚠️ **Disclaimer: Method `find` does not return every field in the database.** To force this, you need to do something like: `db.movies.find().toArray()`
+
+</aside>
+
+## Filter - First parameter
 
 Just like WHERE in SQL:
 
@@ -67,4 +72,67 @@ You can limit the amount of data returned:
 
 ```jsx
 db.movies.find({ $orderby: { imdb_rating: -1 } }).limit(5); // Return top 5 imdb_rating movies
+```
+
+---
+
+## Filter
+
+More on filtering data in MongoDB.
+
+### Comparsion operators
+
+- `$lt`, `$gt` **= less than, greater than;**
+- `$lte`, `$gte` **= less than or equal, greater than or equal;**
+- `$eq`, `$ne` **= equal, not equal;**
+- `$in`, `$nin` **= in, not in (object);**
+
+### Logic operators
+
+- `$and`, `$or` **= and, or;**
+- `$not`, `$nor` **= not, not or ;**
+
+### Usage
+
+Logic operators, if used, need to come before comparsion operators.
+
+```jsx
+db.collection.find({ quantity: { $lt: 5 } }); // Documents with quantity < 5
+db.collection.find({ quantity: { $in: [5, 15] } }); // Quantity equal to 5 or 15
+db.collection.find({ quantity: { $or: [{ $eq: 5 }, { $eq: 15 }] } }); // Same as above
+
+db.inventory.find({ price: { $not: { $gt: 1.99 } } }); // Price not greater than 1.99
+db.inventory.find({ price: { $lte: 1.99 } }); // Same as above
+db.inventory.find({ $nor: [{ price: { $lte: 1.99 } }, { quantity: 5 }] });
+// Price is not less than or equal to 1.99 and/or quantity is not 5
+```
+
+## Sort
+
+Similar to ORDER BY in SQL.
+
+```jsx
+db.collection.find({}).sort({ quantity: 1 }); // Sort by quantity ascending
+db.collection.find({}).sort({ quantity: -1 }); // Sort by quantity descending
+
+db.collection.find({}).sort({ quantity: -1 }, { price: 1 });
+// Sort by quantity descending, price ascending
+```
+
+# Deleting Documents
+
+Work similarly to `insertOne` and `insertMany`:
+
+### deleteOne()
+
+```jsx
+db.inventory.deleteOne({ quantity: 100 }); // Delete first document with quantity 100
+db.inventory.deleteOne({ _id: "12ajg23" }); // Delete document with _id = 12ajg23
+```
+
+### deleteMany()
+
+```jsx
+db.inventory.deleteMany({ price: { $gt: 100 } }); // Delete every with price greater than 100
+db.inventory.deleteMany({}); // Delete every document in collection
 ```

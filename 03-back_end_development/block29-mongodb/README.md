@@ -28,7 +28,8 @@ db.insertOne({ name: 'Johnny', age: undefined });
 db.insertMany([{ name: 'Carlos', age: 11 }, { name: 'Amy', age: 23 }]);
 ```
 
-# Querying Collections
+<details>
+<summary>Querying Collections</summary>
 
 ## Find method
 
@@ -175,6 +176,7 @@ db.heroes.count({ publisher: 'Marvel' });
 ```jsx
 db.heroes.distinct("publisher") // Number of different publishers in heroes collection
 ```
+</details>
 
 # Deleting Documents
 
@@ -193,3 +195,121 @@ db.inventory.deleteOne({ _id: "12ajg23" }); // Delete document with _id = 12ajg2
 db.inventory.deleteMany({ price: { $gt: 100 } }); // Delete every with price greater than 100
 db.inventory.deleteMany({}); // Delete every document in collection
 ```
+<details>
+<summary>Updating Collections</summary>
+
+First parameter is an object with the filter (WHERE);
+
+Second parameter is an object with the fields to update (SET);
+
+## updateOne()
+
+```jsx
+
+db.inventory.updateOne({ item: "paper" }, { $set: { "size.uom": "cm", status: "P" } });
+// Update first document where item = 'paper'
+```
+
+## updateMany()
+
+```jsx
+db.inventory.updateMany({ "qty": { $lt: 50 } }, { $set: { "size.uom": "in" } });
+// Update all documents where qty is less than 50
+db.inventory.updateMany({}, { $set: { "size.uom": "in" } });
+// Update all documents in collection
+```
+
+## `$set`
+
+Directly **set** values to fields
+
+### Top Level Updates - Conventional
+
+```jsx
+db.products.updateOne(
+	{ _id: 100 },
+	{ $set: { quantity: 500, tags: [ "coats", "outerwear", "clothing" ] } }
+);
+```
+
+### Embedded Updates - Dot notation
+
+Used to update object keys, while keeping the rest of the object intact
+
+```jsx
+db.products.updateOne(
+  { _id: 100 },
+  { $set: { "details.make": "Adidas" } }
+);
+```
+
+### Array Updates - Numbered dot notation
+
+```jsx
+db.products.updateOne(
+  { _id: 100 },
+  { $set: { "tags.1": "rain gear", "ratings.0.rating": 2 } }
+);
+```
+
+## `$inc`
+
+Increment or Decrement number values
+
+```jsx
+// Doc. Before -> { _id: 5, quantity: 10, totalSold: 52 }
+db.inventory.updateOne(
+	{ _id: 5 },
+	{ $inc: { quantity: -2, totalSold: 2 } }
+);
+// Doc. After -> { _id: 5, quantity: 8, totalSold: 54 }
+```
+
+## `$min, $max`
+
+Compare field to given value and update to the minimum or maximum between them
+
+```jsx
+// Docs. Before -> 
+// { _id: 5, security: 4.2, technology: 3.8 }
+// { _id: 6, security: 4.8, technology: 4 }
+db.requirements.updateOne(
+	{},
+	{ $max: { security: 4.5 }, $min: { technology: 3.9 } }
+);
+// Docs. After ->
+// { _id: 5, security: 4.5, technology: 3.8 }
+// { _id: 6, security: 4.8, technology: 3.9 }
+```
+
+## `$currentDate`
+
+Set a field to current Date. As a `timestamp` or `Date`. By default it uses the `Date` format, you can change that by specifying a `$type`.
+
+```jsx
+// Doc. Before -> { _id: 1, lastModified: ISODate("2013-10-02T01:11:18.965Z") }
+
+db.customers.updateOne(
+	{ _id: 1 },
+	{ $currentDate: { lastModified: true, "cancellation.date": { $type: "timestamp" } } }
+);
+// Doc. After ->
+// {
+//   _id: 1,
+//   lastModified: ISODate("2022-05-12T04:25:23.965Z"),
+//   cancellation: { date: Timestamp(1579728101, 1) }
+// }
+```
+
+## `$rename, $unset`
+
+Rename or remove fields from documents'
+
+```jsx
+db.inventory.updateMany({}, { $rename: { "name": "productName" } });
+// Rename 'name' to 'productName'
+
+db.inventory.updateMany({}, { $unset: { "color": "" } });
+// Remove field 'color'
+```
+</details>

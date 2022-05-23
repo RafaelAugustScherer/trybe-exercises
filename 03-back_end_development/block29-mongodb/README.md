@@ -312,4 +312,119 @@ db.inventory.updateMany({}, { $rename: { "name": "productName" } });
 db.inventory.updateMany({}, { $unset: { "color": "" } });
 // Remove field 'color'
 ```
+
+## Array Updates
+
+### `$push - $each, $sort, $slice`
+
+```jsx
+db.inventory.updateOne(
+	{ _id: 1 },
+	{ $push: { items: { { name: 'eraser', price: 3.5 } } } }
+); // Push to/create array 'items' inside document with _id = 1
+```
+
+---
+
+```jsx
+db.inventory.updateOne(
+	{ _id: 1 },
+	{
+		$push: {
+			items: {
+				$each: [
+					{
+						name: 'pen',
+						price: 3.2,
+					},
+					{
+						name: 'notebook',
+						price: 12,
+					},
+				],
+				$sort: { price: -1 } // Optional
+				$slice: 2 // Optional
+			}
+		}
+	}
+);
+```
+
+The code above does the following:
+
+- Update document with `_id = 1`;
+- Create or push to `items` array inside this document;
+- Sort this array by price descending;
+- Keep only the first two items of this array (slice).
+
+### `$pop`
+
+Remove first (-1) or last(1) item from an array
+
+```jsx
+db.inventory.updateMany(
+	{},
+	{ $pop: { items: 1 } } // Remove last item from 'items' in every document
+);
+```
+
+### `$pull`
+
+Remove items that fulfill a condition
+
+```jsx
+db.profiles.updateOne(
+  { _id: 1 },
+  { $pull: { votes: { $gte: 6 } } },
+);
+// Remove every number in 'votes' array that is equal or greater to 6
+```
+
+### `$addToSet`
+
+Works the same way as $push, but if you try to push a duplicate value, it won’t push, treating the array as a set
+
+```jsx
+// Doc. Before => { _id: 1 }
+db.inventory.updateOne(
+	{ _id: 1 },
+	{ $addToSet: { items: { { name: 'eraser', price: 3.5 } } } }
+); // Create array 'items' inside document with _id = 1
+
+// Doc. => { _id: 1, items: { name: 'eraser', price: 3.5 } }
+db.inventory.updateOne(
+	{ _id: 1 },
+	{ $addToSet: { items: { { name: 'eraser', price: 3.5 } } } }
+); // Doesn't allow for duplicates
+
+// Doc. => { _id: 1, items: { name: 'eraser', price: 3.5 } }
+```
+
+```jsx
+db.inventory.updateOne({ _id: 1 }, {
+	$addToSet: {
+		tags: {
+			$each: ["clothing", "shirt"] // Will try to push 'clothing' and 'shirt' to tags
+		}
+	}
+});
+```
+
+### `arrayFilters`
+
+Use an array filter to apply an update on a specific item.
+
+```jsx
+db.recipes.updateOne(
+  { title: "Simple Pancake" },
+  {
+    $set : {
+      "ingredients.$[e].measurementUnit": "cup",
+    },
+  },
+  { arrayFilters: [ { "e.name": "Flour" } ] },
+);
+// In document with title = 'Simple Pancake', set measurementUnit = 'cup'
+// in 'ingredients' array where ingredient name = 'Flour'
+```
 </details>

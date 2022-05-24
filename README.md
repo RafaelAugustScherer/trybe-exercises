@@ -234,5 +234,5 @@ This repository includes all exercises and notes made during the [Trybe Course](
 ### [Block 30: Mongoose & OOP](/03-back_end_development/block30-mongoose)
 
 - [X] __30.1__: _MongoDB & MSC Architecture_
-- [ ] __30.2__: _MongoDB & OOP_
+- [X] __30.2__: _MongoDB & OOP_
 - [ ] __30.3__: _Project - Car Shop_

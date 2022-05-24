@@ -229,4 +229,10 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __29.3__: _Query Operators_
 - [X] __29.4__: _Simple Updates_
 - [X] __29.5__: _Complex Updates - Arrays_
-- [ ] __29.6__: _Project - Commerce_
+- [X] __29.6__: _Project - Commerce_
+
+### [Block 30: Mongoose & OOP](/03-back_end_development/block30-mongoose)
+
+- [X] __30.1__: _MongoDB & MSC Architecture_
+- [ ] __30.2__: _MongoDB & OOP_
+- [ ] __30.3__: _Project - Car Shop_

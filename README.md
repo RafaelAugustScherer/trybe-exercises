@@ -235,4 +235,20 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __30.1__: _MongoDB & MSC Architecture_
 - [X] __30.2__: _MongoDB & OOP_
-- [ ] __30.3__: _Project - Car Shop_
+- [X] __30.3__: _Project - Car Shop_
+
+### Block 31: Project - Delivery App
+
+- [X] __31.1__: _Project - Delivery App_
+
+### Block 32: MasterClass - VPS, CI/CD
+
+- [X] __32.1__: _Day One - VPS_
+- [X] __32.2__: _Day Two - CI/CD_
+
+### [Block 33: Introduction to Python](/04-computer-science/block33-intro-python)
+
+- [X] __33.1__: _Learning Python_
+- [X] __33.2__: _Data Input and Output_
+- [X] __33.3__: _Tests_
+- [X] __33.4__: _Project - Job Insights_

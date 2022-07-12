@@ -252,3 +252,10 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __33.2__: _Data Input and Output_
 - [X] __33.3__: _Tests_
 - [X] __33.4__: _Project - Job Insights_
+
+### [Block 34: Project Patterns](/04-computer-science/block34-project-patterns)
+
+- [X] __34.1__: _OOP in Python_
+- [X] __34.2__: _Design Patterns - Iterator, Adapter, Strategy_
+- [X] __34.3__: _Design Patterns - Decorator, Observer, Factory_
+- [X] __34.4__: _Project - Inventory Reports_

@@ -259,3 +259,9 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __34.2__: _Design Patterns - Iterator, Adapter, Strategy_
 - [X] __34.3__: _Design Patterns - Decorator, Observer, Factory_
 - [X] __34.4__: _Project - Inventory Reports_
+
+### [Block 35: Network & Data Scraping](/04-computer-science/block35-data-scraping)
+
+- [X] __35.1__: _Network Architecture, Tools & Security_
+- [X] __35.2__: _Data Scraping_
+- [X] __35.3__: _Project - Tech News_

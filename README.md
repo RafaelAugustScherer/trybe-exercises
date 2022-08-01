@@ -265,3 +265,10 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __35.1__: _Network Architecture, Tools & Security_
 - [X] __35.2__: _Data Scraping_
 - [X] __35.3__: _Project - Tech News_
+
+### [Block 36: Algorithms](/04-computer-science/block36-algorithms)
+
+- [X] __36.1__: _Alogrithms Complexity_
+- [X] __36.2__: _Recursion & Problem Solving Strategies_
+- [X] __36.3__: _Order & Search Algorithms_
+- [X] __36.4__: _Project - Algorithms_

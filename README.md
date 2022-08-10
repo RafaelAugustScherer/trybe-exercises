@@ -272,3 +272,11 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __36.2__: _Recursion & Problem Solving Strategies_
 - [X] __36.3__: _Order & Search Algorithms_
 - [X] __36.4__: _Project - Algorithms_
+
+### [Block 37: Data Structures I: Arrays, Lists, Queues and Piles](/04-computer-science/block37-data-structures-I)
+
+- [X] __37.1__: _Computer Architecture_
+- [X] __37.2__: _Arrays_
+- [X] __37.3__: _Nodes & Chained Lists_
+- [X] __37.4__: _Queues & Piles_
+- [X] __37.5__: _Project - TING - Trybe Is Not Google_

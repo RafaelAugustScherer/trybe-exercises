@@ -9,7 +9,7 @@ A hashmap is a list of multiple groups of data, each located by a unique hash nu
 
 Each space in the vector where the information is stored is called a bucket:
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8a4273c8-c149-4bca-bc27-34af1961b812/Untitled.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8a4273c8-c149-4bca-bc27-34af1961b812/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220922T174331Z&X-Amz-Expires=86400&X-Amz-Signature=05635e0141de2885b006960ee4714be5203d0eea8ac98ebf931a6a2eede17957&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 To index a file, we provide the hash function with the insertion id and it will return the exact position of the bucket in the vector.
 

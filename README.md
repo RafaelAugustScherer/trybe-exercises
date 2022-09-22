@@ -280,3 +280,9 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __37.3__: _Nodes & Chained Lists_
 - [X] __37.4__: _Queues & Piles_
 - [X] __37.5__: _Project - TING - Trybe Is Not Google_
+
+### [Block 38: Data Structures II: Hashmaps & Sets](/04-computer-science/block38-data-structures-II)
+
+- [X] __38.1__: _Hashmap & Dict_
+- [X] __38.2__: Set
+- [X] __38.3__: _Project - Restaurant Orders_

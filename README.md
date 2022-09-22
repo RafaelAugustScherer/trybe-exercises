@@ -146,7 +146,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __18.1__: _Project - Recipes App_
 
-## Back-end Development
+## Back-end Development ✔️
 
 ### [Block 19: Docker - Utilizing Containers ✔️](/03-back_end_development/block19-docker)
 
@@ -245,6 +245,8 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 - [X] __32.1__: _Day One - VPS_
 - [X] __32.2__: _Day Two - CI/CD_
+
+## Computer Science ✔️
 
 ### [Block 33: Introduction to Python ✔️](/04-computer-science/block33-intro-python)
 

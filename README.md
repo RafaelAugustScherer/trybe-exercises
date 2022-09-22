@@ -148,14 +148,14 @@ This repository includes all exercises and notes made during the [Trybe Course](
 
 ## Back-end Development
 
-### [Block 19: Docker - Utilizing Containers](/03-back_end_development/block19-docker)
+### [Block 19: Docker - Utilizing Containers ✔️](/03-back_end_development/block19-docker)
 
 - [X] __19.1__: _Introduction to Back-end_
 - [X] __19.2__: _Creating & Manipulating Images in Docker_
 - [X] __19.3__: _Orchestrate Containers w/ Docker Compose_
 - [X] __19.4__: _Project: Docker Todo-List_
 
-### [Block 20: Introduction to SQL](/03-back_end_development/block20-sql-database)
+### [Block 20: Introduction to SQL ✔️](/03-back_end_development/block20-sql-database)
 
 - [X] __20.1__: _Introduction - Relational Database_
 - [X] __20.2__: _Finding Data in a Database_
@@ -163,14 +163,14 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __20.4__: _Manipulating Tables_
 - [X] __20.5__: _Project: All For One_
 
-### [Block 21: SQL Functions, JOINs and Normalization](/03-back_end_development/block21-sql-database-advanced)
+### [Block 21: SQL Functions, JOINs and Normalization ✔️](/03-back_end_development/block21-sql-database-advanced)
 
 - [X] __21.1__: _Most used functions in SQL_
 - [X] __21.2__: _Simplifying JOINs_
 - [X] __21.3__: _Transforming ideas into a database model_
 - [X] __21.4__: _Live Class + Project - One For All_
 
-### [Block 22: Introduction to Web Development With Node.js](/03-back_end_development/block22-intro-nodejs)
+### [Block 22: Introduction to Web Development With Node.js ✔️](/03-back_end_development/block22-intro-nodejs)
 
 - [X] __22.1__: _Node.js - A JavaScript Engine_
 - [X] __22.2__: _Node.js - Asynchronous Flux_
@@ -179,7 +179,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __22.5__: _Express - Middlewares_
 - [X] __22.6__: _Project - Talker Manager_
 
-### [Block 23: Node.js: Service Layer & REST Architecture](/03-back_end_development/block23-msc-nodejs)
+### [Block 23: Node.js: Service Layer & REST Architecture ✔️](/03-back_end_development/block23-msc-nodejs)
 
 - [X] __23.1__: _Software Architecture - Model Layer_
 - [X] __23.2__: _Software Architecture - Controller & Service Layer_
@@ -187,7 +187,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __23.4__: _Software Architecture - Testing Layers_
 - [X] __23.5__: _Project - Store Manager_
 
-### [Block 24: ORM & Authentication](/03-back_end_development/block24-orm-jwt)
+### [Block 24: ORM & Authentication ✔️](/03-back_end_development/block24-orm-jwt)
 
 - [X] __24.1__: _ORM - Application interface with database_
 - [X] __24.2__: _ORM - Associations_
@@ -195,20 +195,20 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __24.4__: _Testing APIs w/ Integration Tests_
 - [X] __24.5__: _Project - Blogs API_
 
-### [Block 25: Deployment](/03-back_end_development/block25-deployment)
+### [Block 25: Deployment ✔️](/03-back_end_development/block25-deployment)
 
 - [X] __25.1__: _Infrastructure - Deploy w/ Heroku_
 - [X] __25.2__: _Deploy Docker & Heroku_
 - [X] __25.3__: _Project - Stranger Things_
 
-### [Block 26: TypeScript](/03-back_end_development/block26-typescript)
+### [Block 26: TypeScript ✔️](/03-back_end_development/block26-typescript)
 
 - [X] __26.1__: _Introduction to TypeScript_
 - [X] __26.2__: _Static Typing & Generics_
 - [X] __26.3__: _TypeScript + Express_
 - [X] __26.4__: _Project - Trybe Smith_
 
-### [Block 27: Object-Oriented Programming (OOP) & SOLID](/03-back_end_development/block27-oop-solid)
+### [Block 27: Object-Oriented Programming (OOP) & SOLID ✔️](/03-back_end_development/block27-oop-solid)
 
 - [X] __27.1__: _Introduction to Object Orientation_
 - [X] __27.2__: _Heritage & Interfaces_
@@ -217,11 +217,11 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __27.5__: _SOLID - Principles L and I_
 - [X] __27.6__: _Project - Trybers and Dragons_
 
-### [Block 28: Project - TFC - Trybe Futebol Clube]
+### [Block 28: Project - TFC - Trybe Futebol Clube ✔️]
 
 - [X] __28.1__: _Project - TFC - Trybe Futebol Clube_
 
-### [Block 29: Introduction to MongoDB](/03-back_end_development/block29-mongodb)
+### [Block 29: Introduction to MongoDB ✔️](/03-back_end_development/block29-mongodb)
 
 - [X] __29.1__: _NoSQL - Introduction_
 - [X] __29.1__: _MongoDB - Introduction_
@@ -231,49 +231,49 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __29.5__: _Complex Updates - Arrays_
 - [X] __29.6__: _Project - Commerce_
 
-### [Block 30: Mongoose & OOP](/03-back_end_development/block30-mongoose)
+### [Block 30: Mongoose & OOP ✔️](/03-back_end_development/block30-mongoose)
 
 - [X] __30.1__: _MongoDB & MSC Architecture_
 - [X] __30.2__: _MongoDB & OOP_
 - [X] __30.3__: _Project - Car Shop_
 
-### Block 31: Project - Delivery App
+### Block 31: Project - Delivery App ✔️
 
 - [X] __31.1__: _Project - Delivery App_
 
-### Block 32: MasterClass - VPS, CI/CD
+### Block 32: MasterClass - VPS, CI/CD ✔️
 
 - [X] __32.1__: _Day One - VPS_
 - [X] __32.2__: _Day Two - CI/CD_
 
-### [Block 33: Introduction to Python](/04-computer-science/block33-intro-python)
+### [Block 33: Introduction to Python ✔️](/04-computer-science/block33-intro-python)
 
 - [X] __33.1__: _Learning Python_
 - [X] __33.2__: _Data Input and Output_
 - [X] __33.3__: _Tests_
 - [X] __33.4__: _Project - Job Insights_
 
-### [Block 34: Project Patterns](/04-computer-science/block34-project-patterns)
+### [Block 34: Project Patterns ✔️](/04-computer-science/block34-project-patterns)
 
 - [X] __34.1__: _OOP in Python_
 - [X] __34.2__: _Design Patterns - Iterator, Adapter, Strategy_
 - [X] __34.3__: _Design Patterns - Decorator, Observer, Factory_
 - [X] __34.4__: _Project - Inventory Reports_
 
-### [Block 35: Network & Data Scraping](/04-computer-science/block35-data-scraping)
+### [Block 35: Network & Data Scraping ✔️](/04-computer-science/block35-data-scraping)
 
 - [X] __35.1__: _Network Architecture, Tools & Security_
 - [X] __35.2__: _Data Scraping_
 - [X] __35.3__: _Project - Tech News_
 
-### [Block 36: Algorithms](/04-computer-science/block36-algorithms)
+### [Block 36: Algorithms ✔️](/04-computer-science/block36-algorithms)
 
 - [X] __36.1__: _Alogrithms Complexity_
 - [X] __36.2__: _Recursion & Problem Solving Strategies_
 - [X] __36.3__: _Order & Search Algorithms_
 - [X] __36.4__: _Project - Algorithms_
 
-### [Block 37: Data Structures I: Arrays, Lists, Queues and Piles](/04-computer-science/block37-data-structures-I)
+### [Block 37: Data Structures I: Arrays, Lists, Queues and Piles ✔️](/04-computer-science/block37-data-structures-I)
 
 - [X] __37.1__: _Computer Architecture_
 - [X] __37.2__: _Arrays_
@@ -281,7 +281,7 @@ This repository includes all exercises and notes made during the [Trybe Course](
 - [X] __37.4__: _Queues & Piles_
 - [X] __37.5__: _Project - TING - Trybe Is Not Google_
 
-### [Block 38: Data Structures II: Hashmaps & Sets](/04-computer-science/block38-data-structures-II)
+### [Block 38: Data Structures II: Hashmaps & Sets ✔️](/04-computer-science/block38-data-structures-II)
 
 - [X] __38.1__: _Hashmap & Dict_
 - [X] __38.2__: Set
